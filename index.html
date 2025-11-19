@@ -136,11 +136,442 @@
         .mummy-leg-right {
             right: 8px;
         }
+        .enemy-tough {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .enemy-small {
+            width: 30px;
+            height: 30px;
+            position: relative;
+        }
+        .enemy-summoner {
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+        .enemy-different {
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+        .tough-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #654321 0%, #3d2817 100%);
+            border: 3px solid #2a1a0a;
+            border-radius: 10px 10px 15px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .tough-head {
+            width: 38px;
+            height: 34px;
+            background: linear-gradient(to bottom, #654321 0%, #3d2817 100%);
+            border: 3px solid #2a1a0a;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .tough-eye {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            background-color: #2a1a0a;
+            border-radius: 50%;
+            border: 2px solid #1a0a0a;
+        }
+        .tough-eye::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700;
+            border-radius: 50%;
+        }
+        .tough-eye::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 5px;
+            height: 5px;
+            background-color: #ff0000;
+            border-radius: 50%;
+        }
+        .small-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #a0a0a0 0%, #808080 100%);
+            border: 1px solid #606060;
+            border-radius: 6px 6px 8px 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .small-head {
+            width: 24px;
+            height: 20px;
+            background: linear-gradient(to bottom, #a0a0a0 0%, #808080 100%);
+            border: 1px solid #606060;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .small-eye {
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: #3a2a5a;
+            border-radius: 50%;
+            border: 1px solid #2a1a4a;
+        }
+        .small-eye::before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 6px;
+            height: 6px;
+            background-color: #ffd700;
+            border-radius: 50%;
+        }
+        .small-eye::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 3px;
+            height: 3px;
+            background-color: #ff0000;
+            border-radius: 50%;
+        }
+        .different-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #8b7355 0%, #6b5535 100%);
+            border: 2px solid #5a4525;
+            border-radius: 8px 8px 12px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .different-head {
+            width: 36px;
+            height: 32px;
+            background: linear-gradient(to bottom, #d4af37 0%, #b8941a 100%);
+            border: 2px solid #8b6914;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .different-crown {
+            position: absolute;
+            width: 32px;
+            height: 8px;
+            background: linear-gradient(to bottom, #ffd700 0%, #ff8c00 100%);
+            border: 2px solid #cc6600;
+            border-radius: 4px;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .different-crown::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #ff8c00;
+            border: 1px solid #cc6600;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .different-eye {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        .summoner-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #4a4a6a 0%, #2a2a4a 100%);
+            border: 2px solid #1a1a3a;
+            border-radius: 8px 8px 12px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .summoner-head {
+            width: 32px;
+            height: 28px;
+            background: linear-gradient(to bottom, #4a4a6a 0%, #2a2a4a 100%);
+            border: 2px solid #1a1a3a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .summoner-eye {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #6a2a8a;
+            border-radius: 50%;
+            border: 1px solid #4a1a6a;
+        }
+        .summoner-eye::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 8px;
+            height: 8px;
+            background-color: #8b00ff;
+            border-radius: 50%;
+        }
+        .summoner-arms {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background: linear-gradient(to bottom, #4a4a6a 0%, #2a2a4a 100%);
+            border: 1px solid #1a1a3a;
+            border-radius: 4px;
+            top: 12px;
+        }
+        .summoner-arm-left {
+            left: -4px;
+            transform: rotate(-20deg);
+        }
+        .summoner-arm-right {
+            right: -4px;
+            transform: rotate(20deg);
+        }
+        .summoner-legs {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background: linear-gradient(to bottom, #4a4a6a 0%, #2a2a4a 100%);
+            border: 1px solid #1a1a3a;
+            border-radius: 3px;
+            bottom: -2px;
+        }
+        .summoner-leg-left {
+            left: 8px;
+        }
+        .summoner-leg-right {
+            right: 8px;
+        }
         #ui-container {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #hp-counter {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ff4444;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #countdown-timer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ffd700;
+            padding: 30px 60px;
+            border-radius: 15px;
+            font-size: 72px;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            display: none;
+        }
+        #countdown-timer.active {
+            display: block;
+        }
+        #boss-hp-bar-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 3px solid #8b6914;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+        }
+        #boss-hp-bar-container.active {
+            display: block;
+        }
+        #boss-hp-label {
+            color: #ffd700;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        #boss-hp-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        #boss-hp-fill {
+            height: 100%;
+            background: linear-gradient(to right, #ff0000 0%, #ff4444 50%, #ff6666 100%);
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+        #boss-hp-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .boss {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        .boss-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 100%);
+            border: 3px solid #4a2a0a;
+            border-radius: 10px 10px 15px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .boss-head {
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(to bottom, #1a1a4a 0%, #0a0a2a 100%);
+            border: 3px solid #0a0a1a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss-beak {
+            position: absolute;
+            width: 25px;
+            height: 8px;
+            background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid #0a0a0a;
+            border-radius: 0 50% 50% 0;
+            bottom: 8px;
+            left: -5px;
+            transform: rotate(-10deg);
+        }
+        .boss-crown {
+            position: absolute;
+            width: 40px;
+            height: 10px;
+            background: linear-gradient(to bottom, #ffd700 0%, #cc9900 100%);
+            border: 2px solid #996600;
+            border-radius: 5px;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss-crown::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff8c00;
+            border: 1px solid #cc6600;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss-collar {
+            position: absolute;
+            width: 50px;
+            height: 12px;
+            background: linear-gradient(to bottom, #1a1a4a 0%, #ffd700 50%, #1a1a4a 100%);
+            border: 2px solid #0a0a2a;
+            border-radius: 5px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss-kilt {
+            position: absolute;
+            width: 45px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ffd700 0%, #cc9900 100%);
+            border: 2px solid #996600;
+            border-radius: 0 0 8px 8px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss-staff {
+            position: absolute;
+            width: 4px;
+            height: 50px;
+            background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 100%);
+            border: 1px solid #0a0a0a;
+            border-radius: 2px;
+            left: -8px;
+            top: 10px;
+            transform: rotate(-5deg);
+        }
+        .boss-staff::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ffd700;
+            border: 1px solid #cc9900;
+            border-radius: 50%;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         #money-counter {
             background-color: #1a4d2e;
@@ -298,6 +729,391 @@
             right: -8px;
             transform: rotate(20deg) scaleX(-1);
         }
+        .peashooter {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .peashooter-head {
+            width: 32px;
+            height: 32px;
+            background-color: #228b22;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #006400;
+        }
+        .peashooter-mouth {
+            position: absolute;
+            width: 14px;
+            height: 12px;
+            background-color: #1a5a1a;
+            border: 2px solid #004400;
+            border-radius: 50% 50% 0 0;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .peashooter-mouth::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .peashooter-stem {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .peashooter-leaf {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #32cd32;
+            border: 1px solid #228b22;
+            border-radius: 0 50% 50% 0;
+            bottom: 4px;
+        }
+        .peashooter-leaf-left {
+            left: -6px;
+            transform: rotate(-30deg);
+        }
+        .peashooter-leaf-right {
+            right: -6px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        .cactus {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .cactus-body {
+            width: 20px;
+            height: 35px;
+            background-color: #228b22;
+            border: 2px solid #006400;
+            border-radius: 10px 10px 5px 5px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .cactus-arm {
+            position: absolute;
+            width: 12px;
+            height: 18px;
+            background-color: #228b22;
+            border: 2px solid #006400;
+            border-radius: 6px;
+        }
+        .cactus-arm-left {
+            left: 2px;
+            top: 15px;
+            transform: rotate(-25deg);
+        }
+        .cactus-arm-right {
+            right: 2px;
+            top: 15px;
+            transform: rotate(25deg);
+        }
+        .cactus-spike {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #006400;
+            border-radius: 50%;
+        }
+        .cactus-spike-1 { top: 5px; left: 4px; }
+        .cactus-spike-2 { top: 5px; right: 4px; }
+        .cactus-spike-3 { top: 12px; left: 2px; }
+        .cactus-spike-4 { top: 12px; right: 2px; }
+        .cactus-spike-5 { top: 20px; left: 4px; }
+        .cactus-spike-6 { top: 20px; right: 4px; }
+        .cactus-spike-7 { bottom: 5px; left: 50%; transform: translateX(-50%); }
+        .cactus-pot {
+            position: absolute;
+            width: 24px;
+            height: 8px;
+            background-color: #8b4513;
+            border: 2px solid #654321;
+            border-radius: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .thunderpea {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .thunderpea-head {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(to bottom, #ffd700 0%, #ff8c00 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #ff8c00;
+        }
+        .thunderpea-mouth {
+            position: absolute;
+            width: 14px;
+            height: 12px;
+            background-color: #ff8c00;
+            border: 2px solid #ff4500;
+            border-radius: 50% 50% 0 0;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .thunderpea-mouth::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .thunderpea-lightning {
+            position: absolute;
+            width: 3px;
+            height: 8px;
+            background-color: #ffff00;
+            border: 1px solid #ffd700;
+            transform: rotate(45deg);
+        }
+        .thunderpea-lightning-1 { top: 6px; left: 6px; }
+        .thunderpea-lightning-2 { top: 6px; right: 6px; transform: rotate(-45deg); }
+        .thunderpea-lightning-3 { top: 14px; left: 4px; }
+        .thunderpea-lightning-4 { top: 14px; right: 4px; transform: rotate(-45deg); }
+        .thunderpea-stem {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ffd700 0%, #ff8c00 100%);
+            border: 1px solid #ff8c00;
+            border-radius: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .thunderpea-leaf {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #90ee90;
+            border: 1px solid #228b22;
+            border-radius: 0 50% 50% 0;
+            bottom: 4px;
+        }
+        .thunderpea-leaf-left {
+            left: -6px;
+            transform: rotate(-30deg);
+        }
+        .thunderpea-leaf-right {
+            right: -6px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        .firepeashooter {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .firepeashooter-head {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(to bottom right, #ff6347 0%, #cc0000 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #8b0000;
+        }
+        .firepeashooter-eye {
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            top: 8px;
+        }
+        .firepeashooter-eye::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #ff8c00;
+            border-radius: 50%;
+            top: 2px;
+            left: 1.5px;
+        }
+        .firepeashooter-eye-left {
+            left: 8px;
+        }
+        .firepeashooter-eye-right {
+            right: 8px;
+        }
+        .firepeashooter-mouth {
+            position: absolute;
+            width: 14px;
+            height: 12px;
+            background-color: #8b0000;
+            border: 2px solid #660000;
+            border-radius: 50% 50% 0 0;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .firepeashooter-mouth::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .firepeashooter-flame {
+            position: absolute;
+            width: 6px;
+            height: 10px;
+            background: linear-gradient(to top, #ffd700 0%, #ff8c00 50%, #ff4500 100%);
+            border-radius: 50% 50% 0 50%;
+            top: -2px;
+        }
+        .firepeashooter-flame-1 { left: 4px; transform: rotate(-20deg); }
+        .firepeashooter-flame-2 { right: 4px; transform: rotate(20deg) scaleX(-1); }
+        .firepeashooter-flame-3 { top: 2px; left: 50%; transform: translateX(-50%) rotate(180deg); }
+        .firepeashooter-stem {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ff6347 0%, #cc0000 100%);
+            border: 1px solid #8b0000;
+            border-radius: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .firepeashooter-leaf {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #8b0000;
+            border: 1px solid #660000;
+            border-radius: 0 50% 50% 0;
+            bottom: 4px;
+        }
+        .firepeashooter-leaf-left {
+            left: -6px;
+            transform: rotate(-30deg);
+        }
+        .firepeashooter-leaf-right {
+            right: -6px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        .snowpea {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .snowpea-head {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(to bottom, #87ceeb 0%, #4682b4 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #4169e1;
+        }
+        .snowpea-eye {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 10px;
+        }
+        .snowpea-eye-left {
+            left: 10px;
+        }
+        .snowpea-eye-right {
+            right: 10px;
+        }
+        .snowpea-mouth {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #000;
+            border: 2px solid #1e90ff;
+            border-radius: 50%;
+            bottom: 6px;
+            right: 4px;
+        }
+        .snowpea-ice {
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            background: linear-gradient(to top, #ffffff 0%, #b0e0e6 100%);
+            border: 1px solid #87ceeb;
+            transform: rotate(45deg);
+        }
+        .snowpea-ice-1 { top: -4px; left: 4px; transform: rotate(30deg); }
+        .snowpea-ice-2 { top: -2px; left: 50%; transform: translateX(-50%) rotate(90deg); }
+        .snowpea-ice-3 { top: -4px; right: 4px; transform: rotate(150deg); }
+        .snowpea-ice-4 { top: 2px; left: 2px; transform: rotate(60deg); }
+        .snowpea-ice-5 { top: 2px; right: 2px; transform: rotate(120deg); }
+        .snowpea-stem {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(to bottom, #90ee90 0%, #228b22 100%);
+            border: 1px solid #006400;
+            border-radius: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .snowpea-leaf {
+            position: absolute;
+            width: 12px;
+            height: 14px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 50% 50% 50% 0;
+            bottom: 2px;
+        }
+        .snowpea-leaf-left {
+            left: -8px;
+            transform: rotate(-25deg);
+        }
+        .snowpea-leaf-right {
+            right: -8px;
+            transform: rotate(25deg) scaleX(-1);
+        }
         .cube.valid-placement {
             background-color: #2d6a3d;
             border-color: #ffd700;
@@ -319,6 +1135,44 @@
             z-index: 5;
             pointer-events: none;
         }
+        .projectile {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #32cd32;
+            border: 2px solid #228b22;
+            border-radius: 3px;
+            z-index: 15;
+            pointer-events: none;
+            box-shadow: 0 0 4px rgba(50, 205, 50, 0.8);
+        }
+        .projectile.thunder {
+            background-color: #ffd700;
+            border-color: #ff8c00;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 1);
+        }
+        .projectile.fire {
+            background-color: #ff4500;
+            border-color: #ff6347;
+            box-shadow: 0 0 8px rgba(255, 69, 0, 1);
+        }
+        .projectile.ice {
+            background-color: #87ceeb;
+            border-color: #4682b4;
+            box-shadow: 0 0 8px rgba(135, 206, 235, 1);
+        }
+        .enemy.stunned {
+            opacity: 0.5;
+            filter: brightness(1.5);
+        }
+        .enemy.on-fire {
+            filter: brightness(1.3) hue-rotate(10deg);
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+        }
+        .enemy.slowed {
+            filter: brightness(0.9) hue-rotate(-20deg);
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -327,7 +1181,22 @@
             <span class="money-icon">💰</span>
             <span id="money-amount">100</span>
         </div>
+        <div id="hp-counter">
+            <span>❤️</span>
+            <span id="hp-amount">10</span>
+        </div>
     </div>
+    <div id="countdown-timer">15</div>
+    <div id="boss-hp-bar-container">
+        <div id="boss-hp-label">BOSS</div>
+        <div id="boss-hp-bar">
+            <div id="boss-hp-fill"></div>
+            <div id="boss-hp-text">30 / 30</div>
+        </div>
+    </div>
+    <audio id="boss-music" loop>
+        <source src="TENNA BATTLE THEME DELTARUNE CHAPTER 3.mp3" type="audio/mpeg">
+    </audio>
     <div id="plant-shop">
         <div class="plant-card" id="sunflower-card" data-cost="50" data-plant="sunflower">
             <div class="sunflower">
@@ -348,6 +1217,83 @@
             </div>
             <div class="plant-cost">50</div>
         </div>
+        <div class="plant-card" id="peashooter-card" data-cost="100" data-plant="peashooter">
+            <div class="peashooter">
+                <div class="peashooter-head">
+                    <div class="peashooter-mouth"></div>
+                </div>
+                <div class="peashooter-stem"></div>
+                <div class="peashooter-leaf peashooter-leaf-left"></div>
+                <div class="peashooter-leaf peashooter-leaf-right"></div>
+            </div>
+            <div class="plant-cost">100</div>
+        </div>
+        <div class="plant-card" id="cactus-card" data-cost="150" data-plant="cactus">
+            <div class="cactus">
+                <div class="cactus-body">
+                    <div class="cactus-spike cactus-spike-1"></div>
+                    <div class="cactus-spike cactus-spike-2"></div>
+                    <div class="cactus-spike cactus-spike-3"></div>
+                    <div class="cactus-spike cactus-spike-4"></div>
+                    <div class="cactus-spike cactus-spike-5"></div>
+                    <div class="cactus-spike cactus-spike-6"></div>
+                    <div class="cactus-spike cactus-spike-7"></div>
+                </div>
+                <div class="cactus-arm cactus-arm-left"></div>
+                <div class="cactus-arm cactus-arm-right"></div>
+                <div class="cactus-pot"></div>
+            </div>
+            <div class="plant-cost">150</div>
+        </div>
+        <div class="plant-card" id="thunderpea-card" data-cost="175" data-plant="thunderpea">
+            <div class="thunderpea">
+                <div class="thunderpea-head">
+                    <div class="thunderpea-mouth"></div>
+                    <div class="thunderpea-lightning thunderpea-lightning-1"></div>
+                    <div class="thunderpea-lightning thunderpea-lightning-2"></div>
+                    <div class="thunderpea-lightning thunderpea-lightning-3"></div>
+                    <div class="thunderpea-lightning thunderpea-lightning-4"></div>
+                </div>
+                <div class="thunderpea-stem"></div>
+                <div class="thunderpea-leaf thunderpea-leaf-left"></div>
+                <div class="thunderpea-leaf thunderpea-leaf-right"></div>
+            </div>
+            <div class="plant-cost">175</div>
+        </div>
+        <div class="plant-card" id="firepeashooter-card" data-cost="200" data-plant="firepeashooter">
+            <div class="firepeashooter">
+                <div class="firepeashooter-head">
+                    <div class="firepeashooter-eye firepeashooter-eye-left"></div>
+                    <div class="firepeashooter-eye firepeashooter-eye-right"></div>
+                    <div class="firepeashooter-mouth"></div>
+                    <div class="firepeashooter-flame firepeashooter-flame-1"></div>
+                    <div class="firepeashooter-flame firepeashooter-flame-2"></div>
+                    <div class="firepeashooter-flame firepeashooter-flame-3"></div>
+                </div>
+                <div class="firepeashooter-stem"></div>
+                <div class="firepeashooter-leaf firepeashooter-leaf-left"></div>
+                <div class="firepeashooter-leaf firepeashooter-leaf-right"></div>
+            </div>
+            <div class="plant-cost">200</div>
+        </div>
+        <div class="plant-card" id="snowpea-card" data-cost="125" data-plant="snowpea">
+            <div class="snowpea">
+                <div class="snowpea-head">
+                    <div class="snowpea-eye snowpea-eye-left"></div>
+                    <div class="snowpea-eye snowpea-eye-right"></div>
+                    <div class="snowpea-mouth"></div>
+                    <div class="snowpea-ice snowpea-ice-1"></div>
+                    <div class="snowpea-ice snowpea-ice-2"></div>
+                    <div class="snowpea-ice snowpea-ice-3"></div>
+                    <div class="snowpea-ice snowpea-ice-4"></div>
+                    <div class="snowpea-ice snowpea-ice-5"></div>
+                </div>
+                <div class="snowpea-stem"></div>
+                <div class="snowpea-leaf snowpea-leaf-left"></div>
+                <div class="snowpea-leaf snowpea-leaf-right"></div>
+            </div>
+            <div class="plant-cost">125</div>
+        </div>
     </div>
     <div id="map-container"></div>
     
@@ -362,6 +1308,90 @@
         // Money system
         let money = 100;
         const moneyDisplay = document.getElementById('money-amount');
+        
+        // Player HP system
+        let playerHP = 10;
+        const hpDisplay = document.getElementById('hp-amount');
+        const countdownTimer = document.getElementById('countdown-timer');
+        let gameStarted = false;
+        
+        function updateHPDisplay() {
+            hpDisplay.textContent = playerHP;
+            if (playerHP <= 0) {
+                // Game over
+                alert('Game Over! You lost all your HP!');
+                // Could add game over screen here
+            }
+        }
+        
+        function loseHP(amount = 1) {
+            playerHP = Math.max(0, playerHP - amount);
+            updateHPDisplay();
+        }
+        
+        // Initialize HP display
+        updateHPDisplay();
+        
+        // Boss HP bar system
+        const bossHPBarContainer = document.getElementById('boss-hp-bar-container');
+        const bossHPFill = document.getElementById('boss-hp-fill');
+        const bossHPText = document.getElementById('boss-hp-text');
+        let bossEnemy = null;
+        
+        function updateBossHPBar() {
+            if (!bossEnemy || !bossEnemy.active) {
+                bossHPBarContainer.classList.remove('active');
+                return;
+            }
+            
+            const percentage = (bossEnemy.maxHits - bossEnemy.hits) / bossEnemy.maxHits * 100;
+            bossHPFill.style.width = percentage + '%';
+            bossHPText.textContent = `${bossEnemy.maxHits - bossEnemy.hits} / ${bossEnemy.maxHits}`;
+        }
+        
+        // Countdown timer
+        let countdown = 15;
+        countdownTimer.textContent = countdown;
+        countdownTimer.classList.add('active');
+        
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownTimer.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                countdownTimer.classList.remove('active');
+                gameStarted = true;
+            }
+        }, 1000);
+        
+        // Boss spawn timer (3:50 = 230 seconds)
+        const bossSpawnTime = 230000; // 230 seconds in milliseconds
+        let gameStartTime = null;
+        
+        // Track game start time
+        const gameStartInterval = setInterval(() => {
+            if (gameStarted && gameStartTime === null) {
+                gameStartTime = Date.now();
+            }
+            
+            // Spawn boss after 3:50
+            if (gameStarted && gameStartTime && !bossEnemy && (Date.now() - gameStartTime) >= bossSpawnTime) {
+                // Spawn boss on random row, rightmost column
+                const bossRow = Math.floor(Math.random() * mapHeight);
+                bossEnemy = createEnemy(mapWidth - 1, bossRow, 'boss');
+                bossHPBarContainer.classList.add('active');
+                updateBossHPBar();
+                
+                // Play boss music
+                const bossMusic = document.getElementById('boss-music');
+                if (bossMusic) {
+                    bossMusic.play().catch(err => {
+                        console.log('Could not play boss music:', err);
+                    });
+                }
+            }
+        }, 1000);
         
         function updateMoneyDisplay() {
             moneyDisplay.textContent = money;
@@ -418,7 +1448,7 @@
         // Set grid template columns
         mapContainer.style.gridTemplateColumns = `repeat(${mapWidth}, ${cubeSize}px)`;
         
-        // Function to create mummy enemy
+        // Function to create mummy enemy (type 1 - regular)
         function createMummy() {
             const enemy = document.createElement('div');
             enemy.className = 'enemy';
@@ -471,28 +1501,313 @@
             return enemy;
         }
         
+        // Function to create tough enemy (type 2 - 9 hits)
+        function createToughEnemy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const tough = document.createElement('div');
+            tough.className = 'enemy-tough';
+            
+            const body = document.createElement('div');
+            body.className = 'tough-body';
+            
+            const head = document.createElement('div');
+            head.className = 'tough-head';
+            
+            const eye = document.createElement('div');
+            eye.className = 'tough-eye';
+            head.appendChild(eye);
+            
+            body.appendChild(head);
+            tough.appendChild(body);
+            enemy.appendChild(tough);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create summoner enemy (type 3 - 6 hits, summons small guys)
+        function createSummonerEnemy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const summoner = document.createElement('div');
+            summoner.className = 'enemy-summoner';
+            
+            const body = document.createElement('div');
+            body.className = 'summoner-body';
+            
+            const head = document.createElement('div');
+            head.className = 'summoner-head';
+            
+            const eye = document.createElement('div');
+            eye.className = 'summoner-eye';
+            head.appendChild(eye);
+            
+            const armLeft = document.createElement('div');
+            armLeft.className = 'summoner-arms summoner-arm-left';
+            const armRight = document.createElement('div');
+            armRight.className = 'summoner-arms summoner-arm-right';
+            
+            const legLeft = document.createElement('div');
+            legLeft.className = 'summoner-legs summoner-leg-left';
+            const legRight = document.createElement('div');
+            legRight.className = 'summoner-legs summoner-leg-right';
+            
+            body.appendChild(head);
+            body.appendChild(armLeft);
+            body.appendChild(armRight);
+            body.appendChild(legLeft);
+            body.appendChild(legRight);
+            summoner.appendChild(body);
+            enemy.appendChild(summoner);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create small enemy (summoned by summoner - 2 hits)
+        function createSmallEnemy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const small = document.createElement('div');
+            small.className = 'enemy-small';
+            
+            const body = document.createElement('div');
+            body.className = 'small-body';
+            
+            const head = document.createElement('div');
+            head.className = 'small-head';
+            
+            const eye = document.createElement('div');
+            eye.className = 'small-eye';
+            head.appendChild(eye);
+            
+            body.appendChild(head);
+            small.appendChild(body);
+            enemy.appendChild(small);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create different enemy (type 4 - 6 hits, pharaoh look)
+        function createDifferentEnemy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const different = document.createElement('div');
+            different.className = 'enemy-different';
+            
+            const body = document.createElement('div');
+            body.className = 'different-body';
+            
+            const head = document.createElement('div');
+            head.className = 'different-head';
+            
+            const crown = document.createElement('div');
+            crown.className = 'different-crown';
+            head.appendChild(crown);
+            
+            const eye = document.createElement('div');
+            eye.className = 'different-eye';
+            head.appendChild(eye);
+            
+            body.appendChild(head);
+            different.appendChild(body);
+            enemy.appendChild(different);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create boss (Thoth-like)
+        function createBoss() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const boss = document.createElement('div');
+            boss.className = 'boss';
+            
+            const body = document.createElement('div');
+            body.className = 'boss-body';
+            
+            const head = document.createElement('div');
+            head.className = 'boss-head';
+            
+            const beak = document.createElement('div');
+            beak.className = 'boss-beak';
+            head.appendChild(beak);
+            
+            const crown = document.createElement('div');
+            crown.className = 'boss-crown';
+            head.appendChild(crown);
+            
+            const collar = document.createElement('div');
+            collar.className = 'boss-collar';
+            body.appendChild(collar);
+            
+            const kilt = document.createElement('div');
+            kilt.className = 'boss-kilt';
+            body.appendChild(kilt);
+            
+            const staff = document.createElement('div');
+            staff.className = 'boss-staff';
+            body.appendChild(staff);
+            
+            body.appendChild(head);
+            boss.appendChild(body);
+            enemy.appendChild(boss);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
         // Function to convert grid position to pixel position
-        function gridToPixel(x, y) {
+        function gridToPixel(x, y, enemySizeOverride = null) {
             const padding = 20;
-            const pixelX = padding + x * (cubeSize + gap) + (cubeSize - enemySize) / 2;
-            const pixelY = padding + y * (cubeSize + gap) + (cubeSize - enemySize) / 2;
+            const size = enemySizeOverride || enemySize;
+            const pixelX = padding + x * (cubeSize + gap) + (cubeSize - size) / 2;
+            const pixelY = padding + y * (cubeSize + gap) + (cubeSize - size) / 2;
             return { x: pixelX, y: pixelY };
+        }
+        
+        // Function to get enemy size based on type
+        function getEnemySize(type) {
+            switch(type) {
+                case 'boss': return 80;
+                case 'tough': return 50;
+                case 'small': return 30;
+                case 'summoner':
+                case 'different':
+                case 'regular':
+                default: return 40;
+            }
         }
         
         // Enemy system
         const enemies = [];
         const plantsBeingEaten = new Map(); // Track plants being eaten: key -> { plantData, startTime, enemy }
         
-        function createEnemy(x, y) {
-            const enemy = createMummy();
+        // Function to get random enemy type based on spawn chances
+        function getRandomEnemyType() {
+            const rand = Math.random() * 100; // 0-100
+            
+            // Type 1 (regular): 35%
+            if (rand < 35) {
+                return 'regular';
+            }
+            // Type 2 (tough): 25% (35 to 60)
+            else if (rand < 60) {
+                return 'tough';
+            }
+            // Type 3 (summoner): 30% (60 to 90)
+            else if (rand < 90) {
+                return 'summoner';
+            }
+            // Type 4 (different): 10% (90 to 100)
+            else {
+                return 'different';
+            }
+        }
+        
+        function createEnemy(x, y, type = null) {
+            // If no type specified, use random type based on spawn chances
+            if (type === null) {
+                type = getRandomEnemyType();
+            }
+            let enemy;
+            let maxHits;
+            
+            // Create enemy based on type
+            switch(type) {
+                case 'boss':
+                    enemy = createBoss();
+                    maxHits = 30;
+                    break;
+                case 'tough':
+                    enemy = createToughEnemy();
+                    maxHits = 9;
+                    break;
+                case 'summoner':
+                    enemy = createSummonerEnemy();
+                    maxHits = 6;
+                    break;
+                case 'different':
+                    enemy = createDifferentEnemy();
+                    maxHits = 6;
+                    break;
+                case 'small':
+                    enemy = createSmallEnemy();
+                    maxHits = 2;
+                    break;
+                default: // 'regular'
+                    enemy = createMummy();
+                    maxHits = 5;
+                    break;
+            }
+            
             const enemyObj = {
                 element: enemy,
                 x: x,
                 y: y,
-                active: true
+                active: true,
+                type: type,
+                health: maxHits,
+                hits: 0,
+                maxHits: maxHits,
+                stunned: false,
+                stunEndTime: 0,
+                onFire: false,
+                fireEndTime: 0,
+                fireDamageTicks: 0,
+                slowed: false,
+                slowEndTime: 0,
+                baseMoveSpeed: 1, // Normal move speed
+                lastSummonTime: type === 'summoner' ? Date.now() : 0,
+                summonCooldown: type === 'summoner' ? (6000 + Math.random() * 1000) : 0, // Random 6-7 seconds
+                isSummoning: false,
+                summonStartTime: 0,
+                summonDuration: 1000, // Takes 1 second to summon
+                // Boss-specific properties
+                lastJumpTime: type === 'boss' ? Date.now() : 0,
+                jumpCooldown: type === 'boss' ? 2000 : 0, // Jump every 2 seconds
+                lastBossSummonTime: type === 'boss' ? Date.now() : 0,
+                bossSummonCooldown: type === 'boss' ? 5000 : 0 // Summon every 5 seconds
             };
             enemies.push(enemyObj);
             return enemyObj;
+        }
+        
+        function removeEnemy(enemyObj, giveReward = false) {
+            enemyObj.active = false;
+            
+            // If this is the boss, hide HP bar
+            if (enemyObj.type === 'boss') {
+                bossEnemy = null;
+                bossHPBarContainer.classList.remove('active');
+            }
+            
+            if (enemyObj.element && enemyObj.element.parentNode) {
+                enemyObj.element.remove();
+            }
+            // Remove from enemies array
+            const index = enemies.indexOf(enemyObj);
+            if (index > -1) {
+                enemies.splice(index, 1);
+            }
+            // Remove from plantsBeingEaten if this enemy was eating
+            plantsBeingEaten.forEach((data, key) => {
+                if (data.enemy === enemyObj) {
+                    plantsBeingEaten.delete(key);
+                }
+            });
+            // Give 50 gold for killing enemy (only if killed by projectiles)
+            if (giveReward) {
+                addMoney(50);
+            }
         }
         
         function checkPlantEating() {
@@ -514,23 +1829,31 @@
                     const plant = placedPlants.get(key);
                     
                     if (plant) {
+                        // Determine eating time based on plant type
+                        let eatingTime = 20; // Default 20 seconds
+                        if (plant.type === 'cactus') {
+                            // Cactus takes 25-30 seconds (random)
+                            eatingTime = 25 + Math.random() * 5; // Random between 25-30
+                        }
+                        
                         // Start eating this plant - enemy stops moving
                         plantsBeingEaten.set(key, {
                             plantData: plant,
                             startTime: Date.now(),
                             enemy: enemy,
-                            plantKey: key
+                            plantKey: key,
+                            eatingTime: eatingTime
                         });
                     }
                 }
             });
             
-            // Check if any plants have been eaten for 20 seconds
+            // Check if any plants have been eaten for their required time
             const currentTime = Date.now();
             plantsBeingEaten.forEach((data, key) => {
                 const elapsed = (currentTime - data.startTime) / 1000; // Convert to seconds
                 
-                if (elapsed >= 20) {
+                if (elapsed >= data.eatingTime) {
                     // Plant is destroyed
                     const plant = data.plantData;
                     if (plant.element && plant.element.parentNode) {
@@ -543,9 +1866,73 @@
             });
         }
         
+        function updateEnemyStuns() {
+            const currentTime = Date.now();
+            enemies.forEach(enemy => {
+                if (!enemy.active) return;
+                
+                // Check if stun has expired
+                if (enemy.stunned && currentTime >= enemy.stunEndTime) {
+                    enemy.stunned = false;
+                    enemy.element.classList.remove('stunned');
+                }
+                
+                // Check if fire has expired
+                if (enemy.onFire && currentTime >= enemy.fireEndTime) {
+                    enemy.onFire = false;
+                    enemy.element.classList.remove('on-fire');
+                    enemy.fireDamageTicks = 0;
+                }
+                
+                // Check if slow has expired
+                if (enemy.slowed && currentTime >= enemy.slowEndTime) {
+                    enemy.slowed = false;
+                    enemy.element.classList.remove('slowed');
+                }
+            });
+        }
+        
+        function updateFireDamage() {
+            const currentTime = Date.now();
+            enemies.forEach(enemy => {
+                if (!enemy.active || !enemy.onFire) return;
+                
+                // Apply damage over time every 500ms (6 ticks over 3 seconds)
+                const fireStartTime = enemy.fireEndTime - 3000;
+                const elapsed = currentTime - fireStartTime;
+                const expectedTicks = Math.floor(elapsed / 500);
+                
+                // Apply damage for ticks that haven't been processed yet
+                while (enemy.fireDamageTicks < expectedTicks && enemy.fireDamageTicks < 6) {
+                    enemy.hits++;
+                    enemy.fireDamageTicks++;
+                    
+                    // Check if enemy should die
+                    if (enemy.hits >= enemy.maxHits) {
+                        removeEnemy(enemy, true);
+                        return;
+                    }
+                    
+                    // Update boss HP bar if boss is taking fire damage
+                    if (enemy.type === 'boss') {
+                        updateBossHPBar();
+                    }
+                }
+            });
+        }
+        
         function moveEnemy(enemyObj) {
             if (!enemyObj.active || !enemyObj.element.parentNode) {
                 return false;
+            }
+            
+            // Check if enemy is stunned - if so, don't move
+            if (enemyObj.stunned) {
+                const enemySize = getEnemySize(enemyObj.type);
+                const pos = gridToPixel(enemyObj.x, enemyObj.y, enemySize);
+                enemyObj.element.style.left = pos.x + 'px';
+                enemyObj.element.style.top = pos.y + 'px';
+                return true;
             }
             
             // Check if enemy is eating a plant - if so, don't move
@@ -558,55 +1945,176 @@
             
             if (isEating) {
                 // Enemy is eating, just update position but don't move
-                const pos = gridToPixel(enemyObj.x, enemyObj.y);
+                const enemySize = getEnemySize(enemyObj.type);
+                const pos = gridToPixel(enemyObj.x, enemyObj.y, enemySize);
                 enemyObj.element.style.left = pos.x + 'px';
                 enemyObj.element.style.top = pos.y + 'px';
                 return true;
             }
             
-            const pos = gridToPixel(enemyObj.x, enemyObj.y);
+            // Check if enemy is summoning - if so, don't move
+            if (enemyObj.isSummoning) {
+                // Enemy is summoning, just update position but don't move
+                const enemySize = getEnemySize(enemyObj.type);
+                const pos = gridToPixel(enemyObj.x, enemyObj.y, enemySize);
+                enemyObj.element.style.left = pos.x + 'px';
+                enemyObj.element.style.top = pos.y + 'px';
+                return true;
+            }
+            
+            const enemySize = getEnemySize(enemyObj.type);
+            const pos = gridToPixel(enemyObj.x, enemyObj.y, enemySize);
             enemyObj.element.style.left = pos.x + 'px';
             enemyObj.element.style.top = pos.y + 'px';
             
             // Move enemy left
             enemyObj.x--;
             
-            // When reaching the left edge, remove the enemy
+            // When reaching the left edge (x = 0), player loses HP
             if (enemyObj.x < 0) {
-                enemyObj.active = false;
-                if (enemyObj.element.parentNode) {
-                    enemyObj.element.remove();
-                }
-                // Remove from enemies array
-                const index = enemies.indexOf(enemyObj);
-                if (index > -1) {
-                    enemies.splice(index, 1);
-                }
-                // Remove from plantsBeingEaten if this enemy was eating
-                plantsBeingEaten.forEach((data, key) => {
-                    if (data.enemy === enemyObj) {
-                        plantsBeingEaten.delete(key);
-                    }
-                });
+                loseHP(1); // Lose 1 HP
+                removeEnemy(enemyObj, false); // Remove enemy without giving reward
                 return false;
             }
             return true;
         }
         
         // Game loop - move all enemies and check plant eating
-        function gameLoop() {
-            checkPlantEating(); // Check first, then move
+        const enemyMoveTicks = new Map(); // Track move ticks for each enemy (for slow effect)
+        
+        function checkSummoning() {
+            const currentTime = Date.now();
             enemies.forEach(enemy => {
-                if (enemy.active) {
-                    moveEnemy(enemy);
+                if (!enemy.active) return;
+                
+                // Regular summoner logic
+                if (enemy.type === 'summoner') {
+                    // If currently summoning, check if summon is complete
+                    if (enemy.isSummoning) {
+                        if (currentTime - enemy.summonStartTime >= enemy.summonDuration) {
+                            // Summon complete - create the small enemy
+                            const summonX = enemy.x + 1;
+                            const summonY = enemy.y;
+                            
+                            // Only summon if the position is valid (within map bounds)
+                            if (summonX < mapWidth && summonY >= 0 && summonY < mapHeight) {
+                                createEnemy(summonX, summonY, 'small');
+                            }
+                            
+                            // Reset summoning state and set new cooldown
+                            enemy.isSummoning = false;
+                            enemy.lastSummonTime = currentTime;
+                            enemy.summonCooldown = 6000 + Math.random() * 1000; // Random 6-7 seconds
+                        }
+                        return; // Still summoning, don't check for new summon
+                    }
+                    
+                    // Check if summoner can start summoning (cooldown passed)
+                    if (currentTime - enemy.lastSummonTime >= enemy.summonCooldown) {
+                        // Start summoning - enemy stops moving
+                        enemy.isSummoning = true;
+                        enemy.summonStartTime = currentTime;
+                    }
+                }
+                
+                // Boss summoning logic
+                if (enemy.type === 'boss') {
+                    if (currentTime - enemy.lastBossSummonTime >= enemy.bossSummonCooldown) {
+                        // Boss summons a random enemy type using the same probabilities
+                        const summonX = enemy.x + 1;
+                        const summonY = enemy.y;
+                        
+                        // Try to summon in a valid position
+                        if (summonX < mapWidth && summonY >= 0 && summonY < mapHeight) {
+                            const summonedType = getRandomEnemyType();
+                            createEnemy(summonX, summonY, summonedType);
+                        }
+                        
+                        enemy.lastBossSummonTime = currentTime;
+                    }
                 }
             });
         }
         
-        // Create a test enemy
-        createEnemy(mapWidth - 1, 0);
+        function moveBoss(boss) {
+            const currentTime = Date.now();
+            
+            // Boss jumps around (teleports to random positions)
+            if (currentTime - boss.lastJumpTime >= boss.jumpCooldown) {
+                // Jump to a random position on the map (but keep moving left)
+                const newX = Math.max(0, Math.min(mapWidth - 1, boss.x - 1 + Math.floor(Math.random() * 3) - 1));
+                const newY = Math.floor(Math.random() * mapHeight);
+                
+                boss.x = newX;
+                boss.y = newY;
+                boss.lastJumpTime = currentTime;
+                
+                // Update position
+                const enemySize = getEnemySize(boss.type);
+                const pos = gridToPixel(boss.x, boss.y, enemySize);
+                boss.element.style.left = pos.x + 'px';
+                boss.element.style.top = pos.y + 'px';
+            } else {
+                // Normal movement (move left slowly)
+                const enemySize = getEnemySize(boss.type);
+                const pos = gridToPixel(boss.x, boss.y, enemySize);
+                boss.element.style.left = pos.x + 'px';
+                boss.element.style.top = pos.y + 'px';
+                
+                // Move left occasionally (slower than regular enemies)
+                if (Math.random() < 0.3) { // 30% chance to move left each tick
+                    boss.x--;
+                    
+                    // Check if boss reached the end
+                    if (boss.x < 0) {
+                        loseHP(1);
+                        removeEnemy(boss, false);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         
-        // Move enemies every 500ms
+        function gameLoop() {
+            // Don't run game loop until countdown is done
+            if (!gameStarted) return;
+            
+            checkPlantEating(); // Check first, then move
+            checkSummoning(); // Check for summoning
+            enemies.forEach(enemy => {
+                if (!enemy.active) return;
+                
+                // Boss has special movement
+                if (enemy.type === 'boss') {
+                    moveBoss(enemy);
+                    updateBossHPBar(); // Update HP bar
+                    return;
+                }
+                
+                // Handle slow effect - slowed enemies move every other tick (half speed)
+                if (enemy.slowed) {
+                    const tickCount = enemyMoveTicks.get(enemy) || 0;
+                    enemyMoveTicks.set(enemy, tickCount + 1);
+                    // Only move every other tick when slowed
+                    if (tickCount % 2 === 0) {
+                        moveEnemy(enemy);
+                    } else {
+                        // Just update position without moving
+                        const enemySize = getEnemySize(enemy.type);
+                        const pos = gridToPixel(enemy.x, enemy.y, enemySize);
+                        enemy.element.style.left = pos.x + 'px';
+                        enemy.element.style.top = pos.y + 'px';
+                    }
+                } else {
+                    // Normal speed - move every tick
+                    moveEnemy(enemy);
+                    enemyMoveTicks.set(enemy, 0);
+                }
+            });
+        }
+        
+        // Move enemies every 500ms (but won't actually move until gameStarted is true)
         setInterval(gameLoop, 500);
         
         // Plant placement system
@@ -655,8 +2163,201 @@
             return sunflower;
         }
         
+        function createPeashooter() {
+            const peashooter = document.createElement('div');
+            peashooter.className = 'plant-placed';
+            
+            const peashooterInner = document.createElement('div');
+            peashooterInner.className = 'peashooter';
+            
+            const head = document.createElement('div');
+            head.className = 'peashooter-head';
+            
+            const mouth = document.createElement('div');
+            mouth.className = 'peashooter-mouth';
+            head.appendChild(mouth);
+            
+            const stem = document.createElement('div');
+            stem.className = 'peashooter-stem';
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'peashooter-leaf peashooter-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'peashooter-leaf peashooter-leaf-right';
+            
+            peashooterInner.appendChild(head);
+            peashooterInner.appendChild(stem);
+            peashooterInner.appendChild(leafLeft);
+            peashooterInner.appendChild(leafRight);
+            peashooter.appendChild(peashooterInner);
+            
+            return peashooter;
+        }
+        
+        function createCactus() {
+            const cactus = document.createElement('div');
+            cactus.className = 'plant-placed';
+            
+            const cactusInner = document.createElement('div');
+            cactusInner.className = 'cactus';
+            
+            const body = document.createElement('div');
+            body.className = 'cactus-body';
+            
+            // Add spikes
+            for (let i = 1; i <= 7; i++) {
+                const spike = document.createElement('div');
+                spike.className = `cactus-spike cactus-spike-${i}`;
+                body.appendChild(spike);
+            }
+            
+            const armLeft = document.createElement('div');
+            armLeft.className = 'cactus-arm cactus-arm-left';
+            const armRight = document.createElement('div');
+            armRight.className = 'cactus-arm cactus-arm-right';
+            const pot = document.createElement('div');
+            pot.className = 'cactus-pot';
+            
+            cactusInner.appendChild(body);
+            cactusInner.appendChild(armLeft);
+            cactusInner.appendChild(armRight);
+            cactusInner.appendChild(pot);
+            cactus.appendChild(cactusInner);
+            
+            return cactus;
+        }
+        
+        function createThunderpea() {
+            const thunderpea = document.createElement('div');
+            thunderpea.className = 'plant-placed';
+            
+            const thunderpeaInner = document.createElement('div');
+            thunderpeaInner.className = 'thunderpea';
+            
+            const head = document.createElement('div');
+            head.className = 'thunderpea-head';
+            
+            const mouth = document.createElement('div');
+            mouth.className = 'thunderpea-mouth';
+            head.appendChild(mouth);
+            
+            // Add lightning bolts
+            for (let i = 1; i <= 4; i++) {
+                const lightning = document.createElement('div');
+                lightning.className = `thunderpea-lightning thunderpea-lightning-${i}`;
+                head.appendChild(lightning);
+            }
+            
+            const stem = document.createElement('div');
+            stem.className = 'thunderpea-stem';
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'thunderpea-leaf thunderpea-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'thunderpea-leaf thunderpea-leaf-right';
+            
+            thunderpeaInner.appendChild(head);
+            thunderpeaInner.appendChild(stem);
+            thunderpeaInner.appendChild(leafLeft);
+            thunderpeaInner.appendChild(leafRight);
+            thunderpea.appendChild(thunderpeaInner);
+            
+            return thunderpea;
+        }
+        
+        function createFirepeashooter() {
+            const firepeashooter = document.createElement('div');
+            firepeashooter.className = 'plant-placed';
+            
+            const firepeashooterInner = document.createElement('div');
+            firepeashooterInner.className = 'firepeashooter';
+            
+            const head = document.createElement('div');
+            head.className = 'firepeashooter-head';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'firepeashooter-eye firepeashooter-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'firepeashooter-eye firepeashooter-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'firepeashooter-mouth';
+            
+            // Add flames
+            for (let i = 1; i <= 3; i++) {
+                const flame = document.createElement('div');
+                flame.className = `firepeashooter-flame firepeashooter-flame-${i}`;
+                head.appendChild(flame);
+            }
+            
+            head.appendChild(eyeLeft);
+            head.appendChild(eyeRight);
+            head.appendChild(mouth);
+            
+            const stem = document.createElement('div');
+            stem.className = 'firepeashooter-stem';
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'firepeashooter-leaf firepeashooter-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'firepeashooter-leaf firepeashooter-leaf-right';
+            
+            firepeashooterInner.appendChild(head);
+            firepeashooterInner.appendChild(stem);
+            firepeashooterInner.appendChild(leafLeft);
+            firepeashooterInner.appendChild(leafRight);
+            firepeashooter.appendChild(firepeashooterInner);
+            
+            return firepeashooter;
+        }
+        
+        function createSnowpea() {
+            const snowpea = document.createElement('div');
+            snowpea.className = 'plant-placed';
+            
+            const snowpeaInner = document.createElement('div');
+            snowpeaInner.className = 'snowpea';
+            
+            const head = document.createElement('div');
+            head.className = 'snowpea-head';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'snowpea-eye snowpea-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'snowpea-eye snowpea-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'snowpea-mouth';
+            
+            // Add ice crystals
+            for (let i = 1; i <= 5; i++) {
+                const ice = document.createElement('div');
+                ice.className = `snowpea-ice snowpea-ice-${i}`;
+                head.appendChild(ice);
+            }
+            
+            head.appendChild(eyeLeft);
+            head.appendChild(eyeRight);
+            head.appendChild(mouth);
+            
+            const stem = document.createElement('div');
+            stem.className = 'snowpea-stem';
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'snowpea-leaf snowpea-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'snowpea-leaf snowpea-leaf-right';
+            
+            snowpeaInner.appendChild(head);
+            snowpeaInner.appendChild(stem);
+            snowpeaInner.appendChild(leafLeft);
+            snowpeaInner.appendChild(leafRight);
+            snowpea.appendChild(snowpeaInner);
+            
+            return snowpea;
+        }
+        
         // Click-based placement system
         const sunflowerCard = document.getElementById('sunflower-card');
+        const peashooterCard = document.getElementById('peashooter-card');
+        const cactusCard = document.getElementById('cactus-card');
+        const thunderpeaCard = document.getElementById('thunderpea-card');
+        const firepeashooterCard = document.getElementById('firepeashooter-card');
+        const snowpeaCard = document.getElementById('snowpea-card');
         let selectedPlant = null;
         let selectedCost = 0;
         
@@ -665,6 +2366,36 @@
                 sunflowerCard.classList.add('insufficient-funds');
             } else {
                 sunflowerCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 100) {
+                peashooterCard.classList.add('insufficient-funds');
+            } else {
+                peashooterCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 150) {
+                cactusCard.classList.add('insufficient-funds');
+            } else {
+                cactusCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 175) {
+                thunderpeaCard.classList.add('insufficient-funds');
+            } else {
+                thunderpeaCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 200) {
+                firepeashooterCard.classList.add('insufficient-funds');
+            } else {
+                firepeashooterCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 125) {
+                snowpeaCard.classList.add('insufficient-funds');
+            } else {
+                snowpeaCard.classList.remove('insufficient-funds');
             }
         };
         
@@ -711,10 +2442,148 @@
                 selectedCost = 0;
                 sunflowerCard.classList.remove('selected');
             } else {
+                // Deselect other plants
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'sunflower';
                 selectedCost = parseInt(sunflowerCard.dataset.cost);
                 sunflowerCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        peashooterCard.addEventListener('click', (e) => {
+            if (money < 100) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'peashooter') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                peashooterCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                // Select
+                selectedPlant = 'peashooter';
+                selectedCost = parseInt(peashooterCard.dataset.cost);
+                peashooterCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        cactusCard.addEventListener('click', (e) => {
+            if (money < 150) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'cactus') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                cactusCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                // Select
+                selectedPlant = 'cactus';
+                selectedCost = parseInt(cactusCard.dataset.cost);
+                cactusCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        thunderpeaCard.addEventListener('click', (e) => {
+            if (money < 175) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'thunderpea') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                thunderpeaCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                // Select
+                selectedPlant = 'thunderpea';
+                selectedCost = parseInt(thunderpeaCard.dataset.cost);
+                thunderpeaCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        firepeashooterCard.addEventListener('click', (e) => {
+            if (money < 200) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'firepeashooter') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                firepeashooterCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                // Select
+                selectedPlant = 'firepeashooter';
+                selectedCost = parseInt(firepeashooterCard.dataset.cost);
+                firepeashooterCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        snowpeaCard.addEventListener('click', (e) => {
+            if (money < 125) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'snowpea') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                snowpeaCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                // Select
+                selectedPlant = 'snowpea';
+                selectedCost = parseInt(snowpeaCard.dataset.cost);
+                snowpeaCard.classList.add('selected');
             }
             
             updateCubeHighlights();
@@ -755,6 +2624,76 @@
                     selectedCost = 0;
                     sunflowerCard.classList.remove('selected');
                     updateCubeHighlights();
+                } else if (selectedPlant === 'peashooter') {
+                    const plant = createPeashooter();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'peashooter', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    peashooterCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'cactus') {
+                    const plant = createCactus();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'cactus', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    cactusCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'thunderpea') {
+                    const plant = createThunderpea();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'thunderpea', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    thunderpeaCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'firepeashooter') {
+                    const plant = createFirepeashooter();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'firepeashooter', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    firepeashooterCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'snowpea') {
+                    const plant = createSnowpea();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'snowpea', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    snowpeaCard.classList.remove('selected');
+                    updateCubeHighlights();
                 }
             });
         });
@@ -778,6 +2717,221 @@
         
         // Generate income every second
         setInterval(generateSunflowerIncome, 1000);
+        
+        // Shooting system
+        const projectiles = [];
+        const shootCooldown = 1000; // Shoot every 1 second (for peashooter)
+        const thunderShootCooldown = 10000; // Shoot every 10 seconds (for thunder pea)
+        const snowShootCooldown = 3000; // Shoot every 3 seconds (for snow pea)
+        const lastShotTime = new Map(); // Track last shot time for each plant
+        const stunDuration = 3000; // Stun lasts 3 seconds
+        const slowDuration = 3000; // Slow lasts 3 seconds
+        
+        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false) {
+            const projectile = document.createElement('div');
+            let className = 'projectile';
+            if (isThunder) className = 'projectile thunder';
+            else if (isFire) className = 'projectile fire';
+            else if (isIce) className = 'projectile ice';
+            projectile.className = className;
+            projectile.style.left = startX + 'px';
+            projectile.style.top = startY + 'px';
+            mapContainer.appendChild(projectile);
+            
+            const projectileObj = {
+                element: projectile,
+                x: startX,
+                y: startY,
+                targetX: targetX,
+                targetY: targetY,
+                speed: 3,
+                active: true,
+                isThunder: isThunder,
+                isFire: isFire,
+                isIce: isIce
+            };
+            projectiles.push(projectileObj);
+            return projectileObj;
+        }
+        
+        function findNearestEnemy(plantX, plantY) {
+            let nearestEnemy = null;
+            let nearestDistance = Infinity;
+            
+            enemies.forEach(enemy => {
+                if (!enemy.active) return;
+                
+                // IMPORTANT: Only target enemies on the same row (plantY === enemy.y)
+                // and enemies that are to the right (enemies come from right side)
+                if (enemy.y === plantY && enemy.x >= plantX) {
+                    const distance = enemy.x - plantX;
+                    if (distance < nearestDistance && distance >= 0) {
+                        nearestDistance = distance;
+                        nearestEnemy = enemy;
+                    }
+                }
+            });
+            
+            return nearestEnemy;
+        }
+        
+        function updateProjectiles() {
+            // Iterate backwards to safely remove items
+            for (let i = projectiles.length - 1; i >= 0; i--) {
+                const projectile = projectiles[i];
+                
+                if (!projectile.active || !projectile.element.parentNode) {
+                    projectiles.splice(i, 1);
+                    continue;
+                }
+                
+                // Move projectile toward target
+                const dx = projectile.targetX - projectile.x;
+                const dy = projectile.targetY - projectile.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < projectile.speed) {
+                    // Projectile reached target (missed)
+                    projectile.element.remove();
+                    projectiles.splice(i, 1);
+                    continue;
+                }
+                
+                // Move projectile
+                projectile.x += (dx / distance) * projectile.speed;
+                projectile.y += (dy / distance) * projectile.speed;
+                projectile.element.style.left = projectile.x + 'px';
+                projectile.element.style.top = projectile.y + 'px';
+                
+                // Check collision with enemies
+                let hitEnemy = false;
+                for (let j = 0; j < enemies.length; j++) {
+                    const enemy = enemies[j];
+                    if (!enemy.active) continue;
+                    
+                    const enemyPos = gridToPixel(enemy.x, enemy.y);
+                    const enemyCenterX = enemyPos.x + enemySize / 2;
+                    const enemyCenterY = enemyPos.y + enemySize / 2;
+                    
+                    const distanceToEnemy = Math.sqrt(
+                        Math.pow(projectile.x - enemyCenterX, 2) + 
+                        Math.pow(projectile.y - enemyCenterY, 2)
+                    );
+                    
+                    if (distanceToEnemy < 20) {
+                        // Hit enemy
+                        if (projectile.isThunder) {
+                            // Thunder pea stuns the enemy
+                            enemy.stunned = true;
+                            enemy.stunEndTime = Date.now() + stunDuration;
+                            enemy.element.classList.add('stunned');
+                        } else if (projectile.isFire) {
+                            // Fire peashooter applies damage over time
+                            enemy.onFire = true;
+                            enemy.fireEndTime = Date.now() + 3000; // Fire lasts 3 seconds
+                            enemy.fireDamageTicks = 0;
+                            enemy.element.classList.add('on-fire');
+                            // Also do initial hit
+                            enemy.hits++;
+                            if (enemy.hits >= enemy.maxHits) {
+                                removeEnemy(enemy, true);
+                            }
+                            // Update boss HP bar if boss was hit
+                            if (enemy.type === 'boss') {
+                                updateBossHPBar();
+                            }
+                        } else if (projectile.isIce) {
+                            // Snow pea slows the enemy
+                            enemy.slowed = true;
+                            enemy.slowEndTime = Date.now() + slowDuration;
+                            enemy.element.classList.add('slowed');
+                            // Also do damage
+                            enemy.hits++;
+                            if (enemy.hits >= enemy.maxHits) {
+                                removeEnemy(enemy, true);
+                            }
+                            // Update boss HP bar if boss was hit
+                            if (enemy.type === 'boss') {
+                                updateBossHPBar();
+                            }
+                        } else {
+                            // Regular peashooter does damage
+                            enemy.hits++;
+                            // Check if enemy should die
+                            if (enemy.hits >= enemy.maxHits) {
+                                removeEnemy(enemy, true); // Give reward when killed
+                            }
+                            // Update boss HP bar if boss was hit
+                            if (enemy.type === 'boss') {
+                                updateBossHPBar();
+                            }
+                        }
+                        
+                        projectile.element.remove();
+                        projectile.active = false;
+                        projectiles.splice(i, 1);
+                        hitEnemy = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        function peashooterShoot() {
+            const currentTime = Date.now();
+            
+            placedPlants.forEach((plant, key) => {
+                if (plant.type !== 'peashooter' && plant.type !== 'thunderpea' && plant.type !== 'firepeashooter' && plant.type !== 'snowpea') return;
+                
+                // Get plant position from key
+                const [x, y] = key.split(',').map(Number);
+                const plantPos = gridToPixel(x, y);
+                const plantCenterX = plantPos.x + cubeSize / 2;
+                const plantCenterY = plantPos.y + cubeSize / 2;
+                
+                // Check cooldown based on plant type
+                const lastShot = lastShotTime.get(key) || 0;
+                let cooldown = shootCooldown; // Default 1 second
+                if (plant.type === 'thunderpea') {
+                    cooldown = thunderShootCooldown; // 10 seconds
+                } else if (plant.type === 'firepeashooter') {
+                    cooldown = shootCooldown; // 1 second (same as peashooter)
+                } else if (plant.type === 'snowpea') {
+                    cooldown = snowShootCooldown; // 3 seconds
+                }
+                
+                if (currentTime - lastShot < cooldown) {
+                    return;
+                }
+                
+                // Find nearest enemy
+                const targetEnemy = findNearestEnemy(x, y);
+                
+                if (targetEnemy) {
+                    const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y);
+                    const targetX = enemyPos.x + enemySize / 2;
+                    const targetY = enemyPos.y + enemySize / 2;
+                    
+                    // Create projectile based on plant type
+                    const isThunder = plant.type === 'thunderpea';
+                    const isFire = plant.type === 'firepeashooter';
+                    const isIce = plant.type === 'snowpea';
+                    createProjectile(plantCenterX, plantCenterY, targetX, targetY, isThunder, isFire, isIce);
+                    lastShotTime.set(key, currentTime);
+                }
+            });
+        }
+        
+        // Shooting loop - update projectiles and shoot
+        function shootingLoop() {
+            updateEnemyStuns();
+            updateFireDamage();
+            peashooterShoot();
+            updateProjectiles();
+        }
+        
+        // Run shooting loop every frame (about 60fps)
+        setInterval(shootingLoop, 16);
     </script>
 </body>
 </html>
