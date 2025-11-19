@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Egypt TDG - 2D Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #2d5016;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #map-container {
+            display: grid;
+            gap: 2px;
+            padding: 20px;
+            position: relative;
+        }
+        .cube {
+            width: 60px;
+            height: 60px;
+            background-color: #1a4d2e;
+            border: 2px solid #0f2e1a;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .enemy {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 10;
+            transition: left 0.3s linear, top 0.3s linear;
+        }
+        .mummy {
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+        .mummy-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #8b8b8b 0%, #6b6b6b 100%);
+            border: 2px solid #4a4a4a;
+            border-radius: 8px 8px 12px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .mummy-bandage {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: #5a5a5a;
+            border-top: 1px solid #3a3a3a;
+            border-bottom: 1px solid #3a3a3a;
+        }
+        .mummy-head {
+            width: 32px;
+            height: 28px;
+            background: linear-gradient(to bottom, #8b8b8b 0%, #6b6b6b 100%);
+            border: 2px solid #4a4a4a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .mummy-eye {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #4a2a6a;
+            border-radius: 50%;
+            border: 1px solid #2a1a4a;
+        }
+        .mummy-eye::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 8px;
+            height: 8px;
+            background-color: #ffd700;
+            border-radius: 50%;
+        }
+        .mummy-eye::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 4px;
+            height: 4px;
+            background-color: #ff0000;
+            border-radius: 50%;
+        }
+        .mummy-arms {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background: linear-gradient(to bottom, #8b8b8b 0%, #6b6b6b 100%);
+            border: 1px solid #4a4a4a;
+            border-radius: 4px;
+            top: 12px;
+        }
+        .mummy-arm-left {
+            left: -4px;
+            transform: rotate(-20deg);
+        }
+        .mummy-arm-right {
+            right: -4px;
+            transform: rotate(20deg);
+        }
+        .mummy-legs {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background: linear-gradient(to bottom, #8b8b8b 0%, #6b6b6b 100%);
+            border: 1px solid #4a4a4a;
+            border-radius: 3px;
+            bottom: -2px;
+        }
+        .mummy-leg-left {
+            left: 8px;
+        }
+        .mummy-leg-right {
+            right: 8px;
+        }
+        #ui-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        #money-counter {
+            background-color: #1a4d2e;
+            border: 3px solid #0f2e1a;
+            border-radius: 10px;
+            padding: 15px 20px;
+            color: #ffd700;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .money-icon {
+            font-size: 28px;
+        }
+        #plant-shop {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .plant-card {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border: 3px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+        .plant-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .plant-card.selected {
+            border-color: #ffd700;
+            border-width: 4px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        .plant-card.insufficient-funds {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .plant-card.insufficient-funds:hover {
+            transform: none;
+        }
+        .plant-cost {
+            position: absolute;
+            bottom: 2px;
+            right: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+        .sunflower {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .sunflower-face {
+            width: 30px;
+            height: 30px;
+            background-color: #8b4513;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #654321;
+        }
+        .sunflower-eye {
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            top: 8px;
+        }
+        .sunflower-eye::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: black;
+            border-radius: 50%;
+            top: 2px;
+            left: 1.5px;
+        }
+        .sunflower-eye-left {
+            left: 8px;
+        }
+        .sunflower-eye-right {
+            right: 8px;
+        }
+        .sunflower-mouth {
+            position: absolute;
+            width: 12px;
+            height: 6px;
+            border: 2px solid #654321;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .sunflower-petal {
+            position: absolute;
+            width: 12px;
+            height: 18px;
+            background-color: #ffd700;
+            border: 1px solid #333;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+        .sunflower-petal:nth-child(1) { top: -5px; left: 50%; transform: translateX(-50%) rotate(0deg); }
+        .sunflower-petal:nth-child(2) { top: 2px; right: -2px; transform: rotate(30deg); }
+        .sunflower-petal:nth-child(3) { bottom: 5px; right: 2px; transform: rotate(60deg); }
+        .sunflower-petal:nth-child(4) { bottom: -5px; left: 50%; transform: translateX(-50%) rotate(90deg); }
+        .sunflower-petal:nth-child(5) { bottom: 5px; left: 2px; transform: rotate(120deg); }
+        .sunflower-petal:nth-child(6) { top: 2px; left: -2px; transform: rotate(150deg); }
+        .sunflower-stem {
+            position: absolute;
+            width: 6px;
+            height: 15px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 3px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .sunflower-leaf {
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 0 50% 50% 0;
+            bottom: -5px;
+        }
+        .sunflower-leaf-left {
+            left: -8px;
+            transform: rotate(-20deg);
+        }
+        .sunflower-leaf-right {
+            right: -8px;
+            transform: rotate(20deg) scaleX(-1);
+        }
+        .cube.valid-placement {
+            background-color: #2d6a3d;
+            border-color: #ffd700;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .cube.invalid-placement {
+            background-color: #1a4d2e;
+            border-color: #ff0000;
+            cursor: not-allowed;
+        }
+        .plant-placed {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="ui-container">
+        <div id="money-counter">
+            <span class="money-icon">💰</span>
+            <span id="money-amount">100</span>
+        </div>
+    </div>
+    <div id="plant-shop">
+        <div class="plant-card" id="sunflower-card" data-cost="50" data-plant="sunflower">
+            <div class="sunflower">
+                <div class="sunflower-face">
+                    <div class="sunflower-eye sunflower-eye-left"></div>
+                    <div class="sunflower-eye sunflower-eye-right"></div>
+                    <div class="sunflower-mouth"></div>
+                </div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-petal"></div>
+                <div class="sunflower-stem"></div>
+                <div class="sunflower-leaf sunflower-leaf-left"></div>
+                <div class="sunflower-leaf sunflower-leaf-right"></div>
+            </div>
+            <div class="plant-cost">50</div>
+        </div>
+    </div>
+    <div id="map-container"></div>
+    
+    <script>
+        const mapContainer = document.getElementById('map-container');
+        const mapWidth = 15; // Number of cubes horizontally
+        const mapHeight = 8; // Number of cubes vertically
+        const cubeSize = 60;
+        const gap = 2;
+        const enemySize = 40;
+        
+        // Money system
+        let money = 100;
+        const moneyDisplay = document.getElementById('money-amount');
+        
+        function updateMoneyDisplay() {
+            moneyDisplay.textContent = money;
+        }
+        
+        // Will be set after plant shop is initialized
+        let updatePlantCardAvailability = null;
+        
+        // Will be set after placement system is initialized
+        let updateCubeHighlights = null;
+        
+        function addMoney(amount) {
+            money += amount;
+            updateMoneyDisplay();
+            if (updatePlantCardAvailability) {
+                updatePlantCardAvailability();
+            }
+            if (updateCubeHighlights) {
+                updateCubeHighlights();
+            }
+        }
+        
+        function spendMoney(amount) {
+            if (money >= amount) {
+                money -= amount;
+                updateMoneyDisplay();
+                if (updatePlantCardAvailability) {
+                    updatePlantCardAvailability();
+                }
+                if (updateCubeHighlights) {
+                    updateCubeHighlights();
+                }
+                return true;
+            }
+            return false;
+        }
+        
+        // Initialize money display
+        updateMoneyDisplay();
+        
+        // Create grid of dark green cubes
+        const cubes = [];
+        for (let y = 0; y < mapHeight; y++) {
+            for (let x = 0; x < mapWidth; x++) {
+                const cube = document.createElement('div');
+                cube.className = 'cube';
+                cube.dataset.x = x;
+                cube.dataset.y = y;
+                mapContainer.appendChild(cube);
+                cubes.push({ element: cube, x, y });
+            }
+        }
+        
+        // Set grid template columns
+        mapContainer.style.gridTemplateColumns = `repeat(${mapWidth}, ${cubeSize}px)`;
+        
+        // Function to create mummy enemy
+        function createMummy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const mummy = document.createElement('div');
+            mummy.className = 'mummy';
+            
+            // Mummy body
+            const body = document.createElement('div');
+            body.className = 'mummy-body';
+            
+            // Add bandage lines
+            for (let i = 0; i < 6; i++) {
+                const bandage = document.createElement('div');
+                bandage.className = 'mummy-bandage';
+                bandage.style.top = `${i * 6 + 2}px`;
+                body.appendChild(bandage);
+            }
+            
+            // Mummy head
+            const head = document.createElement('div');
+            head.className = 'mummy-head';
+            
+            // Mummy eye
+            const eye = document.createElement('div');
+            eye.className = 'mummy-eye';
+            head.appendChild(eye);
+            
+            // Mummy arms
+            const armLeft = document.createElement('div');
+            armLeft.className = 'mummy-arms mummy-arm-left';
+            const armRight = document.createElement('div');
+            armRight.className = 'mummy-arms mummy-arm-right';
+            
+            // Mummy legs
+            const legLeft = document.createElement('div');
+            legLeft.className = 'mummy-legs mummy-leg-left';
+            const legRight = document.createElement('div');
+            legRight.className = 'mummy-legs mummy-leg-right';
+            
+            body.appendChild(head);
+            body.appendChild(armLeft);
+            body.appendChild(armRight);
+            body.appendChild(legLeft);
+            body.appendChild(legRight);
+            mummy.appendChild(body);
+            enemy.appendChild(mummy);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to convert grid position to pixel position
+        function gridToPixel(x, y) {
+            const padding = 20;
+            const pixelX = padding + x * (cubeSize + gap) + (cubeSize - enemySize) / 2;
+            const pixelY = padding + y * (cubeSize + gap) + (cubeSize - enemySize) / 2;
+            return { x: pixelX, y: pixelY };
+        }
+        
+        // Enemy system
+        const enemies = [];
+        const plantsBeingEaten = new Map(); // Track plants being eaten: key -> { plantData, startTime, enemy }
+        
+        function createEnemy(x, y) {
+            const enemy = createMummy();
+            const enemyObj = {
+                element: enemy,
+                x: x,
+                y: y,
+                active: true
+            };
+            enemies.push(enemyObj);
+            return enemyObj;
+        }
+        
+        function checkPlantEating() {
+            // Check each enemy's position for plants
+            enemies.forEach(enemy => {
+                if (!enemy.active) return;
+                
+                // Check if this enemy is already eating a plant
+                let isEating = false;
+                plantsBeingEaten.forEach((data, key) => {
+                    if (data.enemy === enemy) {
+                        isEating = true;
+                    }
+                });
+                
+                // If not eating, check if there's a plant at current position
+                if (!isEating) {
+                    const key = `${enemy.x},${enemy.y}`;
+                    const plant = placedPlants.get(key);
+                    
+                    if (plant) {
+                        // Start eating this plant - enemy stops moving
+                        plantsBeingEaten.set(key, {
+                            plantData: plant,
+                            startTime: Date.now(),
+                            enemy: enemy,
+                            plantKey: key
+                        });
+                    }
+                }
+            });
+            
+            // Check if any plants have been eaten for 20 seconds
+            const currentTime = Date.now();
+            plantsBeingEaten.forEach((data, key) => {
+                const elapsed = (currentTime - data.startTime) / 1000; // Convert to seconds
+                
+                if (elapsed >= 20) {
+                    // Plant is destroyed
+                    const plant = data.plantData;
+                    if (plant.element && plant.element.parentNode) {
+                        plant.element.remove();
+                    }
+                    placedPlants.delete(data.plantKey);
+                    plantsBeingEaten.delete(key);
+                    // Enemy can now continue moving
+                }
+            });
+        }
+        
+        function moveEnemy(enemyObj) {
+            if (!enemyObj.active || !enemyObj.element.parentNode) {
+                return false;
+            }
+            
+            // Check if enemy is eating a plant - if so, don't move
+            let isEating = false;
+            plantsBeingEaten.forEach((data, key) => {
+                if (data.enemy === enemyObj) {
+                    isEating = true;
+                }
+            });
+            
+            if (isEating) {
+                // Enemy is eating, just update position but don't move
+                const pos = gridToPixel(enemyObj.x, enemyObj.y);
+                enemyObj.element.style.left = pos.x + 'px';
+                enemyObj.element.style.top = pos.y + 'px';
+                return true;
+            }
+            
+            const pos = gridToPixel(enemyObj.x, enemyObj.y);
+            enemyObj.element.style.left = pos.x + 'px';
+            enemyObj.element.style.top = pos.y + 'px';
+            
+            // Move enemy left
+            enemyObj.x--;
+            
+            // When reaching the left edge, remove the enemy
+            if (enemyObj.x < 0) {
+                enemyObj.active = false;
+                if (enemyObj.element.parentNode) {
+                    enemyObj.element.remove();
+                }
+                // Remove from enemies array
+                const index = enemies.indexOf(enemyObj);
+                if (index > -1) {
+                    enemies.splice(index, 1);
+                }
+                // Remove from plantsBeingEaten if this enemy was eating
+                plantsBeingEaten.forEach((data, key) => {
+                    if (data.enemy === enemyObj) {
+                        plantsBeingEaten.delete(key);
+                    }
+                });
+                return false;
+            }
+            return true;
+        }
+        
+        // Game loop - move all enemies and check plant eating
+        function gameLoop() {
+            checkPlantEating(); // Check first, then move
+            enemies.forEach(enemy => {
+                if (enemy.active) {
+                    moveEnemy(enemy);
+                }
+            });
+        }
+        
+        // Create a test enemy
+        createEnemy(mapWidth - 1, 0);
+        
+        // Move enemies every 500ms
+        setInterval(gameLoop, 500);
+        
+        // Plant placement system
+        const placedPlants = new Map(); // Track which squares have plants
+        
+        function createSunflower() {
+            const sunflower = document.createElement('div');
+            sunflower.className = 'plant-placed';
+            
+            const sunflowerInner = document.createElement('div');
+            sunflowerInner.className = 'sunflower';
+            
+            const face = document.createElement('div');
+            face.className = 'sunflower-face';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'sunflower-eye sunflower-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'sunflower-eye sunflower-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'sunflower-mouth';
+            
+            face.appendChild(eyeLeft);
+            face.appendChild(eyeRight);
+            face.appendChild(mouth);
+            
+            for (let i = 0; i < 6; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'sunflower-petal';
+                sunflowerInner.appendChild(petal);
+            }
+            
+            const stem = document.createElement('div');
+            stem.className = 'sunflower-stem';
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'sunflower-leaf sunflower-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'sunflower-leaf sunflower-leaf-right';
+            
+            sunflowerInner.appendChild(face);
+            sunflowerInner.appendChild(stem);
+            sunflowerInner.appendChild(leafLeft);
+            sunflowerInner.appendChild(leafRight);
+            sunflower.appendChild(sunflowerInner);
+            
+            return sunflower;
+        }
+        
+        // Click-based placement system
+        const sunflowerCard = document.getElementById('sunflower-card');
+        let selectedPlant = null;
+        let selectedCost = 0;
+        
+        updatePlantCardAvailability = function() {
+            if (money < 50) {
+                sunflowerCard.classList.add('insufficient-funds');
+            } else {
+                sunflowerCard.classList.remove('insufficient-funds');
+            }
+        };
+        
+        updatePlantCardAvailability();
+        
+        // Function to update visual feedback on cubes
+        updateCubeHighlights = function() {
+            cubes.forEach(cube => {
+                cube.element.classList.remove('valid-placement', 'invalid-placement');
+                
+                if (selectedPlant) {
+                    const isValid = isValidPlacement(cube.x, cube.y);
+                    const hasMoney = money >= selectedCost;
+                    
+                    if (hasMoney && isValid) {
+                        cube.element.classList.add('valid-placement');
+                    } else if (!isValid) {
+                        cube.element.classList.add('invalid-placement');
+                    }
+                }
+            });
+        };
+        
+        // Check if a square is a valid placement location
+        function isValidPlacement(x, y) {
+            // Can't place if already occupied
+            const key = `${x},${y}`;
+            if (placedPlants.has(key)) {
+                return false;
+            }
+            return true;
+        }
+        
+        // Click on plant card to select it
+        sunflowerCard.addEventListener('click', (e) => {
+            if (money < 50) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'sunflower') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                sunflowerCard.classList.remove('selected');
+            } else {
+                // Select
+                selectedPlant = 'sunflower';
+                selectedCost = parseInt(sunflowerCard.dataset.cost);
+                sunflowerCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        // Click on cubes to place plants
+        cubes.forEach(cube => {
+            cube.element.addEventListener('click', (e) => {
+                // Only place if a plant is selected
+                if (!selectedPlant) {
+                    return;
+                }
+                
+                const key = `${cube.x},${cube.y}`;
+                
+                // Check if square is valid for placement
+                if (!isValidPlacement(cube.x, cube.y)) {
+                    return;
+                }
+                
+                // Check if player has enough money
+                if (money < selectedCost) {
+                    return;
+                }
+                
+                // Place the plant
+                if (selectedPlant === 'sunflower') {
+                    const plant = createSunflower();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'sunflower', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    sunflowerCard.classList.remove('selected');
+                    updateCubeHighlights();
+                }
+            });
+        });
+        
+        // Update highlights when money changes (hook into addMoney/spendMoney)
+        // This is already handled in addMoney and spendMoney functions
+        
+        // Sunflower income generation - 1 gold per second per sunflower
+        function generateSunflowerIncome() {
+            let sunflowerCount = 0;
+            placedPlants.forEach(plant => {
+                if (plant.type === 'sunflower') {
+                    sunflowerCount++;
+                }
+            });
+            
+            if (sunflowerCount > 0) {
+                addMoney(sunflowerCount);
+            }
+        }
+        
+        // Generate income every second
+        setInterval(generateSunflowerIncome, 1000);
+    </script>
+</body>
+</html>
