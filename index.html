@@ -423,6 +423,27 @@
         #countdown-timer.active {
             display: block;
         }
+        #boss-timer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ffd700;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            border: 3px solid #8b6914;
+        }
+        #boss-timer-label {
+            font-size: 18px;
+            color: #ffaa00;
+            margin-bottom: 5px;
+        }
         #boss-hp-bar-container {
             position: fixed;
             bottom: 20px;
@@ -594,6 +615,11 @@
             top: 20px;
             right: 20px;
             z-index: 100;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        .plant-shop-column {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -1114,6 +1140,287 @@
             right: -8px;
             transform: rotate(25deg) scaleX(-1);
         }
+        .starfruit {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .starfruit-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #ffd700 0%, #ff8c00 50%, #ff4500 100%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            position: relative;
+            border: 2px solid #cc6600;
+        }
+        .starfruit-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 18px;
+        }
+        .starfruit-eye-left {
+            left: 12px;
+        }
+        .starfruit-eye-right {
+            right: 12px;
+        }
+        .starfruit-eye::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+        }
+        .starfruit-mouth {
+            position: absolute;
+            width: 16px;
+            height: 8px;
+            border: 2px solid #000;
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .starfruit-fang {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 0 0 50% 50%;
+            bottom: 8px;
+        }
+        .starfruit-fang-left {
+            left: 16px;
+        }
+        .starfruit-fang-right {
+            right: 16px;
+        }
+        .starfruit-leaf {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 0 50% 50% 0;
+            bottom: -2px;
+        }
+        .starfruit-leaf-left {
+            left: -6px;
+            transform: rotate(-30deg);
+        }
+        .starfruit-leaf-right {
+            right: -6px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        .mushroom {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .mushroom-cap {
+            width: 40px;
+            height: 25px;
+            background: linear-gradient(to bottom, #ffd700 0%, #ffaa00 100%);
+            border: 3px solid #000;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .mushroom-spot {
+            position: absolute;
+            background-color: #cc6600;
+            border: 1px solid #8b4513;
+            border-radius: 50%;
+        }
+        .mushroom-spot-1 { width: 8px; height: 8px; top: 6px; left: 8px; }
+        .mushroom-spot-2 { width: 6px; height: 6px; top: 4px; right: 10px; }
+        .mushroom-spot-3 { width: 7px; height: 7px; top: 12px; left: 50%; transform: translateX(-50%); }
+        .mushroom-spot-4 { width: 5px; height: 5px; top: 10px; left: 18px; }
+        .mushroom-cap::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: linear-gradient(to right, transparent 0%, #fff 50%, transparent 100%);
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.6;
+        }
+        .mushroom-stem {
+            width: 20px;
+            height: 25px;
+            background: linear-gradient(to bottom, #f5deb3 0%, #d2b48c 100%);
+            border: 2px solid #000;
+            border-radius: 0 0 8px 8px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .mushroom-eye {
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 8px;
+        }
+        .mushroom-eye::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+        }
+        .mushroom-eye-left {
+            left: 6px;
+        }
+        .mushroom-eye-right {
+            right: 6px;
+        }
+        .mushroom-mouth {
+            position: absolute;
+            width: 10px;
+            height: 5px;
+            border: 2px solid #000;
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .coconutcannon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .coconutcannon-body {
+            width: 35px;
+            height: 40px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 50%, #3d2817 100%);
+            border: 2px solid #2a1a0a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .coconutcannon-eye {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #f5deb3;
+            border: 2px solid #000;
+            border-radius: 50%;
+            top: 12px;
+            left: 8px;
+        }
+        .coconutcannon-pupil {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 3px;
+            left: 2px;
+        }
+        .coconutcannon-eyebrow {
+            position: absolute;
+            width: 12px;
+            height: 3px;
+            background-color: #2a1a0a;
+            border-radius: 2px;
+            top: 8px;
+            left: 7px;
+            transform: rotate(-10deg);
+        }
+        .coconutcannon-mouth {
+            position: absolute;
+            width: 18px;
+            height: 20px;
+            background: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
+            border: 2px solid #8b4513;
+            border-radius: 50% 50% 40% 40%;
+            bottom: 2px;
+            right: 2px;
+        }
+        .coconutcannon-fuse {
+            position: absolute;
+            width: 3px;
+            height: 12px;
+            background: linear-gradient(to top, #654321 0%, #3d2817 100%);
+            border: 1px solid #2a1a0a;
+            border-radius: 2px;
+            top: -2px;
+            right: 10px;
+            transform: rotate(-20deg);
+        }
+        .coconutcannon-spark {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ffff00 0%, #ffaa00 50%, transparent 100%);
+            border-radius: 50%;
+            top: -6px;
+            right: 8px;
+            box-shadow: 0 0 6px rgba(255, 255, 0, 0.8);
+        }
+        .coconutcannon-base {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 100%);
+            border: 1px solid #2a1a0a;
+            border-radius: 50%;
+            bottom: 0;
+        }
+        .coconutcannon-base-left {
+            left: 8px;
+        }
+        .coconutcannon-base-right {
+            right: 8px;
+        }
+        .coconutcannon-base-spot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #2a1a0a;
+            border-radius: 50%;
+        }
+        .coconutcannon-base-spot-1 { top: 3px; left: 3px; }
+        .coconutcannon-base-spot-2 { top: 3px; right: 3px; }
+        .coconutcannon-base-spot-3 { bottom: 3px; left: 50%; transform: translateX(-50%); }
+        .coconutcannon-leaf {
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            background-color: #228b22;
+            border: 1px solid #006400;
+            border-radius: 0 50% 50% 0;
+            bottom: -2px;
+        }
+        .coconutcannon-leaf-left {
+            left: 4px;
+            transform: rotate(-20deg);
+        }
+        .coconutcannon-leaf-right {
+            right: 4px;
+            transform: rotate(20deg) scaleX(-1);
+        }
         .cube.valid-placement {
             background-color: #2d6a3d;
             border-color: #ffd700;
@@ -1161,6 +1468,211 @@
             border-color: #4682b4;
             box-shadow: 0 0 8px rgba(135, 206, 235, 1);
         }
+        .projectile.coconut {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 100%);
+            border: 2px solid #2a1a0a;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(139, 69, 19, 0.8);
+        }
+        .explosion {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.8) 0%, rgba(255, 69, 0, 0.6) 50%, rgba(255, 0, 0, 0.4) 100%);
+            border: 3px solid #ff4500;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 1), inset 0 0 20px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            z-index: 1000;
+            animation: explode 0.3s ease-out forwards;
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        .coconutcannon.on-cooldown {
+            opacity: 0.6;
+            filter: grayscale(50%);
+        }
+        .chomper {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .chomper-head {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to bottom, #9370db 0%, #6a4c93 50%, #4b0082 100%);
+            border: 3px solid #2d1b4e;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .chomper-spot {
+            position: absolute;
+            background-color: #6a4c93;
+            border-radius: 50%;
+        }
+        .chomper-spot-1 { width: 4px; height: 4px; top: 8px; left: 10px; }
+        .chomper-spot-2 { width: 3px; height: 3px; top: 12px; right: 12px; }
+        .chomper-spot-3 { width: 5px; height: 5px; top: 20px; left: 15px; }
+        .chomper-horn {
+            position: absolute;
+            width: 6px;
+            height: 10px;
+            background: linear-gradient(to bottom, #d3d3d3 0%, #a9a9a9 100%);
+            border: 2px solid #696969;
+            border-radius: 50% 50% 0 0;
+            top: -5px;
+            right: 12px;
+            transform: rotate(-10deg);
+        }
+        .chomper-mouth {
+            position: absolute;
+            width: 32px;
+            height: 24px;
+            background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
+            border: 3px solid #32cd32;
+            border-radius: 0 0 50% 50%;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .chomper-teeth {
+            position: absolute;
+            width: 3px;
+            height: 4px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 0 50% 50%;
+        }
+        .chomper-teeth-upper {
+            top: 2px;
+        }
+        .chomper-teeth-lower {
+            bottom: 2px;
+        }
+        .chomper-teeth-1 { left: 4px; }
+        .chomper-teeth-2 { left: 10px; }
+        .chomper-teeth-3 { left: 16px; }
+        .chomper-teeth-4 { right: 16px; }
+        .chomper-teeth-5 { right: 10px; }
+        .chomper-teeth-6 { right: 4px; }
+        .chomper-tongue {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: linear-gradient(to bottom, #ff69b4 0%, #ff1493 100%);
+            border-radius: 50%;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .chomper-stem {
+            position: absolute;
+            width: 12px;
+            height: 15px;
+            background: linear-gradient(to bottom, #9370db 0%, #6a4c93 100%);
+            border: 2px solid #4b0082;
+            border-radius: 0 0 8px 8px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .chomper-leaf {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #32cd32;
+            border: 2px solid #228b22;
+            border-radius: 0 50% 50% 0;
+        }
+        .chomper-leaf-1 {
+            top: 35px;
+            left: 2px;
+            transform: rotate(-30deg);
+        }
+        .chomper-leaf-2 {
+            top: 38px;
+            left: 8px;
+            transform: rotate(-15deg);
+        }
+        .chomper-leaf-3 {
+            top: 35px;
+            right: 8px;
+            transform: rotate(15deg) scaleX(-1);
+        }
+        .chomper-leaf-4 {
+            top: 42px;
+            left: 12px;
+            transform: rotate(-10deg);
+        }
+        .chomper-leaf-5 {
+            top: 42px;
+            right: 12px;
+            transform: rotate(10deg) scaleX(-1);
+        }
+        .chomper-eating .chomper-mouth {
+            height: 30px;
+            border-radius: 50% 50% 0 0;
+            animation: chomper-bite 0.3s ease-in-out infinite;
+        }
+        @keyframes chomper-bite {
+            0%, 100% { height: 30px; }
+            50% { height: 35px; }
+        }
+        .ghost {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .ghost-head {
+            width: 40px;
+            height: 30px;
+            background-color: #d3d3d3;
+            border: 2px solid #a9a9a9;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ghost-eye {
+            position: absolute;
+            width: 8px;
+            height: 4px;
+            background-color: #000;
+            top: 8px;
+        }
+        .ghost-eye-left {
+            left: 8px;
+        }
+        .ghost-eye-right {
+            right: 8px;
+        }
+        .ghost-tear {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background-color: #808080;
+            border: 1px solid #696969;
+            top: 18px;
+        }
+        .ghost-tear-left {
+            left: 8px;
+        }
+        .ghost-tear-right {
+            right: 8px;
+        }
         .enemy.stunned {
             opacity: 0.5;
             filter: brightness(1.5);
@@ -1197,8 +1709,13 @@
     <audio id="boss-music" loop>
         <source src="TENNA BATTLE THEME DELTARUNE CHAPTER 3.mp3" type="audio/mpeg">
     </audio>
+    <div id="boss-timer">
+        <div id="boss-timer-label">BOSS IN:</div>
+        <div id="boss-timer-value">4:00</div>
+    </div>
     <div id="plant-shop">
-        <div class="plant-card" id="sunflower-card" data-cost="50" data-plant="sunflower">
+        <div class="plant-shop-column">
+            <div class="plant-card" id="sunflower-card" data-cost="50" data-plant="sunflower">
             <div class="sunflower">
                 <div class="sunflower-face">
                     <div class="sunflower-eye sunflower-eye-left"></div>
@@ -1294,6 +1811,109 @@
             </div>
             <div class="plant-cost">125</div>
         </div>
+        </div>
+        <div class="plant-shop-column">
+        <div class="plant-card" id="starfruit-card" data-cost="75" data-plant="starfruit">
+            <div class="starfruit">
+                <div class="starfruit-body">
+                    <div class="starfruit-eye starfruit-eye-left"></div>
+                    <div class="starfruit-eye starfruit-eye-right"></div>
+                    <div class="starfruit-mouth"></div>
+                    <div class="starfruit-fang starfruit-fang-left"></div>
+                    <div class="starfruit-fang starfruit-fang-right"></div>
+                </div>
+                <div class="starfruit-leaf starfruit-leaf-left"></div>
+                <div class="starfruit-leaf starfruit-leaf-right"></div>
+            </div>
+            <div class="plant-cost">75</div>
+        </div>
+        <div class="plant-card" id="mushroom-card" data-cost="75" data-plant="mushroom">
+            <div class="mushroom">
+                <div class="mushroom-cap">
+                    <div class="mushroom-spot mushroom-spot-1"></div>
+                    <div class="mushroom-spot mushroom-spot-2"></div>
+                    <div class="mushroom-spot mushroom-spot-3"></div>
+                    <div class="mushroom-spot mushroom-spot-4"></div>
+                </div>
+                <div class="mushroom-stem">
+                    <div class="mushroom-eye mushroom-eye-left"></div>
+                    <div class="mushroom-eye mushroom-eye-right"></div>
+                    <div class="mushroom-mouth"></div>
+                </div>
+            </div>
+            <div class="plant-cost">75</div>
+        </div>
+        <div class="plant-card" id="coconutcannon-card" data-cost="150" data-plant="coconutcannon">
+            <div class="coconutcannon">
+                <div class="coconutcannon-body">
+                    <div class="coconutcannon-eyebrow"></div>
+                    <div class="coconutcannon-eye">
+                        <div class="coconutcannon-pupil"></div>
+                    </div>
+                    <div class="coconutcannon-mouth"></div>
+                </div>
+                <div class="coconutcannon-fuse">
+                    <div class="coconutcannon-spark"></div>
+                </div>
+                <div class="coconutcannon-base coconutcannon-base-left">
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-1"></div>
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-2"></div>
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-3"></div>
+                </div>
+                <div class="coconutcannon-base coconutcannon-base-right">
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-1"></div>
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-2"></div>
+                    <div class="coconutcannon-base-spot coconutcannon-base-spot-3"></div>
+                </div>
+                <div class="coconutcannon-leaf coconutcannon-leaf-left"></div>
+                <div class="coconutcannon-leaf coconutcannon-leaf-right"></div>
+            </div>
+            <div class="plant-cost">150</div>
+        </div>
+        <div class="plant-card" id="chomper-card" data-cost="125" data-plant="chomper">
+            <div class="chomper">
+                <div class="chomper-head">
+                    <div class="chomper-spot chomper-spot-1"></div>
+                    <div class="chomper-spot chomper-spot-2"></div>
+                    <div class="chomper-spot chomper-spot-3"></div>
+                    <div class="chomper-horn"></div>
+                    <div class="chomper-mouth">
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-1"></div>
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-2"></div>
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-3"></div>
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-4"></div>
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-5"></div>
+                        <div class="chomper-teeth chomper-teeth-upper chomper-teeth-6"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-1"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-2"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-3"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-4"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-5"></div>
+                        <div class="chomper-teeth chomper-teeth-lower chomper-teeth-6"></div>
+                        <div class="chomper-tongue"></div>
+                    </div>
+                </div>
+                <div class="chomper-stem"></div>
+                <div class="chomper-leaf chomper-leaf-1"></div>
+                <div class="chomper-leaf chomper-leaf-2"></div>
+                <div class="chomper-leaf chomper-leaf-3"></div>
+                <div class="chomper-leaf chomper-leaf-4"></div>
+                <div class="chomper-leaf chomper-leaf-5"></div>
+            </div>
+            <div class="plant-cost">125</div>
+        </div>
+        <div class="plant-card" id="ghost-card" data-cost="900" data-plant="ghost" style="display: none;">
+            <div class="ghost">
+                <div class="ghost-head">
+                    <div class="ghost-eye ghost-eye-left"></div>
+                    <div class="ghost-eye ghost-eye-right"></div>
+                    <div class="ghost-tear ghost-tear-left"></div>
+                    <div class="ghost-tear ghost-tear-right"></div>
+                </div>
+            </div>
+            <div class="plant-cost">900</div>
+        </div>
+        </div>
     </div>
     <div id="map-container"></div>
     
@@ -1306,7 +1926,7 @@
         const enemySize = 40;
         
         // Money system
-        let money = 100;
+        let money = 200;
         const moneyDisplay = document.getElementById('money-amount');
         
         // Player HP system
@@ -1365,18 +1985,27 @@
             }
         }, 1000);
         
-        // Boss spawn timer (3:50 = 230 seconds)
-        const bossSpawnTime = 230000; // 230 seconds in milliseconds
-        let gameStartTime = null;
+        // Boss timer system (4 minutes = 240 seconds)
+        const bossTimerElement = document.getElementById('boss-timer-value');
+        const bossTimerLabel = document.getElementById('boss-timer');
+        let bossTimerSeconds = 240; // 4 minutes
+        let bossTimerInterval = null;
         
-        // Track game start time
-        const gameStartInterval = setInterval(() => {
-            if (gameStarted && gameStartTime === null) {
-                gameStartTime = Date.now();
-            }
-            
-            // Spawn boss after 3:50
-            if (gameStarted && gameStartTime && !bossEnemy && (Date.now() - gameStartTime) >= bossSpawnTime) {
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function updateBossTimer() {
+            if (bossTimerSeconds > 0) {
+                bossTimerElement.textContent = formatTime(bossTimerSeconds);
+                bossTimerSeconds--;
+            } else {
+                // Timer reached 0 - spawn boss
+                clearInterval(bossTimerInterval);
+                bossTimerLabel.style.display = 'none';
+                
                 // Spawn boss on random row, rightmost column
                 const bossRow = Math.floor(Math.random() * mapHeight);
                 bossEnemy = createEnemy(mapWidth - 1, bossRow, 'boss');
@@ -1391,7 +2020,59 @@
                     });
                 }
             }
-        }, 1000);
+        }
+        
+        // Start boss timer when game starts
+        const gameStartCheckInterval = setInterval(() => {
+            if (gameStarted && bossTimerInterval === null) {
+                bossTimerInterval = setInterval(updateBossTimer, 1000);
+                clearInterval(gameStartCheckInterval);
+            }
+        }, 100);
+        
+        // Enemy spawning system
+        let regularEnemiesSpawned = 0;
+        const regularEnemyLimit = 4;
+        let enemySpawnInterval = null;
+        const enemySpawnCooldown = 5500; // Spawn enemy every 5.5 seconds
+        let lastEnemySpawnTime = 0;
+        
+        function spawnEnemy() {
+            if (!gameStarted) return;
+            
+            const currentTime = Date.now();
+            
+            // Check if we can spawn an enemy
+            if (currentTime - lastEnemySpawnTime >= enemySpawnCooldown) {
+                // Choose random row
+                const randomRow = Math.floor(Math.random() * mapHeight);
+                
+                // Spawn on rightmost column
+                const spawnX = mapWidth - 1;
+                
+                // First 4 enemies are always regular (type 1)
+                if (regularEnemiesSpawned < regularEnemyLimit) {
+                    createEnemy(spawnX, randomRow, 'regular');
+                    regularEnemiesSpawned++;
+                } else {
+                    // After 4 regular enemies, spawn all types with probabilities
+                    createEnemy(spawnX, randomRow); // Uses getRandomEnemyType() by default
+                }
+                
+                lastEnemySpawnTime = currentTime;
+            }
+        }
+        
+        // Start enemy spawning when game starts
+        const enemySpawnCheckInterval = setInterval(() => {
+            if (gameStarted && enemySpawnInterval === null) {
+                // Spawn first enemy immediately
+                spawnEnemy();
+                // Then spawn enemies every 5.5 seconds
+                enemySpawnInterval = setInterval(spawnEnemy, enemySpawnCooldown);
+                clearInterval(enemySpawnCheckInterval);
+            }
+        }, 100);
         
         function updateMoneyDisplay() {
             moneyDisplay.textContent = money;
@@ -1774,6 +2455,9 @@
                 // Boss-specific properties
                 lastJumpTime: type === 'boss' ? Date.now() : 0,
                 jumpCooldown: type === 'boss' ? 2000 : 0, // Jump every 2 seconds
+                jumpStopDuration: type === 'boss' ? 4000 : 0, // Stop for 4 seconds after jump
+                isJumping: false,
+                jumpStartTime: 0,
                 lastBossSummonTime: type === 'boss' ? Date.now() : 0,
                 bossSummonCooldown: type === 'boss' ? 5000 : 0 // Summon every 5 seconds
             };
@@ -1784,10 +2468,28 @@
         function removeEnemy(enemyObj, giveReward = false) {
             enemyObj.active = false;
             
-            // If this is the boss, hide HP bar
+            // If this is the boss, respawn it with 100 HP
             if (enemyObj.type === 'boss') {
-                bossEnemy = null;
-                bossHPBarContainer.classList.remove('active');
+                // Remove the old boss
+                if (enemyObj.element && enemyObj.element.parentNode) {
+                    enemyObj.element.remove();
+                }
+                const index = enemies.indexOf(enemyObj);
+                if (index > -1) {
+                    enemies.splice(index, 1);
+                }
+                
+                // Respawn boss with 100 HP on random row, rightmost column
+                const bossRow = Math.floor(Math.random() * mapHeight);
+                const newBoss = createEnemy(mapWidth - 1, bossRow, 'boss');
+                // Override maxHits to 100 for respawned boss
+                newBoss.maxHits = 100;
+                newBoss.health = 100;
+                newBoss.hits = 0;
+                bossEnemy = newBoss;
+                bossHPBarContainer.classList.add('active');
+                updateBossHPBar();
+                return; // Exit early since we've already handled removal
             }
             
             if (enemyObj.element && enemyObj.element.parentNode) {
@@ -2039,6 +2741,22 @@
         function moveBoss(boss) {
             const currentTime = Date.now();
             
+            // Check if boss is currently stopped after a jump
+            if (boss.isJumping) {
+                // Check if 4 seconds have passed since the jump
+                if (currentTime - boss.jumpStartTime >= boss.jumpStopDuration) {
+                    // Stop period is over, boss can move again
+                    boss.isJumping = false;
+                } else {
+                    // Still in stop period - just update position but don't move
+                    const enemySize = getEnemySize(boss.type);
+                    const pos = gridToPixel(boss.x, boss.y, enemySize);
+                    boss.element.style.left = pos.x + 'px';
+                    boss.element.style.top = pos.y + 'px';
+                    return true;
+                }
+            }
+            
             // Boss jumps around (teleports to random positions)
             if (currentTime - boss.lastJumpTime >= boss.jumpCooldown) {
                 // Jump to a random position on the map (but keep moving left)
@@ -2048,6 +2766,8 @@
                 boss.x = newX;
                 boss.y = newY;
                 boss.lastJumpTime = currentTime;
+                boss.isJumping = true; // Start stop period
+                boss.jumpStartTime = currentTime;
                 
                 // Update position
                 const enemySize = getEnemySize(boss.type);
@@ -2055,31 +2775,121 @@
                 boss.element.style.left = pos.x + 'px';
                 boss.element.style.top = pos.y + 'px';
             } else {
-                // Normal movement (move left slowly)
-                const enemySize = getEnemySize(boss.type);
-                const pos = gridToPixel(boss.x, boss.y, enemySize);
-                boss.element.style.left = pos.x + 'px';
-                boss.element.style.top = pos.y + 'px';
-                
-                // Move left occasionally (slower than regular enemies)
-                if (Math.random() < 0.3) { // 30% chance to move left each tick
-                    boss.x--;
+                // Normal movement (move left slowly) - only if not stopped
+                if (!boss.isJumping) {
+                    const enemySize = getEnemySize(boss.type);
+                    const pos = gridToPixel(boss.x, boss.y, enemySize);
+                    boss.element.style.left = pos.x + 'px';
+                    boss.element.style.top = pos.y + 'px';
                     
-                    // Check if boss reached the end
-                    if (boss.x < 0) {
-                        loseHP(1);
-                        removeEnemy(boss, false);
-                        return false;
+                    // Move left occasionally (slower than regular enemies)
+                    if (Math.random() < 0.3) { // 30% chance to move left each tick
+                        boss.x--;
+                        
+                        // Check if boss reached the end
+                        if (boss.x < 0) {
+                            loseHP(1);
+                            removeEnemy(boss, false);
+                            return false;
+                        }
                     }
+                } else {
+                    // Still stopped, just update position
+                    const enemySize = getEnemySize(boss.type);
+                    const pos = gridToPixel(boss.x, boss.y, enemySize);
+                    boss.element.style.left = pos.x + 'px';
+                    boss.element.style.top = pos.y + 'px';
                 }
             }
             return true;
+        }
+        
+        function checkChomperEating() {
+            if (!gameStarted) return;
+            
+            const currentTime = Date.now();
+            placedPlants.forEach((plant, key) => {
+                if (plant.type !== 'chomper') return;
+                if (!plant.element || !plant.element.parentNode) return;
+                
+                // Check if chomper is on cooldown
+                const timeSinceLastEat = currentTime - plant.lastEatTime;
+                if (timeSinceLastEat < plant.cooldown) {
+                    return; // Still on cooldown
+                }
+                
+                // Check if chomper is currently eating
+                if (plant.isEating) {
+                    // Check if enemy is still there
+                    const targetX = plant.x + 1; // One column ahead
+                    const targetY = plant.y;
+                    
+                    let targetEnemy = null;
+                    enemies.forEach(enemy => {
+                        if (!enemy.active) return;
+                        if (enemy.x === targetX && enemy.y === targetY) {
+                            targetEnemy = enemy;
+                        }
+                    });
+                    
+                    // If enemy moved away, cancel eating
+                    if (!targetEnemy) {
+                        plant.isEating = false;
+                        plant.element.classList.remove('chomper-eating');
+                        return;
+                    }
+                    
+                    const eatingElapsed = currentTime - plant.eatingStartTime;
+                    if (eatingElapsed >= plant.eatingDuration) {
+                        // Eating complete - kill the enemy
+                        if (targetEnemy.type === 'boss') {
+                            // Boss takes 5 damage
+                            targetEnemy.hits += 5;
+                            if (targetEnemy.hits >= targetEnemy.maxHits) {
+                                removeEnemy(targetEnemy, true);
+                            } else {
+                                updateBossHPBar();
+                            }
+                        } else {
+                            // Regular enemies die instantly
+                            removeEnemy(targetEnemy, true);
+                        }
+                        
+                        // Reset eating state and set cooldown
+                        plant.isEating = false;
+                        plant.lastEatTime = currentTime;
+                        plant.element.classList.remove('chomper-eating');
+                    }
+                    return;
+                }
+                
+                // Check if there's an enemy one column ahead (x + 1, same y)
+                const targetX = plant.x + 1;
+                const targetY = plant.y;
+                
+                // Find enemy at that position
+                let targetEnemy = null;
+                enemies.forEach(enemy => {
+                    if (!enemy.active) return;
+                    if (enemy.x === targetX && enemy.y === targetY) {
+                        targetEnemy = enemy;
+                    }
+                });
+                
+                if (targetEnemy) {
+                    // Start eating
+                    plant.isEating = true;
+                    plant.eatingStartTime = currentTime;
+                    plant.element.classList.add('chomper-eating');
+                }
+            });
         }
         
         function gameLoop() {
             // Don't run game loop until countdown is done
             if (!gameStarted) return;
             
+            checkChomperEating(); // Check chomper eating first
             checkPlantEating(); // Check first, then move
             checkSummoning(); // Check for summoning
             enemies.forEach(enemy => {
@@ -2351,6 +3161,207 @@
             return snowpea;
         }
         
+        function createStarfruit() {
+            const starfruit = document.createElement('div');
+            starfruit.className = 'plant-placed';
+            
+            const starfruitInner = document.createElement('div');
+            starfruitInner.className = 'starfruit';
+            
+            const body = document.createElement('div');
+            body.className = 'starfruit-body';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'starfruit-eye starfruit-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'starfruit-eye starfruit-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'starfruit-mouth';
+            const fangLeft = document.createElement('div');
+            fangLeft.className = 'starfruit-fang starfruit-fang-left';
+            const fangRight = document.createElement('div');
+            fangRight.className = 'starfruit-fang starfruit-fang-right';
+            
+            body.appendChild(eyeLeft);
+            body.appendChild(eyeRight);
+            body.appendChild(mouth);
+            body.appendChild(fangLeft);
+            body.appendChild(fangRight);
+            
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'starfruit-leaf starfruit-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'starfruit-leaf starfruit-leaf-right';
+            
+            starfruitInner.appendChild(body);
+            starfruitInner.appendChild(leafLeft);
+            starfruitInner.appendChild(leafRight);
+            starfruit.appendChild(starfruitInner);
+            
+            return starfruit;
+        }
+        
+        function createMushroom() {
+            const mushroom = document.createElement('div');
+            mushroom.className = 'plant-placed';
+            
+            const mushroomInner = document.createElement('div');
+            mushroomInner.className = 'mushroom';
+            
+            const cap = document.createElement('div');
+            cap.className = 'mushroom-cap';
+            
+            // Add spots
+            for (let i = 1; i <= 4; i++) {
+                const spot = document.createElement('div');
+                spot.className = `mushroom-spot mushroom-spot-${i}`;
+                cap.appendChild(spot);
+            }
+            
+            const stem = document.createElement('div');
+            stem.className = 'mushroom-stem';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'mushroom-eye mushroom-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'mushroom-eye mushroom-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'mushroom-mouth';
+            
+            stem.appendChild(eyeLeft);
+            stem.appendChild(eyeRight);
+            stem.appendChild(mouth);
+            
+            mushroomInner.appendChild(cap);
+            mushroomInner.appendChild(stem);
+            mushroom.appendChild(mushroomInner);
+            
+            return mushroom;
+        }
+        
+        function createCoconutcannon() {
+            const coconutcannon = document.createElement('div');
+            coconutcannon.className = 'plant-placed';
+            
+            const coconutcannonInner = document.createElement('div');
+            coconutcannonInner.className = 'coconutcannon';
+            
+            const body = document.createElement('div');
+            body.className = 'coconutcannon-body';
+            
+            const eyebrow = document.createElement('div');
+            eyebrow.className = 'coconutcannon-eyebrow';
+            const eye = document.createElement('div');
+            eye.className = 'coconutcannon-eye';
+            const pupil = document.createElement('div');
+            pupil.className = 'coconutcannon-pupil';
+            eye.appendChild(pupil);
+            const mouth = document.createElement('div');
+            mouth.className = 'coconutcannon-mouth';
+            
+            body.appendChild(eyebrow);
+            body.appendChild(eye);
+            body.appendChild(mouth);
+            
+            const fuse = document.createElement('div');
+            fuse.className = 'coconutcannon-fuse';
+            const spark = document.createElement('div');
+            spark.className = 'coconutcannon-spark';
+            fuse.appendChild(spark);
+            
+            const baseLeft = document.createElement('div');
+            baseLeft.className = 'coconutcannon-base coconutcannon-base-left';
+            for (let i = 1; i <= 3; i++) {
+                const spot = document.createElement('div');
+                spot.className = `coconutcannon-base-spot coconutcannon-base-spot-${i}`;
+                baseLeft.appendChild(spot);
+            }
+            
+            const baseRight = document.createElement('div');
+            baseRight.className = 'coconutcannon-base coconutcannon-base-right';
+            for (let i = 1; i <= 3; i++) {
+                const spot = document.createElement('div');
+                spot.className = `coconutcannon-base-spot coconutcannon-base-spot-${i}`;
+                baseRight.appendChild(spot);
+            }
+            
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'coconutcannon-leaf coconutcannon-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'coconutcannon-leaf coconutcannon-leaf-right';
+            
+            coconutcannonInner.appendChild(body);
+            coconutcannonInner.appendChild(fuse);
+            coconutcannonInner.appendChild(baseLeft);
+            coconutcannonInner.appendChild(baseRight);
+            coconutcannonInner.appendChild(leafLeft);
+            coconutcannonInner.appendChild(leafRight);
+            coconutcannon.appendChild(coconutcannonInner);
+            
+            return coconutcannon;
+        }
+        
+        function createChomper() {
+            const chomper = document.createElement('div');
+            chomper.className = 'plant-placed';
+            
+            const chomperInner = document.createElement('div');
+            chomperInner.className = 'chomper';
+            
+            const head = document.createElement('div');
+            head.className = 'chomper-head';
+            
+            // Add spots
+            for (let i = 1; i <= 3; i++) {
+                const spot = document.createElement('div');
+                spot.className = `chomper-spot chomper-spot-${i}`;
+                head.appendChild(spot);
+            }
+            
+            const horn = document.createElement('div');
+            horn.className = 'chomper-horn';
+            head.appendChild(horn);
+            
+            const mouth = document.createElement('div');
+            mouth.className = 'chomper-mouth';
+            
+            // Add upper teeth
+            for (let i = 1; i <= 6; i++) {
+                const tooth = document.createElement('div');
+                tooth.className = `chomper-teeth chomper-teeth-upper chomper-teeth-${i}`;
+                mouth.appendChild(tooth);
+            }
+            
+            // Add lower teeth
+            for (let i = 1; i <= 6; i++) {
+                const tooth = document.createElement('div');
+                tooth.className = `chomper-teeth chomper-teeth-lower chomper-teeth-${i}`;
+                mouth.appendChild(tooth);
+            }
+            
+            const tongue = document.createElement('div');
+            tongue.className = 'chomper-tongue';
+            mouth.appendChild(tongue);
+            
+            head.appendChild(mouth);
+            
+            const stem = document.createElement('div');
+            stem.className = 'chomper-stem';
+            
+            // Add leaves
+            for (let i = 1; i <= 5; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = `chomper-leaf chomper-leaf-${i}`;
+                chomperInner.appendChild(leaf);
+            }
+            
+            chomperInner.appendChild(head);
+            chomperInner.appendChild(stem);
+            chomper.appendChild(chomperInner);
+            
+            return chomper;
+        }
+        
         // Click-based placement system
         const sunflowerCard = document.getElementById('sunflower-card');
         const peashooterCard = document.getElementById('peashooter-card');
@@ -2358,7 +3369,17 @@
         const thunderpeaCard = document.getElementById('thunderpea-card');
         const firepeashooterCard = document.getElementById('firepeashooter-card');
         const snowpeaCard = document.getElementById('snowpea-card');
+        const starfruitCard = document.getElementById('starfruit-card');
+        const mushroomCard = document.getElementById('mushroom-card');
+        const coconutcannonCard = document.getElementById('coconutcannon-card');
+        const chomperCard = document.getElementById('chomper-card');
+        const ghostCard = document.getElementById('ghost-card');
         let selectedPlant = null;
+        
+        // 1/20 chance to show ghost card
+        if (Math.random() < 0.05) { // 5% = 1/20
+            ghostCard.style.display = 'block';
+        }
         let selectedCost = 0;
         
         updatePlantCardAvailability = function() {
@@ -2396,6 +3417,26 @@
                 snowpeaCard.classList.add('insufficient-funds');
             } else {
                 snowpeaCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 75) {
+                starfruitCard.classList.add('insufficient-funds');
+                mushroomCard.classList.add('insufficient-funds');
+            } else {
+                starfruitCard.classList.remove('insufficient-funds');
+                mushroomCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 125) {
+                chomperCard.classList.add('insufficient-funds');
+            } else {
+                chomperCard.classList.remove('insufficient-funds');
+            }
+            
+            if (money < 150) {
+                coconutcannonCard.classList.add('insufficient-funds');
+            } else {
+                coconutcannonCard.classList.remove('insufficient-funds');
             }
         };
         
@@ -2448,6 +3489,13 @@
                 thunderpeaCard.classList.remove('selected');
                 firepeashooterCard.classList.remove('selected');
                 snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
                 // Select
                 selectedPlant = 'sunflower';
                 selectedCost = parseInt(sunflowerCard.dataset.cost);
@@ -2474,6 +3522,11 @@
                 cactusCard.classList.remove('selected');
                 thunderpeaCard.classList.remove('selected');
                 firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'peashooter';
                 selectedCost = parseInt(peashooterCard.dataset.cost);
@@ -2500,6 +3553,11 @@
                 peashooterCard.classList.remove('selected');
                 thunderpeaCard.classList.remove('selected');
                 firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'cactus';
                 selectedCost = parseInt(cactusCard.dataset.cost);
@@ -2526,6 +3584,11 @@
                 peashooterCard.classList.remove('selected');
                 cactusCard.classList.remove('selected');
                 firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'thunderpea';
                 selectedCost = parseInt(thunderpeaCard.dataset.cost);
@@ -2553,6 +3616,10 @@
                 cactusCard.classList.remove('selected');
                 thunderpeaCard.classList.remove('selected');
                 snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'firepeashooter';
                 selectedCost = parseInt(firepeashooterCard.dataset.cost);
@@ -2580,6 +3647,8 @@
                 cactusCard.classList.remove('selected');
                 thunderpeaCard.classList.remove('selected');
                 firepeashooterCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'snowpea';
                 selectedCost = parseInt(snowpeaCard.dataset.cost);
@@ -2588,6 +3657,125 @@
             
             updateCubeHighlights();
         });
+        
+        starfruitCard.addEventListener('click', (e) => {
+            const cost = parseInt(starfruitCard.dataset.cost);
+            if (money >= cost) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                starfruitCard.classList.add('selected');
+                
+                selectedPlant = 'starfruit';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        mushroomCard.addEventListener('click', (e) => {
+            const cost = parseInt(mushroomCard.dataset.cost);
+            if (money >= cost) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                mushroomCard.classList.add('selected');
+                
+                selectedPlant = 'mushroom';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        coconutcannonCard.addEventListener('click', (e) => {
+            const cost = parseInt(coconutcannonCard.dataset.cost);
+            if (money >= cost) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                if (ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                coconutcannonCard.classList.add('selected');
+                
+                selectedPlant = 'coconutcannon';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        chomperCard.addEventListener('click', (e) => {
+            const cost = parseInt(chomperCard.dataset.cost);
+            if (money >= cost) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                chomperCard.classList.add('selected');
+                
+                selectedPlant = 'chomper';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        if (ghostCard && ghostCard.style.display !== 'none') {
+            ghostCard.addEventListener('click', (e) => {
+                const cost = parseInt(ghostCard.dataset.cost);
+                if (money >= cost) {
+                    // Deselect other cards
+                    sunflowerCard.classList.remove('selected');
+                    peashooterCard.classList.remove('selected');
+                    cactusCard.classList.remove('selected');
+                    thunderpeaCard.classList.remove('selected');
+                    firepeashooterCard.classList.remove('selected');
+                    snowpeaCard.classList.remove('selected');
+                    starfruitCard.classList.remove('selected');
+                    mushroomCard.classList.remove('selected');
+                    coconutcannonCard.classList.remove('selected');
+                    chomperCard.classList.remove('selected');
+                    ghostCard.classList.remove('selected');
+                    ghostCard.classList.add('selected');
+                    
+                    selectedPlant = 'ghost';
+                    selectedCost = cost;
+                    updateCubeHighlights();
+                }
+            });
+        }
         
         // Click on cubes to place plants
         cubes.forEach(cube => {
@@ -2694,6 +3882,103 @@
                     selectedCost = 0;
                     snowpeaCard.classList.remove('selected');
                     updateCubeHighlights();
+                } else if (selectedPlant === 'mushroom') {
+                    const plant = createMushroom();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'mushroom', 
+                        element: plant,
+                        plantTime: Date.now() // Track when mushroom was planted
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    mushroomCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'coconutcannon') {
+                    const plant = createCoconutcannon();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    const plantData = { 
+                        type: 'coconutcannon', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y,
+                        lastShotTime: 0,
+                        cooldown: 20700 // 20.7 seconds in milliseconds
+                    };
+                    placedPlants.set(key, plantData);
+                    
+                    // Add click listener to coconut cannon for manual shooting
+                    plant.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent cube click
+                        shootCoconutcannon(key, plantData);
+                    });
+                    
+                    // Add cursor pointer style
+                    plant.style.cursor = 'pointer';
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    coconutcannonCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'chomper') {
+                    const plant = createChomper();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'chomper', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y,
+                        lastEatTime: 0,
+                        cooldown: 10000, // 10 seconds cooldown
+                        isEating: false,
+                        eatingStartTime: 0,
+                        eatingDuration: 2000 // 2 seconds to eat
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    chomperCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'ghost') {
+                    // CRASH THE GAME
+                    // Create infinite loop to crash
+                    while(true) {
+                        // This will freeze the browser
+                    }
+                } else if (selectedPlant === 'starfruit') {
+                    const plant = createStarfruit();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'starfruit', 
+                        element: plant,
+                        lastIncomeTime: Date.now() // Track income generation
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    starfruitCard.classList.remove('selected');
+                    updateCubeHighlights();
                 }
             });
         });
@@ -2718,6 +4003,66 @@
         // Generate income every second
         setInterval(generateSunflowerIncome, 1000);
         
+        // Starfruit income generation - 10 gold every 5 seconds
+        function generateStarfruitIncome() {
+            if (!gameStarted) return;
+            
+            placedPlants.forEach((plant, key) => {
+                if (plant.type === 'starfruit') {
+                    // Initialize last income time if not set
+                    if (!plant.lastIncomeTime) {
+                        plant.lastIncomeTime = Date.now();
+                    }
+                    
+                    const currentTime = Date.now();
+                    // Generate 10 gold every 5 seconds
+                    if (currentTime - plant.lastIncomeTime >= 5000) {
+                        addMoney(10);
+                        plant.lastIncomeTime = currentTime;
+                    }
+                }
+            });
+        }
+        
+        // Check starfruit income every 500ms
+        setInterval(generateStarfruitIncome, 500);
+        
+        // Mushroom income generation - wait 10 seconds, then 5 gold every 2 seconds
+        function generateMushroomIncome() {
+            if (!gameStarted) return;
+            
+            placedPlants.forEach((plant, key) => {
+                if (plant.type === 'mushroom') {
+                    const currentTime = Date.now();
+                    
+                    // Initialize plant data if not set
+                    if (!plant.plantTime) {
+                        plant.plantTime = Date.now(); // Time when plant was placed
+                        plant.lastIncomeTime = null; // Will be set after 10 second delay
+                    }
+                    
+                    const timeSincePlanted = currentTime - plant.plantTime;
+                    
+                    // Wait 10 seconds before starting income
+                    if (timeSincePlanted >= 10000) {
+                        // Initialize last income time after delay
+                        if (!plant.lastIncomeTime) {
+                            plant.lastIncomeTime = currentTime;
+                        }
+                        
+                        // Generate 5 gold every 2 seconds
+                        if (currentTime - plant.lastIncomeTime >= 2000) {
+                            addMoney(5);
+                            plant.lastIncomeTime = currentTime;
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Check mushroom income every 500ms
+        setInterval(generateMushroomIncome, 500);
+        
         // Shooting system
         const projectiles = [];
         const shootCooldown = 1000; // Shoot every 1 second (for peashooter)
@@ -2727,12 +4072,13 @@
         const stunDuration = 3000; // Stun lasts 3 seconds
         const slowDuration = 3000; // Slow lasts 3 seconds
         
-        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false) {
+        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false, isCoconut = false) {
             const projectile = document.createElement('div');
             let className = 'projectile';
             if (isThunder) className = 'projectile thunder';
             else if (isFire) className = 'projectile fire';
             else if (isIce) className = 'projectile ice';
+            else if (isCoconut) className = 'projectile coconut';
             projectile.className = className;
             projectile.style.left = startX + 'px';
             projectile.style.top = startY + 'px';
@@ -2748,10 +4094,119 @@
                 active: true,
                 isThunder: isThunder,
                 isFire: isFire,
-                isIce: isIce
+                isIce: isIce,
+                isCoconut: isCoconut
             };
             projectiles.push(projectileObj);
             return projectileObj;
+        }
+        
+        function shootCoconutcannon(key, plantData) {
+            if (!gameStarted) return;
+            
+            const currentTime = Date.now();
+            
+            // Check if cooldown is ready
+            if (currentTime - plantData.lastShotTime < plantData.cooldown) {
+                return; // Still on cooldown
+            }
+            
+            // Find nearest enemy
+            const targetEnemy = findNearestEnemy(plantData.x, plantData.y);
+            
+            if (targetEnemy) {
+                // Get plant center position
+                const plantPos = gridToPixel(plantData.x, plantData.y);
+                const plantCenterX = plantPos.x + cubeSize / 2;
+                const plantCenterY = plantPos.y + cubeSize / 2;
+                
+                // Get enemy center position
+                const enemySize = getEnemySize(targetEnemy.type);
+                const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySize);
+                const targetX = enemyPos.x + enemySize / 2;
+                const targetY = enemyPos.y + enemySize / 2;
+                
+                // Create coconut projectile
+                createProjectile(plantCenterX, plantCenterY, targetX, targetY, false, false, false, true);
+                
+                // Update last shot time
+                plantData.lastShotTime = currentTime;
+                
+                // Visual feedback - add cooldown class
+                plantData.element.classList.add('on-cooldown');
+                setTimeout(() => {
+                    if (plantData.element) {
+                        plantData.element.classList.remove('on-cooldown');
+                    }
+                }, plantData.cooldown);
+            }
+        }
+        
+        function createExplosion(centerX, centerY) {
+            // Create visual explosion effect
+            const explosion = document.createElement('div');
+            explosion.className = 'explosion';
+            explosion.style.left = (centerX - 75) + 'px';
+            explosion.style.top = (centerY - 75) + 'px';
+            mapContainer.appendChild(explosion);
+            
+            // Remove explosion visual after animation
+            setTimeout(() => {
+                if (explosion.parentNode) {
+                    explosion.remove();
+                }
+            }, 300);
+            
+            // Convert pixel position to grid coordinates
+            // Find the grid square that contains the explosion center
+            let explosionGridX = -1;
+            let explosionGridY = -1;
+            let minDistance = Infinity;
+            
+            cubes.forEach(cube => {
+                const cubePos = gridToPixel(cube.x, cube.y);
+                const cubeCenterX = cubePos.x + cubeSize / 2;
+                const cubeCenterY = cubePos.y + cubeSize / 2;
+                
+                const dist = Math.sqrt(
+                    Math.pow(centerX - cubeCenterX, 2) + 
+                    Math.pow(centerY - cubeCenterY, 2)
+                );
+                
+                if (dist < minDistance) {
+                    minDistance = dist;
+                    explosionGridX = cube.x;
+                    explosionGridY = cube.y;
+                }
+            });
+            
+            // Damage all enemies in 3x3 area (3 boxes radius)
+            const explosionRadius = 3; // 3 boxes in each direction
+            enemies.forEach(enemy => {
+                if (!enemy.active) return;
+                
+                // Check if enemy is within explosion radius
+                const dx = Math.abs(enemy.x - explosionGridX);
+                const dy = Math.abs(enemy.y - explosionGridY);
+                
+                // 3x3 area means max distance of 1 box in each direction, or 3 boxes total range
+                // Actually, let me interpret "3x3 box" as a 3x3 grid area centered on impact
+                if (dx <= 1 && dy <= 1) {
+                    // Enemy is in explosion range
+                    if (enemy.type === 'boss') {
+                        // Boss takes 5 damage
+                        enemy.hits += 5;
+                        if (enemy.hits >= enemy.maxHits) {
+                            removeEnemy(enemy, true);
+                        } else {
+                            updateBossHPBar();
+                        }
+                    } else {
+                        // Regular enemies die instantly (one-hit)
+                        removeEnemy(enemy, true);
+                    }
+                }
+            });
         }
         
         function findNearestEnemy(plantX, plantY) {
@@ -2791,7 +4246,11 @@
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
                 if (distance < projectile.speed) {
-                    // Projectile reached target (missed)
+                    // Projectile reached target
+                    if (projectile.isCoconut) {
+                        // Create explosion
+                        createExplosion(projectile.x, projectile.y);
+                    }
                     projectile.element.remove();
                     projectiles.splice(i, 1);
                     continue;
@@ -2809,9 +4268,10 @@
                     const enemy = enemies[j];
                     if (!enemy.active) continue;
                     
-                    const enemyPos = gridToPixel(enemy.x, enemy.y);
-                    const enemyCenterX = enemyPos.x + enemySize / 2;
-                    const enemyCenterY = enemyPos.y + enemySize / 2;
+                    const enemySizeForCollision = getEnemySize(enemy.type);
+                    const enemyPos = gridToPixel(enemy.x, enemy.y, enemySizeForCollision);
+                    const enemyCenterX = enemyPos.x + enemySizeForCollision / 2;
+                    const enemyCenterY = enemyPos.y + enemySizeForCollision / 2;
                     
                     const distanceToEnemy = Math.sqrt(
                         Math.pow(projectile.x - enemyCenterX, 2) + 
@@ -2820,7 +4280,15 @@
                     
                     if (distanceToEnemy < 20) {
                         // Hit enemy
-                        if (projectile.isThunder) {
+                        if (projectile.isCoconut) {
+                            // Coconut explodes on impact
+                            createExplosion(projectile.x, projectile.y);
+                            projectile.element.remove();
+                            projectile.active = false;
+                            projectiles.splice(i, 1);
+                            hitEnemy = true;
+                            break;
+                        } else if (projectile.isThunder) {
                             // Thunder pea stuns the enemy
                             enemy.stunned = true;
                             enemy.stunEndTime = Date.now() + stunDuration;
