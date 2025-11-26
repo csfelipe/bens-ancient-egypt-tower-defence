@@ -156,6 +156,143 @@
             height: 40px;
             position: relative;
         }
+        .enemy-ingen {
+            width: 60px;
+            height: 80px;
+            position: relative;
+        }
+        .ingen-body {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to bottom, #c8a2c8 0%, #9b7a9b 100%);
+            border: 3px solid #7a5a7a;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+        }
+        .ingen-tentacle {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ff00ff 0%, #cc00cc 100%);
+            border: 2px solid #990099;
+            border-radius: 4px;
+        }
+        .ingen-tentacle-1 { top: -5px; left: 10px; transform: rotate(-30deg); }
+        .ingen-tentacle-2 { top: -5px; left: 50%; transform: translateX(-50%) rotate(0deg); }
+        .ingen-tentacle-3 { top: -5px; right: 10px; transform: rotate(30deg); }
+        .ingen-tentacle-4 { top: 5px; left: 5px; transform: rotate(-45deg); }
+        .ingen-tentacle-5 { top: 5px; right: 5px; transform: rotate(45deg); }
+        .ingen-eye {
+            position: absolute;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border: 2px solid #7a5a7a;
+            border-radius: 50%;
+        }
+        .ingen-eye-left {
+            left: 8px;
+        }
+        .ingen-eye-right {
+            right: 8px;
+        }
+        .ingen-pupil {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #000000;
+            border-radius: 50%;
+        }
+        .ingen-leg {
+            position: absolute;
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(to bottom, #4a4a4a 0%, #2a2a2a 100%);
+            border: 1px solid #1a1a1a;
+            border-radius: 2px;
+            bottom: -30px;
+        }
+        .ingen-leg-1 { left: 12px; }
+        .ingen-leg-2 { left: 23px; }
+        .ingen-leg-3 { right: 23px; }
+        .ingen-leg-4 { right: 12px; }
+        .enemy-slow {
+            width: 45px;
+            height: 45px;
+            position: relative;
+        }
+        .slow-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #4a4a4a 0%, #2a2a2a 100%);
+            border: 3px solid #1a1a1a;
+            border-radius: 12px 12px 15px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slow-head {
+            width: 35px;
+            height: 30px;
+            background: linear-gradient(to bottom, #4a4a4a 0%, #2a2a2a 100%);
+            border: 3px solid #1a1a1a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .slow-eye {
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background-color: #ff6b6b;
+            border: 1px solid #cc0000;
+            border-radius: 50%;
+            top: 8px;
+        }
+        .slow-eye-left {
+            left: 8px;
+        }
+        .slow-eye-right {
+            right: 8px;
+        }
+        .slow-arm {
+            position: absolute;
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(to bottom, #3a3a3a 0%, #1a1a1a 100%);
+            border: 2px solid #0a0a0a;
+            border-radius: 3px;
+            top: 15px;
+        }
+        .slow-arm-left {
+            left: -4px;
+            transform: rotate(20deg);
+        }
+        .slow-arm-right {
+            right: -4px;
+            transform: rotate(-20deg);
+        }
+        .slow-leg {
+            position: absolute;
+            width: 8px;
+            height: 25px;
+            background: linear-gradient(to bottom, #3a3a3a 0%, #1a1a1a 100%);
+            border: 2px solid #0a0a0a;
+            border-radius: 0 0 4px 4px;
+            bottom: -25px;
+        }
+        .slow-leg-left {
+            left: 10px;
+        }
+        .slow-leg-right {
+            right: 10px;
+        }
         .tough-body {
             width: 100%;
             height: 100%;
@@ -404,6 +541,18 @@
             align-items: center;
             gap: 10px;
         }
+        #level-counter {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #4a9eff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         #countdown-timer {
             position: fixed;
             top: 50%;
@@ -594,6 +743,269 @@
             left: 50%;
             transform: translateX(-50%);
         }
+        .boss-level2 {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        .boss2-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #d4a574 0%, #b8860b 50%, #8b6914 100%);
+            border: 3px solid #654321;
+            border-radius: 12px 12px 15px 15px;
+            position: relative;
+            overflow: visible;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .boss2-head {
+            width: 55px;
+            height: 50px;
+            background: linear-gradient(to bottom, #d4a574 0%, #b8860b 50%, #8b6914 100%);
+            border: 3px solid #654321;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        .boss2-ear {
+            position: absolute;
+            width: 18px;
+            height: 20px;
+            background: linear-gradient(to bottom, #d4a574 0%, #8b6914 100%);
+            border: 2px solid #654321;
+            border-radius: 50% 50% 0 50%;
+            top: -5px;
+        }
+        .boss2-ear-left {
+            left: -5px;
+            transform: rotate(-30deg);
+        }
+        .boss2-ear-right {
+            right: -5px;
+            transform: rotate(30deg) scaleX(-1);
+        }
+        .boss2-hat {
+            position: absolute;
+            width: 35px;
+            height: 12px;
+            background: linear-gradient(to bottom, #9370db 0%, #6a4c93 100%);
+            border: 2px solid #4b0082;
+            border-radius: 8px 8px 0 0;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .boss2-hat::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: #4b0082;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ff0000 0%, #cc0000 50%, #990000 100%);
+            border: 1px solid #660000;
+            border-radius: 50%;
+            top: 12px;
+            box-shadow: 0 0 8px #ff0000, 0 0 12px #ff0000;
+        }
+        .boss2-eye-left {
+            left: 10px;
+        }
+        .boss2-eye-right {
+            right: 10px;
+        }
+        .boss2-nose {
+            position: absolute;
+            width: 6px;
+            height: 5px;
+            background: #1a1a1a;
+            border: 1px solid #000;
+            border-radius: 50% 50% 0 0;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-mouth {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: #000;
+            border: 2px solid #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-tooth {
+            position: absolute;
+            width: 3px;
+            height: 6px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 0 2px 2px;
+        }
+        .boss2-tooth-1 { bottom: -2px; left: 5px; }
+        .boss2-tooth-2 { bottom: -2px; left: 10px; }
+        .boss2-tooth-3 { bottom: -2px; left: 15px; }
+        .boss2-tooth-4 { bottom: -2px; left: 20px; }
+        .boss2-tooth-5 { bottom: -2px; right: 20px; }
+        .boss2-tooth-6 { bottom: -2px; right: 15px; }
+        .boss2-tooth-7 { bottom: -2px; right: 10px; }
+        .boss2-tooth-8 { bottom: -2px; right: 5px; }
+        .boss2-bowtie {
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            background: linear-gradient(to bottom, #9370db 0%, #6a4c93 100%);
+            border: 2px solid #4b0082;
+            border-radius: 50% 50% 0 0;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .boss2-bowtie::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background: #4b0082;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-button {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #333;
+        }
+        .boss2-button-1 {
+            background: #1a1a1a;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-button-1::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            top: 1px;
+            left: 1px;
+        }
+        .boss2-button-2 {
+            background: #d3d3d3;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss2-button-2::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #000;
+            top: 1px;
+            left: 1px;
+        }
+        .boss2-seam {
+            position: absolute;
+            width: 50px;
+            height: 8px;
+            background: #1a1a1a;
+            border: 1px solid #000;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .boss2-spike {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background: linear-gradient(to bottom, #c0c0c0 0%, #808080 100%);
+            border: 1px solid #606060;
+            border-radius: 0 0 2px 2px;
+            bottom: 8px;
+        }
+        .boss2-spike-1 { left: 5px; }
+        .boss2-spike-2 { left: 15px; }
+        .boss2-spike-3 { left: 50%; transform: translateX(-50%); }
+        .boss2-spike-4 { right: 15px; }
+        .boss2-spike-5 { right: 5px; }
+        .boss2-arm {
+            position: absolute;
+            width: 12px;
+            height: 35px;
+            background: linear-gradient(to bottom, #d4a574 0%, #8b6914 100%);
+            border: 2px solid #654321;
+            border-radius: 6px;
+            top: 20px;
+        }
+        .boss2-arm-left {
+            left: -8px;
+            transform: rotate(20deg);
+        }
+        .boss2-arm-right {
+            right: -8px;
+            transform: rotate(-20deg);
+        }
+        .boss2-claw {
+            position: absolute;
+            width: 2px;
+            height: 8px;
+            background: linear-gradient(to bottom, #c0c0c0 0%, #ff6b6b 30%, #808080 100%);
+            border: 1px solid #606060;
+            border-radius: 0 0 1px 1px;
+            bottom: -8px;
+        }
+        .boss2-claw-1 { left: 1px; }
+        .boss2-claw-2 { left: 3px; }
+        .boss2-claw-3 { left: 5px; }
+        .boss2-claw-4 { left: 7px; }
+        .boss2-claw-5 { left: 9px; }
+        .boss2-leg {
+            position: absolute;
+            width: 14px;
+            height: 30px;
+            background: linear-gradient(to bottom, #d4a574 0%, #8b6914 100%);
+            border: 2px solid #654321;
+            border-radius: 0 0 8px 8px;
+            bottom: -30px;
+        }
+        .boss2-leg-left {
+            left: 18px;
+        }
+        .boss2-leg-right {
+            right: 18px;
+        }
+        .boss2-tear {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background: #1a1a1a;
+            border: 1px solid #000;
+        }
+        .boss2-tear-1 { top: 10px; left: 5px; }
+        .boss2-tear-2 { top: 15px; left: 10px; }
+        .boss2-tear-3 { top: 20px; right: 10px; }
+        .boss2-tear-4 { top: 25px; right: 5px; }
+        .boss2-tear-5 { bottom: 15px; left: 8px; }
+        .boss2-tear-6 { bottom: 10px; right: 8px; }
         #money-counter {
             background-color: #1a4d2e;
             border: 3px solid #0f2e1a;
@@ -1476,6 +1888,93 @@
             border-radius: 50%;
             box-shadow: 0 0 8px rgba(139, 69, 19, 0.8);
         }
+        .projectile.boss-panel {
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+            border: 3px solid #1a1a1a;
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+        .projectile.boss-panel::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(135deg, #666 0%, #444 100%);
+            border-radius: 2px;
+        }
+        .projectile.boss-panel::after {
+            content: 'CTRL';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .projectile.coke-can {
+            width: 30px;
+            height: 50px;
+            background: linear-gradient(to bottom, #c0c0c0 0%, #808080 100%);
+            border: 2px solid #606060;
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .projectile.coke-can::before {
+            content: 'Diet';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 6px;
+            font-weight: bold;
+            color: #000;
+        }
+        .projectile.coke-can::after {
+            content: 'Coke';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            font-size: 8px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+        .projectile.boomerang {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffd700 0%, #ff8c00 50%, transparent 70%);
+            border: 3px solid #ff8c00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+            animation: boomerang-spin 0.3s linear infinite;
+        }
+        @keyframes boomerang-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #song-credit {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 200;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
         .explosion {
             position: absolute;
             width: 150px;
@@ -1631,6 +2130,579 @@
             0%, 100% { height: 30px; }
             50% { height: 35px; }
         }
+        .spikychomper {
+            width: 50px;
+            height: 60px;
+            position: relative;
+        }
+        .spikychomper-head {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(to bottom, #9acd32 0%, #6b8e23 50%, #556b2f 100%);
+            border: 3px solid #3d4a1f;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .spikychomper-spike {
+            position: absolute;
+            background: linear-gradient(to bottom, #ffd700 0%, #daa520 100%);
+            border: 2px solid #b8860b;
+            border-radius: 50% 50% 0 0;
+        }
+        .spikychomper-spike-top-left {
+            width: 8px;
+            height: 12px;
+            top: -8px;
+            left: 8px;
+            transform: rotate(-25deg);
+        }
+        .spikychomper-spike-top-right {
+            width: 8px;
+            height: 12px;
+            top: -8px;
+            right: 8px;
+            transform: rotate(25deg);
+        }
+        .spikychomper-spike-snout {
+            width: 6px;
+            height: 10px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .spikychomper-spike-back-1 {
+            width: 6px;
+            height: 10px;
+            top: 5px;
+            left: 2px;
+            background: linear-gradient(to bottom, #d2691e 0%, #8b4513 100%);
+            border-color: #654321;
+            transform: rotate(-45deg);
+        }
+        .spikychomper-spike-back-2 {
+            width: 6px;
+            height: 10px;
+            top: 10px;
+            right: 2px;
+            background: linear-gradient(to bottom, #d2691e 0%, #8b4513 100%);
+            border-color: #654321;
+            transform: rotate(45deg);
+        }
+        .spikychomper-spike-back-3 {
+            width: 5px;
+            height: 8px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom, #d2691e 0%, #8b4513 100%);
+            border-color: #654321;
+        }
+        .spikychomper-brow {
+            position: absolute;
+            width: 12px;
+            height: 4px;
+            background: linear-gradient(to bottom, #2d5016 0%, #1a3009 100%);
+            border: 1px solid #0f1a05;
+            border-radius: 2px;
+            top: 12px;
+        }
+        .spikychomper-brow-left {
+            left: 6px;
+            transform: rotate(-10deg);
+        }
+        .spikychomper-brow-right {
+            right: 6px;
+            transform: rotate(10deg);
+        }
+        .spikychomper-eye {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background-color: #ffd700;
+            border: 2px solid #daa520;
+            border-radius: 50%;
+            top: 16px;
+        }
+        .spikychomper-eye-left {
+            left: 8px;
+        }
+        .spikychomper-eye-right {
+            right: 8px;
+        }
+        .spikychomper-pupil {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .spikychomper-mouth {
+            position: absolute;
+            width: 28px;
+            height: 20px;
+            background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
+            border: 2px solid #2d5016;
+            border-radius: 0 0 50% 50%;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .spikychomper-tooth {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 0 50% 50%;
+        }
+        .spikychomper-tooth-upper-1 {
+            top: 2px;
+            left: 6px;
+        }
+        .spikychomper-tooth-upper-2 {
+            top: 2px;
+            right: 6px;
+        }
+        .spikychomper-tooth-lower-1 {
+            bottom: 2px;
+            left: 8px;
+        }
+        .spikychomper-tooth-lower-2 {
+            bottom: 2px;
+            right: 8px;
+        }
+        .spikychomper-stem {
+            position: absolute;
+            width: 8px;
+            height: 15px;
+            background: linear-gradient(to bottom, #2d5016 0%, #1a3009 100%);
+            border: 2px solid #0f1a05;
+            border-radius: 4px;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .spikychomper-stem-spike {
+            position: absolute;
+            width: 3px;
+            height: 6px;
+            background: linear-gradient(to bottom, #ffd700 0%, #daa520 100%);
+            border: 1px solid #b8860b;
+            border-radius: 50% 50% 0 0;
+        }
+        .spikychomper-stem-spike-1 {
+            top: 2px;
+            left: -2px;
+            transform: rotate(-45deg);
+        }
+        .spikychomper-stem-spike-2 {
+            top: 5px;
+            right: -2px;
+            transform: rotate(45deg);
+        }
+        .spikychomper-stem-spike-3 {
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .spikychomper-leaf {
+            position: absolute;
+            width: 12px;
+            height: 14px;
+            background: linear-gradient(to bottom, #d2691e 0%, #8b4513 100%);
+            border: 2px solid #654321;
+            border-radius: 0 50% 50% 0;
+            bottom: 0;
+        }
+        .spikychomper-leaf-1 {
+            left: -5px;
+            transform: rotate(-30deg);
+        }
+        .spikychomper-leaf-2 {
+            left: 5px;
+            transform: rotate(-15deg);
+        }
+        .spikychomper-leaf-3 {
+            right: 5px;
+            transform: rotate(15deg) scaleX(-1);
+        }
+        .pumpkin {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .pumpkin-body {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(to bottom, #ff8c00 0%, #ff6600 50%, #cc5500 100%);
+            border: 3px solid #8b4513;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .pumpkin-eye {
+            position: absolute;
+            width: 10px;
+            height: 12px;
+            background-color: #00ff00;
+            border: 2px solid #00cc00;
+            border-radius: 50% 50% 0 0;
+            top: 10px;
+            box-shadow: 0 0 8px #00ff00, 0 0 12px #00ff00;
+        }
+        .pumpkin-eye-left {
+            left: 10px;
+        }
+        .pumpkin-eye-right {
+            right: 10px;
+        }
+        .pumpkin-pupil {
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        .pumpkin-mouth {
+            position: absolute;
+            width: 20px;
+            height: 12px;
+            border: 2px solid #8b4513;
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+        }
+        .pumpkin-tooth {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .pumpkin-tooth-upper {
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .pumpkin-tooth-lower-1 {
+            bottom: -2px;
+            left: 4px;
+        }
+        .pumpkin-tooth-lower-2 {
+            bottom: -2px;
+            right: 4px;
+        }
+        .pumpkin-stem {
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            background: linear-gradient(to bottom, #228b22 0%, #006400 100%);
+            border: 2px solid #004400;
+            border-radius: 0 0 4px 4px;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .pumpkin-flame {
+            position: absolute;
+            width: 6px;
+            height: 12px;
+            background: linear-gradient(to top, #00ff00 0%, #ffff00 50%, #ff6600 100%);
+            border-radius: 50% 50% 0 50%;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pumpkin-flame-flicker 0.5s ease-in-out infinite;
+            box-shadow: 0 0 8px #00ff00, 0 0 12px #ffff00;
+        }
+        @keyframes pumpkin-flame-flicker {
+            0%, 100% { 
+                height: 12px;
+                opacity: 1;
+            }
+            25% { 
+                height: 14px;
+                opacity: 0.9;
+            }
+            50% { 
+                height: 10px;
+                opacity: 0.8;
+            }
+            75% { 
+                height: 13px;
+                opacity: 0.95;
+            }
+        }
+        .flowerplant {
+            width: 50px;
+            height: 60px;
+            position: relative;
+        }
+        .flowerplant-flower {
+            position: absolute;
+            width: 45px;
+            height: 30px;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flowerplant-disc {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #40e0d0 0%, #20b2aa 100%);
+            border: 2px solid #008b8b;
+            border-radius: 50%;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        .flowerplant-disc::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #87ceeb;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+        .flowerplant-disc::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #87ceeb;
+            border-radius: 50%;
+            top: 8px;
+            right: 4px;
+        }
+        .flowerplant-petal {
+            position: absolute;
+            width: 12px;
+            height: 18px;
+            background: linear-gradient(to bottom, #fffacd 0%, #f0e68c 100%);
+            border: 1px solid #daa520;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            top: 8px;
+            left: 50%;
+            transform-origin: center bottom;
+        }
+        .flowerplant-petal-1 { transform: translateX(-50%) rotate(0deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-2 { transform: translateX(-50%) rotate(45deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-3 { transform: translateX(-50%) rotate(90deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-4 { transform: translateX(-50%) rotate(135deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-5 { transform: translateX(-50%) rotate(180deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-6 { transform: translateX(-50%) rotate(225deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-7 { transform: translateX(-50%) rotate(270deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-petal-8 { transform: translateX(-50%) rotate(315deg); border-top: 2px solid #ff8c00; }
+        .flowerplant-body {
+            position: absolute;
+            width: 35px;
+            height: 30px;
+            background: linear-gradient(to bottom, #90ee90 0%, #32cd32 100%);
+            border: 2px solid #228b22;
+            border-radius: 50% 50% 0 0;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flowerplant-eye {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            top: 8px;
+        }
+        .flowerplant-eye::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: #fff;
+            top: 1px;
+            left: 1px;
+            border-radius: 50%;
+        }
+        .flowerplant-eye-left {
+            left: 10px;
+        }
+        .flowerplant-eye-right {
+            right: 10px;
+        }
+        .flowerplant-mouth {
+            position: absolute;
+            width: 8px;
+            height: 4px;
+            border: 1px solid #000;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flowerplant-leaves {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flowerplant-leaf {
+            position: absolute;
+            width: 15px;
+            height: 12px;
+            background: linear-gradient(to bottom, #2d5016 0%, #1a3009 100%);
+            border: 1px solid #0f1a05;
+            border-radius: 0 50% 50% 0;
+        }
+        .flowerplant-leaf-1 {
+            left: -20px;
+            transform: rotate(-30deg);
+        }
+        .flowerplant-leaf-2 {
+            left: -5px;
+            transform: rotate(-10deg);
+        }
+        .flowerplant-leaf-3 {
+            right: -5px;
+            transform: rotate(10deg) scaleX(-1);
+        }
+        .fireplant {
+            width: 50px;
+            height: 55px;
+            position: relative;
+        }
+        .fireplant-top {
+            position: absolute;
+            width: 40px;
+            height: 15px;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .fireplant-leaf {
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            background: linear-gradient(to bottom, #2d5016 0%, #1a3009 100%);
+            border: 1px solid #0f1a05;
+            border-radius: 0 50% 50% 0;
+            top: 0;
+        }
+        .fireplant-leaf-1 {
+            left: 5px;
+            transform: rotate(-20deg);
+        }
+        .fireplant-leaf-2 {
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+        }
+        .fireplant-leaf-3 {
+            right: 5px;
+            transform: rotate(20deg) scaleX(-1);
+        }
+        .fireplant-body {
+            position: absolute;
+            width: 40px;
+            height: 35px;
+            background: linear-gradient(to bottom, #90ee90 0%, #7cfc00 50%, #32cd32 100%);
+            border: 2px solid #228b22;
+            border-radius: 50% 50% 45% 45%;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .fireplant-brow {
+            position: absolute;
+            width: 10px;
+            height: 3px;
+            background: linear-gradient(to bottom, #2d5016 0%, #1a3009 100%);
+            border: 1px solid #0f1a05;
+            border-radius: 2px;
+            top: 6px;
+        }
+        .fireplant-brow-left {
+            left: 6px;
+            transform: rotate(-15deg);
+        }
+        .fireplant-brow-right {
+            right: 6px;
+            transform: rotate(15deg);
+        }
+        .fireplant-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 50%;
+            top: 10px;
+        }
+        .fireplant-eye::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #8b4513;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+        }
+        .fireplant-eye-left {
+            left: 8px;
+        }
+        .fireplant-eye-right {
+            right: 8px;
+        }
+        .fireplant-mouth {
+            position: absolute;
+            width: 6px;
+            height: 3px;
+            border: 1px solid #000;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .fireplant-stem {
+            position: absolute;
+            width: 4px;
+            height: 25px;
+            background: linear-gradient(to bottom, #90ee90 0%, #32cd32 100%);
+            border: 1px solid #228b22;
+            border-radius: 2px;
+            top: 40px;
+            right: 8px;
+            transform: rotate(30deg);
+        }
+        .fireplant-base {
+            position: absolute;
+            width: 35px;
+            height: 8px;
+            background: linear-gradient(to bottom, #654321 0%, #3d2817 100%);
+            border: 2px solid #2a1a0a;
+            border-radius: 8px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         .ghost {
             width: 50px;
             height: 50px;
@@ -1689,6 +2761,10 @@
 </head>
 <body>
     <div id="ui-container">
+        <div id="level-counter">
+            <span>⭐</span>
+            <span id="level-amount">1</span>
+        </div>
         <div id="money-counter">
             <span class="money-icon">💰</span>
             <span id="money-amount">100</span>
@@ -1709,6 +2785,13 @@
     <audio id="boss-music" loop>
         <source src="TENNA BATTLE THEME DELTARUNE CHAPTER 3.mp3" type="audio/mpeg">
     </audio>
+    <audio id="boss-music-level2" loop>
+        <source src="Never Be Alone (FNAF4 Song) - Shadrow.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="boss-music-level3" loop>
+        <source src="A LITTLE THEORIZING  Official Game Theory Song!.mp3" type="audio/mpeg">
+    </audio>
+    <div id="song-credit">all song are not mine</div>
     <div id="boss-timer">
         <div id="boss-timer-label">BOSS IN:</div>
         <div id="boss-timer-value">4:00</div>
@@ -1902,6 +2985,106 @@
             </div>
             <div class="plant-cost">125</div>
         </div>
+        <div class="plant-card" id="spikychomper-card" data-cost="175" data-plant="spikychomper" style="display: none;">
+            <div class="spikychomper">
+                <div class="spikychomper-head">
+                    <div class="spikychomper-spike spikychomper-spike-top-left"></div>
+                    <div class="spikychomper-spike spikychomper-spike-top-right"></div>
+                    <div class="spikychomper-spike spikychomper-spike-snout"></div>
+                    <div class="spikychomper-spike spikychomper-spike-back-1"></div>
+                    <div class="spikychomper-spike spikychomper-spike-back-2"></div>
+                    <div class="spikychomper-spike spikychomper-spike-back-3"></div>
+                    <div class="spikychomper-brow spikychomper-brow-left"></div>
+                    <div class="spikychomper-brow spikychomper-brow-right"></div>
+                    <div class="spikychomper-eye spikychomper-eye-left">
+                        <div class="spikychomper-pupil"></div>
+                    </div>
+                    <div class="spikychomper-eye spikychomper-eye-right">
+                        <div class="spikychomper-pupil"></div>
+                    </div>
+                    <div class="spikychomper-mouth">
+                        <div class="spikychomper-tooth spikychomper-tooth-upper-1"></div>
+                        <div class="spikychomper-tooth spikychomper-tooth-upper-2"></div>
+                        <div class="spikychomper-tooth spikychomper-tooth-lower-1"></div>
+                        <div class="spikychomper-tooth spikychomper-tooth-lower-2"></div>
+                    </div>
+                </div>
+                <div class="spikychomper-stem">
+                    <div class="spikychomper-stem-spike spikychomper-stem-spike-1"></div>
+                    <div class="spikychomper-stem-spike spikychomper-stem-spike-2"></div>
+                    <div class="spikychomper-stem-spike spikychomper-stem-spike-3"></div>
+                </div>
+                <div class="spikychomper-leaf spikychomper-leaf-1"></div>
+                <div class="spikychomper-leaf spikychomper-leaf-2"></div>
+                <div class="spikychomper-leaf spikychomper-leaf-3"></div>
+            </div>
+            <div class="plant-cost">175</div>
+        </div>
+        <div class="plant-card" id="pumpkin-card" data-cost="200" data-plant="pumpkin">
+            <div class="pumpkin">
+                <div class="pumpkin-body">
+                    <div class="pumpkin-eye pumpkin-eye-left">
+                        <div class="pumpkin-pupil"></div>
+                    </div>
+                    <div class="pumpkin-eye pumpkin-eye-right">
+                        <div class="pumpkin-pupil"></div>
+                    </div>
+                    <div class="pumpkin-mouth">
+                        <div class="pumpkin-tooth pumpkin-tooth-upper"></div>
+                        <div class="pumpkin-tooth pumpkin-tooth-lower-1"></div>
+                        <div class="pumpkin-tooth pumpkin-tooth-lower-2"></div>
+                    </div>
+                </div>
+                <div class="pumpkin-stem"></div>
+                <div class="pumpkin-flame"></div>
+            </div>
+            <div class="plant-cost">200</div>
+        </div>
+        <div class="plant-card" id="flowerplant-card" data-cost="150" data-plant="flowerplant" style="display: none;">
+            <div class="flowerplant">
+                <div class="flowerplant-flower">
+                    <div class="flowerplant-disc"></div>
+                    <div class="flowerplant-petal flowerplant-petal-1"></div>
+                    <div class="flowerplant-petal flowerplant-petal-2"></div>
+                    <div class="flowerplant-petal flowerplant-petal-3"></div>
+                    <div class="flowerplant-petal flowerplant-petal-4"></div>
+                    <div class="flowerplant-petal flowerplant-petal-5"></div>
+                    <div class="flowerplant-petal flowerplant-petal-6"></div>
+                    <div class="flowerplant-petal flowerplant-petal-7"></div>
+                    <div class="flowerplant-petal flowerplant-petal-8"></div>
+                </div>
+                <div class="flowerplant-body">
+                    <div class="flowerplant-eye flowerplant-eye-left"></div>
+                    <div class="flowerplant-eye flowerplant-eye-right"></div>
+                    <div class="flowerplant-mouth"></div>
+                </div>
+                <div class="flowerplant-leaves">
+                    <div class="flowerplant-leaf flowerplant-leaf-1"></div>
+                    <div class="flowerplant-leaf flowerplant-leaf-2"></div>
+                    <div class="flowerplant-leaf flowerplant-leaf-3"></div>
+                </div>
+            </div>
+            <div class="plant-cost">150</div>
+        </div>
+        <div class="plant-card" id="fireplant-card" data-cost="150" data-plant="fireplant" style="display: none;">
+            <div class="fireplant">
+                <div class="fireplant-top">
+                    <div class="fireplant-leaf fireplant-leaf-1"></div>
+                    <div class="fireplant-leaf fireplant-leaf-2"></div>
+                    <div class="fireplant-leaf fireplant-leaf-3"></div>
+                </div>
+                <div class="fireplant-body">
+                    <div class="fireplant-brow fireplant-brow-left"></div>
+                    <div class="fireplant-brow fireplant-brow-right"></div>
+                    <div class="fireplant-eye fireplant-eye-left"></div>
+                    <div class="fireplant-eye fireplant-eye-right"></div>
+                    <div class="fireplant-mouth"></div>
+                </div>
+                <div class="fireplant-stem"></div>
+                <div class="fireplant-base"></div>
+            </div>
+            <div class="plant-cost">150</div>
+        </div>
         <div class="plant-card" id="ghost-card" data-cost="900" data-plant="ghost" style="display: none;">
             <div class="ghost">
                 <div class="ghost-head">
@@ -1924,6 +3107,232 @@
         const cubeSize = 60;
         const gap = 2;
         const enemySize = 40;
+        
+        // Level system
+        let currentLevel = 1;
+        const levelDisplay = document.getElementById('level-amount');
+        
+        function updateLevelDisplay() {
+            levelDisplay.textContent = currentLevel;
+        }
+        
+        function resetMap() {
+            // Clear all plants
+            placedPlants.forEach((plant, key) => {
+                if (plant.element && plant.element.parentNode) {
+                    plant.element.remove();
+                }
+            });
+            placedPlants.clear();
+            
+            // Clear all enemies
+            enemies.forEach(enemy => {
+                if (enemy.element && enemy.element.parentNode) {
+                    enemy.element.remove();
+                }
+            });
+            enemies.length = 0;
+            
+            // Clear all projectiles
+            projectiles.forEach(projectile => {
+                if (projectile.element && projectile.element.parentNode) {
+                    projectile.element.remove();
+                }
+            });
+            projectiles.length = 0;
+            
+            // Clear plants being eaten
+            plantsBeingEaten.clear();
+            
+            // Reset boss
+            bossEnemy = null;
+            bossRespawnCount = 0;
+            bossHPBarContainer.classList.remove('active');
+            
+            // Reset ingen
+            ingenEnemy = null;
+            
+            // Reset slow enemy respawns
+            slowEnemyRespawns.clear();
+            
+            // Stop boss music (both level 1 and level 2)
+            const bossMusic1 = document.getElementById('boss-music');
+            if (bossMusic1) {
+                bossMusic1.pause();
+                bossMusic1.currentTime = 0;
+            }
+            const bossMusic2 = document.getElementById('boss-music-level2');
+            if (bossMusic2) {
+                bossMusic2.pause();
+                bossMusic2.currentTime = 0;
+            }
+            const bossMusic3 = document.getElementById('boss-music-level3');
+            if (bossMusic3) {
+                bossMusic3.pause();
+                bossMusic3.currentTime = 0;
+            }
+            
+            // Clear all intervals
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            if (bossTimerInterval) {
+                clearInterval(bossTimerInterval);
+                bossTimerInterval = null;
+            }
+            if (ingenTimerInterval) {
+                clearInterval(ingenTimerInterval);
+                ingenTimerInterval = null;
+            }
+            if (enemySpawnInterval) {
+                clearInterval(enemySpawnInterval);
+                enemySpawnInterval = null;
+            }
+            if (gameStartCheckInterval) {
+                clearInterval(gameStartCheckInterval);
+                gameStartCheckInterval = null;
+            }
+            if (ingenStartCheckInterval) {
+                clearInterval(ingenStartCheckInterval);
+                ingenStartCheckInterval = null;
+            }
+            if (enemySpawnCheckInterval) {
+                clearInterval(enemySpawnCheckInterval);
+                enemySpawnCheckInterval = null;
+            }
+            
+            // Reset game state
+            gameStarted = false;
+            regularEnemiesSpawned = 0;
+            lastEnemySpawnTime = 0;
+            // Set boss timer based on level
+            if (currentLevel === 2) {
+                bossTimerSeconds = 290; // 4:50 for level 2
+            } else {
+                bossTimerSeconds = 240; // 4:00 for level 1
+            }
+            ingenTimerSeconds = 240; // Reset to full 4 minutes
+            bossTimerLabel.style.display = 'block';
+            bossTimerElement.textContent = formatTime(bossTimerSeconds);
+            
+            // Deselect any selected plant
+            selectedPlant = null;
+            selectedCost = 0;
+            document.querySelectorAll('.plant-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
+        
+        function advanceToLevel2() {
+            currentLevel = 2;
+            updateLevelDisplay();
+            
+            // Reset the map first (this clears everything)
+            resetMap();
+            
+            // Update plant card availability (will show spikychomper and pumpkin)
+            if (updatePlantCardAvailability) {
+                updatePlantCardAvailability();
+            }
+            
+            // Reset boss timer for level 2 (4:50 = 290 seconds)
+            if (bossTimerInterval) {
+                clearInterval(bossTimerInterval);
+                bossTimerInterval = null;
+            }
+            bossTimerSeconds = 290; // 4:50 minutes for level 2
+            bossTimerElement.textContent = formatTime(bossTimerSeconds);
+            bossTimerLabel.style.display = 'block'; // Show boss timer in level 2
+            ingenTimerSeconds = 240; // Reset to 4 minutes for level 2
+            
+            // Set money to 350
+            money = 350;
+            updateMoneyDisplay();
+            
+            // Start countdown timer (15 seconds)
+            startCountdown();
+            
+            // Restart game timers (will activate when countdown finishes)
+            restartGameTimers();
+            
+            // Show level up message
+            alert('Level Up! You have reached Level 2! The map has been reset. You have 15 seconds to prepare and 350 cash to start!');
+        }
+        
+        function advanceToLevel3() {
+            currentLevel = 3;
+            updateLevelDisplay();
+            
+            // Reset the map first (this clears everything)
+            resetMap();
+            
+            // Reset boss timer for level 3 (if needed)
+            if (bossTimerInterval) {
+                clearInterval(bossTimerInterval);
+                bossTimerInterval = null;
+            }
+            // Set boss timer for level 3 (4 minutes)
+            bossTimerSeconds = 240; // 4:00 for level 3
+            bossTimerElement.textContent = formatTime(bossTimerSeconds);
+            bossTimerLabel.style.display = 'block';
+            ingenTimerSeconds = 240; // Reset to 4 minutes for level 3
+            
+            // Set money for level 3
+            money = 600;
+            updateMoneyDisplay();
+            
+            // Start countdown timer (15 seconds)
+            startCountdown();
+            
+            // Restart game timers (will activate when countdown finishes)
+            restartGameTimers();
+            
+            // Update plant card availability (will show flowerplant and fireplant)
+            if (updatePlantCardAvailability) {
+                updatePlantCardAvailability();
+            }
+            
+            // Show level up message
+            alert('Level Up! You have reached Level 3! The map has been reset. You have 15 seconds to prepare and 600 cash to start!');
+        }
+        
+        function advanceToLevel4() {
+            currentLevel = 4;
+            updateLevelDisplay();
+            
+            // Reset the map first (this clears everything)
+            resetMap();
+            
+            // Update plant card availability (ensure all plants are shown)
+            if (updatePlantCardAvailability) {
+                updatePlantCardAvailability();
+            }
+            
+            // Reset boss timer for level 4 (if needed)
+            if (bossTimerInterval) {
+                clearInterval(bossTimerInterval);
+                bossTimerInterval = null;
+            }
+            // Set boss timer for level 4 (4 minutes)
+            bossTimerSeconds = 240; // 4:00 for level 4
+            bossTimerElement.textContent = formatTime(bossTimerSeconds);
+            bossTimerLabel.style.display = 'block';
+            ingenTimerSeconds = 240; // Reset to 4 minutes for level 4
+            
+            // Set money for level 4
+            money = 800;
+            updateMoneyDisplay();
+            
+            // Start countdown timer (15 seconds)
+            startCountdown();
+            
+            // Restart game timers (will activate when countdown finishes)
+            restartGameTimers();
+            
+            // Show level up message
+            alert('Level Up! You have reached Level 4! The map has been reset. You have 15 seconds to prepare and 800 cash to start!');
+        }
         
         // Money system
         let money = 200;
@@ -1952,11 +3361,16 @@
         // Initialize HP display
         updateHPDisplay();
         
+        // Initialize level display
+        updateLevelDisplay();
+        
         // Boss HP bar system
         const bossHPBarContainer = document.getElementById('boss-hp-bar-container');
         const bossHPFill = document.getElementById('boss-hp-fill');
         const bossHPText = document.getElementById('boss-hp-text');
         let bossEnemy = null;
+        let bossRespawnCount = 0; // Track how many times boss has respawned
+        const slowEnemyRespawns = new Map(); // Track respawn status for each slow enemy
         
         function updateBossHPBar() {
             if (!bossEnemy || !bossEnemy.active) {
@@ -1971,25 +3385,42 @@
         
         // Countdown timer
         let countdown = 15;
-        countdownTimer.textContent = countdown;
-        countdownTimer.classList.add('active');
+        let countdownInterval = null;
         
-        const countdownInterval = setInterval(() => {
-            countdown--;
+        function startCountdown() {
+            countdown = 15;
             countdownTimer.textContent = countdown;
+            countdownTimer.classList.add('active');
             
-            if (countdown <= 0) {
+            if (countdownInterval) {
                 clearInterval(countdownInterval);
-                countdownTimer.classList.remove('active');
-                gameStarted = true;
             }
-        }, 1000);
+            
+            countdownInterval = setInterval(() => {
+                countdown--;
+                countdownTimer.textContent = countdown;
+                
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownTimer.classList.remove('active');
+                    gameStarted = true;
+                }
+            }, 1000);
+        }
+        
+        // Start initial countdown
+        startCountdown();
         
         // Boss timer system (4 minutes = 240 seconds)
         const bossTimerElement = document.getElementById('boss-timer-value');
         const bossTimerLabel = document.getElementById('boss-timer');
         let bossTimerSeconds = 240; // 4 minutes
         let bossTimerInterval = null;
+        
+        // Ingen timer system (4 minutes = 240 seconds)
+        let ingenTimerSeconds = 240; // 4 minutes
+        let ingenTimerInterval = null;
+        let ingenEnemy = null;
         
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
@@ -1998,35 +3429,140 @@
         }
         
         function updateBossTimer() {
+            // Boss spawns in level 1, 2, and 3
             if (bossTimerSeconds > 0) {
                 bossTimerElement.textContent = formatTime(bossTimerSeconds);
                 bossTimerSeconds--;
             } else {
                 // Timer reached 0 - spawn boss
                 clearInterval(bossTimerInterval);
+                bossTimerInterval = null;
                 bossTimerLabel.style.display = 'none';
                 
-                // Spawn boss on random row, rightmost column
-                const bossRow = Math.floor(Math.random() * mapHeight);
-                bossEnemy = createEnemy(mapWidth - 1, bossRow, 'boss');
-                bossHPBarContainer.classList.add('active');
-                updateBossHPBar();
+                if (currentLevel === 3) {
+                    // Level 3 boss spawns on the right side of the map
+                    const bossRow = Math.floor(Math.random() * mapHeight);
+                    bossEnemy = createEnemy(mapWidth, Math.floor(mapHeight / 2), 'boss'); // mapWidth means outside right
+                    bossHPBarContainer.classList.add('active');
+                    updateBossHPBar();
+                    bossRespawnCount = 0; // Reset respawn count for new boss
+                } else {
+                    // Level 1, 2, and 4 bosses spawn on random row, rightmost column
+                    const bossRow = Math.floor(Math.random() * mapHeight);
+                    bossEnemy = createEnemy(mapWidth - 1, bossRow, 'boss');
+                    bossHPBarContainer.classList.add('active');
+                    updateBossHPBar();
+                    bossRespawnCount = 0; // Reset respawn count for new boss
+                }
                 
-                // Play boss music
-                const bossMusic = document.getElementById('boss-music');
-                if (bossMusic) {
-                    bossMusic.play().catch(err => {
-                        console.log('Could not play boss music:', err);
-                    });
+                // Play boss music based on level
+                if (currentLevel === 4) {
+                    // Level 4 boss music (uses level 3 music for now, or can add level 4 music)
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.play().catch(err => {
+                            console.log('Could not play level 4 boss music:', err);
+                        });
+                    }
+                    // Stop other boss music if playing
+                    const bossMusic1 = document.getElementById('boss-music');
+                    if (bossMusic1) {
+                        bossMusic1.pause();
+                        bossMusic1.currentTime = 0;
+                    }
+                    const bossMusic2 = document.getElementById('boss-music-level2');
+                    if (bossMusic2) {
+                        bossMusic2.pause();
+                        bossMusic2.currentTime = 0;
+                    }
+                } else if (currentLevel === 3) {
+                    // Level 3 boss music
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.play().catch(err => {
+                            console.log('Could not play level 3 boss music:', err);
+                        });
+                    }
+                    // Stop other boss music if playing
+                    const bossMusic1 = document.getElementById('boss-music');
+                    if (bossMusic1) {
+                        bossMusic1.pause();
+                        bossMusic1.currentTime = 0;
+                    }
+                    const bossMusic2 = document.getElementById('boss-music-level2');
+                    if (bossMusic2) {
+                        bossMusic2.pause();
+                        bossMusic2.currentTime = 0;
+                    }
+                } else if (currentLevel === 2) {
+                    // Level 2 boss music
+                    const bossMusic2 = document.getElementById('boss-music-level2');
+                    if (bossMusic2) {
+                        bossMusic2.play().catch(err => {
+                            console.log('Could not play level 2 boss music:', err);
+                        });
+                    }
+                    // Stop other boss music if playing
+                    const bossMusic1 = document.getElementById('boss-music');
+                    if (bossMusic1) {
+                        bossMusic1.pause();
+                        bossMusic1.currentTime = 0;
+                    }
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.pause();
+                        bossMusic3.currentTime = 0;
+                    }
+                } else {
+                    // Level 1 boss music
+                    const bossMusic1 = document.getElementById('boss-music');
+                    if (bossMusic1) {
+                        bossMusic1.play().catch(err => {
+                            console.log('Could not play boss music:', err);
+                        });
+                    }
+                    // Stop other boss music if playing
+                    const bossMusic2 = document.getElementById('boss-music-level2');
+                    if (bossMusic2) {
+                        bossMusic2.pause();
+                        bossMusic2.currentTime = 0;
+                    }
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.pause();
+                        bossMusic3.currentTime = 0;
+                    }
                 }
             }
         }
         
-        // Start boss timer when game starts
-        const gameStartCheckInterval = setInterval(() => {
-            if (gameStarted && bossTimerInterval === null) {
+        function updateIngenTimer() {
+            if (ingenTimerSeconds > 0) {
+                ingenTimerSeconds--;
+            } else {
+                // Timer reached 0 - spawn ingen
+                clearInterval(ingenTimerInterval);
+                
+                // Spawn ingen on random row, rightmost column
+                const ingenRow = Math.floor(Math.random() * mapHeight);
+                ingenEnemy = createEnemy(mapWidth - 1, ingenRow, 'ingen');
+            }
+        }
+        
+        // Start boss timer when game starts (for level 1 and level 2)
+        let gameStartCheckInterval = setInterval(() => {
+            if (gameStarted && bossTimerInterval === null && (currentLevel === 1 || currentLevel === 2)) {
+                // Start boss timer in level 1 or level 2
                 bossTimerInterval = setInterval(updateBossTimer, 1000);
                 clearInterval(gameStartCheckInterval);
+            }
+        }, 100);
+        
+        // Start ingen timer when game starts
+        let ingenStartCheckInterval = setInterval(() => {
+            if (gameStarted && ingenTimerInterval === null) {
+                ingenTimerInterval = setInterval(updateIngenTimer, 1000);
+                clearInterval(ingenStartCheckInterval);
             }
         }, 100);
         
@@ -2064,7 +3600,7 @@
         }
         
         // Start enemy spawning when game starts
-        const enemySpawnCheckInterval = setInterval(() => {
+        let enemySpawnCheckInterval = setInterval(() => {
             if (gameStarted && enemySpawnInterval === null) {
                 // Spawn first enemy immediately
                 spawnEnemy();
@@ -2073,6 +3609,45 @@
                 clearInterval(enemySpawnCheckInterval);
             }
         }, 100);
+        
+        function restartGameTimers() {
+            // Restart boss timer check
+            if (gameStartCheckInterval) {
+                clearInterval(gameStartCheckInterval);
+            }
+            gameStartCheckInterval = setInterval(() => {
+                if (gameStarted && bossTimerInterval === null && (currentLevel === 1 || currentLevel === 2 || currentLevel === 3 || currentLevel === 4)) {
+                    // Start boss timer in level 1, 2, 3, or 4
+                    bossTimerInterval = setInterval(updateBossTimer, 1000);
+                    clearInterval(gameStartCheckInterval);
+                }
+            }, 100);
+            
+            // Restart ingen timer check
+            if (ingenStartCheckInterval) {
+                clearInterval(ingenStartCheckInterval);
+            }
+            ingenStartCheckInterval = setInterval(() => {
+                if (gameStarted && ingenTimerInterval === null) {
+                    ingenTimerInterval = setInterval(updateIngenTimer, 1000);
+                    clearInterval(ingenStartCheckInterval);
+                }
+            }, 100);
+            
+            // Restart enemy spawn check
+            if (enemySpawnCheckInterval) {
+                clearInterval(enemySpawnCheckInterval);
+            }
+            enemySpawnCheckInterval = setInterval(() => {
+                if (gameStarted && enemySpawnInterval === null) {
+                    // Spawn first enemy immediately
+                    spawnEnemy();
+                    // Then spawn enemies every 5.5 seconds
+                    enemySpawnInterval = setInterval(spawnEnemy, enemySpawnCooldown);
+                    clearInterval(enemySpawnCheckInterval);
+                }
+            }, 100);
+        }
         
         function updateMoneyDisplay() {
             moneyDisplay.textContent = money;
@@ -2304,11 +3879,68 @@
             return enemy;
         }
         
-        // Function to create boss (Thoth-like)
+        // Function to create ingen enemy (100 HP, purple creature with tentacles)
+        function createIngen() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const ingen = document.createElement('div');
+            ingen.className = 'enemy-ingen';
+            
+            const body = document.createElement('div');
+            body.className = 'ingen-body';
+            
+            // Add tentacles
+            for (let i = 1; i <= 5; i++) {
+                const tentacle = document.createElement('div');
+                tentacle.className = `ingen-tentacle ingen-tentacle-${i}`;
+                body.appendChild(tentacle);
+            }
+            
+            // Add eyes
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'ingen-eye ingen-eye-left';
+            const pupilLeft = document.createElement('div');
+            pupilLeft.className = 'ingen-pupil';
+            eyeLeft.appendChild(pupilLeft);
+            body.appendChild(eyeLeft);
+            
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'ingen-eye ingen-eye-right';
+            const pupilRight = document.createElement('div');
+            pupilRight.className = 'ingen-pupil';
+            eyeRight.appendChild(pupilRight);
+            body.appendChild(eyeRight);
+            
+            // Add legs
+            for (let i = 1; i <= 4; i++) {
+                const leg = document.createElement('div');
+                leg.className = `ingen-leg ingen-leg-${i}`;
+                body.appendChild(leg);
+            }
+            
+            ingen.appendChild(body);
+            enemy.appendChild(ingen);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create boss (Thoth-like for level 1, Bear animatronic for level 2, Image-based for level 3 and 4)
         function createBoss() {
             const enemy = document.createElement('div');
             enemy.className = 'enemy';
             
+            // Check level to determine which boss to create
+            if (currentLevel === 4) {
+                return createBossLevel4();
+            } else if (currentLevel === 3) {
+                return createBossLevel3();
+            } else if (currentLevel === 2) {
+                return createBossLevel2();
+            }
+            
+            // Level 1 boss (Thoth-like)
             const boss = document.createElement('div');
             boss.className = 'boss';
             
@@ -2346,6 +3978,161 @@
             return enemy;
         }
         
+        // Function to create level 2 boss (Damaged Bear Animatronic)
+        function createBossLevel2() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const boss = document.createElement('div');
+            boss.className = 'boss-level2';
+            
+            const body = document.createElement('div');
+            body.className = 'boss2-body';
+            
+            // Head
+            const head = document.createElement('div');
+            head.className = 'boss2-head';
+            
+            // Ears
+            const earLeft = document.createElement('div');
+            earLeft.className = 'boss2-ear boss2-ear-left';
+            const earRight = document.createElement('div');
+            earRight.className = 'boss2-ear boss2-ear-right';
+            head.appendChild(earLeft);
+            head.appendChild(earRight);
+            
+            // Purple top hat
+            const hat = document.createElement('div');
+            hat.className = 'boss2-hat';
+            head.appendChild(hat);
+            
+            // Red glowing eyes
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'boss2-eye boss2-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'boss2-eye boss2-eye-right';
+            head.appendChild(eyeLeft);
+            head.appendChild(eyeRight);
+            
+            // Wide mouth with sharp teeth
+            const mouth = document.createElement('div');
+            mouth.className = 'boss2-mouth';
+            for (let i = 0; i < 8; i++) {
+                const tooth = document.createElement('div');
+                tooth.className = `boss2-tooth boss2-tooth-${i + 1}`;
+                mouth.appendChild(tooth);
+            }
+            head.appendChild(mouth);
+            
+            // Nose
+            const nose = document.createElement('div');
+            nose.className = 'boss2-nose';
+            head.appendChild(nose);
+            
+            // Purple bowtie
+            const bowtie = document.createElement('div');
+            bowtie.className = 'boss2-bowtie';
+            body.appendChild(bowtie);
+            
+            // Buttons
+            const button1 = document.createElement('div');
+            button1.className = 'boss2-button boss2-button-1';
+            const button2 = document.createElement('div');
+            button2.className = 'boss2-button boss2-button-2';
+            body.appendChild(button1);
+            body.appendChild(button2);
+            
+            // Jagged seam with spikes
+            const seam = document.createElement('div');
+            seam.className = 'boss2-seam';
+            for (let i = 0; i < 5; i++) {
+                const spike = document.createElement('div');
+                spike.className = `boss2-spike boss2-spike-${i + 1}`;
+                seam.appendChild(spike);
+            }
+            body.appendChild(seam);
+            
+            // Arms with sharp claws
+            const armLeft = document.createElement('div');
+            armLeft.className = 'boss2-arm boss2-arm-left';
+            for (let i = 0; i < 5; i++) {
+                const claw = document.createElement('div');
+                claw.className = `boss2-claw boss2-claw-${i + 1}`;
+                armLeft.appendChild(claw);
+            }
+            const armRight = document.createElement('div');
+            armRight.className = 'boss2-arm boss2-arm-right';
+            for (let i = 0; i < 5; i++) {
+                const claw = document.createElement('div');
+                claw.className = `boss2-claw boss2-claw-${i + 1}`;
+                armRight.appendChild(claw);
+            }
+            body.appendChild(armLeft);
+            body.appendChild(armRight);
+            
+            // Legs
+            const legLeft = document.createElement('div');
+            legLeft.className = 'boss2-leg boss2-leg-left';
+            const legRight = document.createElement('div');
+            legRight.className = 'boss2-leg boss2-leg-right';
+            body.appendChild(legLeft);
+            body.appendChild(legRight);
+            
+            // Damage/tears on body
+            for (let i = 0; i < 6; i++) {
+                const tear = document.createElement('div');
+                tear.className = `boss2-tear boss2-tear-${i + 1}`;
+                body.appendChild(tear);
+            }
+            
+            body.appendChild(head);
+            boss.appendChild(body);
+            enemy.appendChild(boss);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
+        // Function to create level 3 boss (Image-based, stationary, outside map)
+        function createBossLevel3() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy enemy-boss-level3';
+            
+            // Create image element for boss
+            const bossImage = document.createElement('img');
+            bossImage.src = 'Matpat-PNG-Image.png'; // Using the provided boss image
+            bossImage.className = 'boss-level3-image';
+            bossImage.style.width = '60px';
+            bossImage.style.height = '60px';
+            bossImage.style.objectFit = 'contain';
+            bossImage.style.transform = 'scaleX(-1)'; // Flip to face left (toward the map) since boss is on the right
+            
+            enemy.appendChild(bossImage);
+            mapContainer.appendChild(enemy);
+            
+            return enemy;
+        }
+        
+        // Function to create level 4 boss (Image-based, moves like level 1 boss)
+        function createBossLevel4() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy enemy-boss-level4';
+            
+            // Create image element for boss
+            const bossImage = document.createElement('img');
+            bossImage.src = 'Noli_Remodel_Render.webp'; // Using the provided boss image
+            bossImage.className = 'boss-level4-image';
+            bossImage.style.width = '120px';
+            bossImage.style.height = '120px';
+            bossImage.style.objectFit = 'contain';
+            // Don't flip - boss spawns on right side and moves left, so image faces right initially
+            
+            enemy.appendChild(bossImage);
+            mapContainer.appendChild(enemy);
+            
+            return enemy;
+        }
+        
         // Function to convert grid position to pixel position
         function gridToPixel(x, y, enemySizeOverride = null) {
             const padding = 20;
@@ -2355,11 +4142,63 @@
             return { x: pixelX, y: pixelY };
         }
         
+        // Function to create slow enemy (very slow, 2 lives)
+        function createSlowEnemy() {
+            const enemy = document.createElement('div');
+            enemy.className = 'enemy';
+            
+            const slow = document.createElement('div');
+            slow.className = 'enemy-slow';
+            
+            // Slow enemy body (larger, heavier looking)
+            const body = document.createElement('div');
+            body.className = 'slow-body';
+            
+            // Slow enemy head
+            const head = document.createElement('div');
+            head.className = 'slow-head';
+            
+            // Slow enemy eyes (smaller, sleepy looking)
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'slow-eye slow-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'slow-eye slow-eye-right';
+            head.appendChild(eyeLeft);
+            head.appendChild(eyeRight);
+            
+            // Slow enemy arms (hanging down)
+            const armLeft = document.createElement('div');
+            armLeft.className = 'slow-arm slow-arm-left';
+            const armRight = document.createElement('div');
+            armRight.className = 'slow-arm slow-arm-right';
+            
+            // Slow enemy legs (thick, heavy)
+            const legLeft = document.createElement('div');
+            legLeft.className = 'slow-leg slow-leg-left';
+            const legRight = document.createElement('div');
+            legRight.className = 'slow-leg slow-leg-right';
+            
+            body.appendChild(head);
+            body.appendChild(armLeft);
+            body.appendChild(armRight);
+            body.appendChild(legLeft);
+            body.appendChild(legRight);
+            slow.appendChild(body);
+            enemy.appendChild(slow);
+            
+            mapContainer.appendChild(enemy);
+            return enemy;
+        }
+        
         // Function to get enemy size based on type
         function getEnemySize(type) {
             switch(type) {
-                case 'boss': return 80;
+                case 'boss': 
+                    // Level 3 boss is smaller (60px), others are 80px
+                    if (currentLevel === 3) return 60;
+                    return 80;
                 case 'tough': return 50;
+                case 'slow': return 45;
                 case 'small': return 30;
                 case 'summoner':
                 case 'different':
@@ -2376,21 +4215,46 @@
         function getRandomEnemyType() {
             const rand = Math.random() * 100; // 0-100
             
-            // Type 1 (regular): 35%
-            if (rand < 35) {
-                return 'regular';
-            }
-            // Type 2 (tough): 25% (35 to 60)
-            else if (rand < 60) {
-                return 'tough';
-            }
-            // Type 3 (summoner): 30% (60 to 90)
-            else if (rand < 90) {
-                return 'summoner';
-            }
-            // Type 4 (different): 10% (90 to 100)
-            else {
-                return 'different';
+            // In level 2, include slow enemy
+            if (currentLevel >= 2) {
+                // Type 1 (regular): 30%
+                if (rand < 30) {
+                    return 'regular';
+                }
+                // Type 2 (tough): 20% (30 to 50)
+                else if (rand < 50) {
+                    return 'tough';
+                }
+                // Type 3 (summoner): 25% (50 to 75)
+                else if (rand < 75) {
+                    return 'summoner';
+                }
+                // Type 4 (different): 10% (75 to 85)
+                else if (rand < 85) {
+                    return 'different';
+                }
+                // Type 5 (slow): 15% (85 to 100)
+                else {
+                    return 'slow';
+                }
+            } else {
+                // Level 1 - no slow enemy
+                // Type 1 (regular): 35%
+                if (rand < 35) {
+                    return 'regular';
+                }
+                // Type 2 (tough): 25% (35 to 60)
+                else if (rand < 60) {
+                    return 'tough';
+                }
+                // Type 3 (summoner): 30% (60 to 90)
+                else if (rand < 90) {
+                    return 'summoner';
+                }
+                // Type 4 (different): 10% (90 to 100)
+                else {
+                    return 'different';
+                }
             }
         }
         
@@ -2406,7 +4270,20 @@
             switch(type) {
                 case 'boss':
                     enemy = createBoss();
-                    maxHits = 30;
+                    // Level 4 boss has 167 HP, level 3 has 200 HP, level 2 has 120 HP, level 1 has 30 HP
+                    if (currentLevel === 4) {
+                        maxHits = 167;
+                    } else if (currentLevel === 3) {
+                        maxHits = 200;
+                    } else if (currentLevel === 2) {
+                        maxHits = 120;
+                    } else {
+                        maxHits = 30;
+                    }
+                    break;
+                case 'ingen':
+                    enemy = createIngen();
+                    maxHits = 100;
                     break;
                 case 'tough':
                     enemy = createToughEnemy();
@@ -2424,10 +4301,28 @@
                     enemy = createSmallEnemy();
                     maxHits = 2;
                     break;
+                case 'slow':
+                    enemy = createSlowEnemy();
+                    // Check if this is a respawned slow enemy
+                    const slowKey = `${x},${y}`;
+                    if (slowEnemyRespawns.has(slowKey) && slowEnemyRespawns.get(slowKey)) {
+                        maxHits = 2; // Respawned slow enemy has 2 hits
+                    } else {
+                        maxHits = 4; // Initial slow enemy has 4 hits
+                    }
+                    break;
                 default: // 'regular'
                     enemy = createMummy();
                     maxHits = 5;
                     break;
+            }
+            
+            // Initialize slow enemy respawn tracking if needed
+            if (type === 'slow') {
+                const slowKey = `${x},${y}`;
+                if (!slowEnemyRespawns.has(slowKey)) {
+                    slowEnemyRespawns.set(slowKey, false);
+                }
             }
             
             const enemyObj = {
@@ -2444,9 +4339,12 @@
                 onFire: false,
                 fireEndTime: 0,
                 fireDamageTicks: 0,
+                isStrongFire: false, // Track if enemy is on stronger fire from spikychomper (dragon)
                 slowed: false,
                 slowEndTime: 0,
                 baseMoveSpeed: 1, // Normal move speed
+                lastMoveTime: type === 'slow' ? Date.now() : 0, // Track last move time for slow enemies
+                moveCooldown: type === 'slow' ? 2000 : 0, // Slow enemies move every 2 seconds
                 lastSummonTime: type === 'summoner' ? Date.now() : 0,
                 summonCooldown: type === 'summoner' ? (6000 + Math.random() * 1000) : 0, // Random 6-7 seconds
                 isSummoning: false,
@@ -2458,17 +4356,65 @@
                 jumpStopDuration: type === 'boss' ? 4000 : 0, // Stop for 4 seconds after jump
                 isJumping: false,
                 jumpStartTime: 0,
-                lastBossSummonTime: type === 'boss' ? Date.now() : 0,
-                bossSummonCooldown: type === 'boss' ? 5000 : 0 // Summon every 5 seconds
+                lastBossSummonTime: (type === 'boss' && currentLevel !== 3) ? Date.now() : 0,
+                bossSummonCooldown: (type === 'boss' && currentLevel !== 3) ? 5000 : 0, // Summon every 5 seconds (level 3 boss doesn't summon)
+                lastBossProjectileTime: type === 'boss' ? Date.now() : 0,
+                bossProjectileCooldown: type === 'boss' ? (currentLevel === 3 ? 4000 : 3000) : 0 // Level 3 throws every 4 seconds, others every 3 seconds
             };
             enemies.push(enemyObj);
+            
+            // Position enemy on map
+            if (x === mapWidth && type === 'boss' && currentLevel === 3) {
+                // Level 3 boss positioned outside map (to the right)
+                const centerY = Math.floor(mapHeight / 2);
+                const pos = gridToPixel(mapWidth - 1, centerY, 60); // Use rightmost column for calculation, boss is 60px
+                enemy.style.position = 'absolute';
+                enemy.style.left = (pos.x + cubeSize + gap) + 'px'; // Position to the right of the map
+                enemy.style.top = pos.y + 'px';
+                enemy.style.zIndex = '100';
+            } else {
+                const enemySize = getEnemySize(type);
+                const pos = gridToPixel(x, y, enemySize);
+                enemy.style.position = 'absolute';
+                enemy.style.left = pos.x + 'px';
+                enemy.style.top = pos.y + 'px';
+            }
+            
             return enemyObj;
         }
         
         function removeEnemy(enemyObj, giveReward = false) {
             enemyObj.active = false;
             
-            // If this is the boss, respawn it with 100 HP
+            // If this is a slow enemy, check if it should respawn
+            if (enemyObj.type === 'slow') {
+                const slowKey = `${enemyObj.x},${enemyObj.y}`;
+                const hasRespawned = slowEnemyRespawns.get(slowKey) || false;
+                
+                // If it hasn't respawned yet, respawn it with 2 hits
+                if (!hasRespawned) {
+                    // Remove the old slow enemy
+                    if (enemyObj.element && enemyObj.element.parentNode) {
+                        enemyObj.element.remove();
+                    }
+                    const index = enemies.indexOf(enemyObj);
+                    if (index > -1) {
+                        enemies.splice(index, 1);
+                    }
+                    
+                    // Mark this position as respawned
+                    slowEnemyRespawns.set(slowKey, true);
+                    
+                    // Respawn slow enemy with 2 HP on same position
+                    const newSlow = createEnemy(enemyObj.x, enemyObj.y, 'slow');
+                    newSlow.maxHits = 2;
+                    newSlow.health = 2;
+                    newSlow.hits = 0;
+                    return; // Exit early since we've already handled removal
+                }
+            }
+            
+            // If this is the boss, respawn it with 100 HP (up to 2 respawns)
             if (enemyObj.type === 'boss') {
                 // Remove the old boss
                 if (enemyObj.element && enemyObj.element.parentNode) {
@@ -2479,17 +4425,64 @@
                     enemies.splice(index, 1);
                 }
                 
-                // Respawn boss with 100 HP on random row, rightmost column
-                const bossRow = Math.floor(Math.random() * mapHeight);
-                const newBoss = createEnemy(mapWidth - 1, bossRow, 'boss');
-                // Override maxHits to 100 for respawned boss
-                newBoss.maxHits = 100;
-                newBoss.health = 100;
-                newBoss.hits = 0;
-                bossEnemy = newBoss;
-                bossHPBarContainer.classList.add('active');
-                updateBossHPBar();
-                return; // Exit early since we've already handled removal
+                // Check if we should respawn (boss respawns 1 time total)
+                if (bossRespawnCount < 1) {
+                    // Respawn boss
+                    if (currentLevel === 3) {
+                        // Level 3 boss respawns on the right side of the map
+                        const newBoss = createEnemy(mapWidth, Math.floor(mapHeight / 2), 'boss');
+                        newBoss.maxHits = 200;
+                        newBoss.health = 200;
+                        newBoss.hits = 0;
+                        bossEnemy = newBoss;
+                    } else {
+                        // Level 1, 2, and 4 bosses respawn on random row, rightmost column
+                        const bossRow = Math.floor(Math.random() * mapHeight);
+                        const newBoss = createEnemy(mapWidth - 1, bossRow, 'boss');
+                        // Override maxHits based on level for respawned boss
+                        if (currentLevel === 4) {
+                            newBoss.maxHits = 167;
+                            newBoss.health = 167;
+                        } else {
+                            newBoss.maxHits = 100;
+                            newBoss.health = 100;
+                        }
+                        newBoss.hits = 0;
+                        bossEnemy = newBoss;
+                    }
+                    bossHPBarContainer.classList.add('active');
+                    updateBossHPBar();
+                    bossRespawnCount++; // Increment respawn count
+                    return; // Exit early since we've already handled removal
+                } else {
+                    // Boss has been killed and won't respawn - advance to level 2
+                    // Hide boss HP bar
+                    bossHPBarContainer.classList.remove('active');
+                    // Stop boss music (both level 1 and level 2)
+                    const bossMusic1 = document.getElementById('boss-music');
+                    if (bossMusic1) {
+                        bossMusic1.pause();
+                        bossMusic1.currentTime = 0;
+                    }
+                    const bossMusic2 = document.getElementById('boss-music-level2');
+                    if (bossMusic2) {
+                        bossMusic2.pause();
+                        bossMusic2.currentTime = 0;
+                    }
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.pause();
+                        bossMusic3.currentTime = 0;
+                    }
+                    // Advance to next level
+                    if (currentLevel === 1) {
+                        advanceToLevel2();
+                    } else if (currentLevel === 2) {
+                        advanceToLevel3();
+                    } else if (currentLevel === 3) {
+                        advanceToLevel4();
+                    }
+                }
             }
             
             if (enemyObj.element && enemyObj.element.parentNode) {
@@ -2606,14 +4599,17 @@
                 
                 // Apply damage for ticks that haven't been processed yet
                 while (enemy.fireDamageTicks < expectedTicks && enemy.fireDamageTicks < 6) {
-                    enemy.hits++;
-                    enemy.fireDamageTicks++;
-                    
-                    // Check if enemy should die
-                    if (enemy.hits >= enemy.maxHits) {
-                        removeEnemy(enemy, true);
-                        return;
+                    // Stronger fire from spikychomper (dragon) does 2 damage per tick instead of 1
+                    const damagePerTick = enemy.isStrongFire ? 2 : 1;
+                    for (let i = 0; i < damagePerTick; i++) {
+                        enemy.hits++;
+                        // Check if enemy should die
+                        if (enemy.hits >= enemy.maxHits) {
+                            removeEnemy(enemy, true);
+                            return;
+                        }
                     }
+                    enemy.fireDamageTicks++;
                     
                     // Update boss HP bar if boss is taking fire damage
                     if (enemy.type === 'boss') {
@@ -2719,8 +4715,8 @@
                     }
                 }
                 
-                // Boss summoning logic
-                if (enemy.type === 'boss') {
+                // Boss summoning logic (level 3 boss doesn't summon)
+                if (enemy.type === 'boss' && currentLevel !== 3) {
                     if (currentTime - enemy.lastBossSummonTime >= enemy.bossSummonCooldown) {
                         // Boss summons a random enemy type using the same probabilities
                         const summonX = enemy.x + 1;
@@ -2738,8 +4734,88 @@
             });
         }
         
+        function throwBossProjectile(boss) {
+            // Find nearest plant to target
+            let nearestPlant = null;
+            let nearestDistance = Infinity;
+            
+            placedPlants.forEach((plant, key) => {
+                const [plantX, plantY] = key.split(',').map(Number);
+                // For level 3 boss (x = mapWidth), calculate distance from right side
+                const bossX = boss.x === mapWidth ? mapWidth - 1 : boss.x;
+                const distance = Math.sqrt(
+                    Math.pow(bossX - plantX, 2) + 
+                    Math.pow(boss.y - plantY, 2)
+                );
+                if (distance < nearestDistance) {
+                    nearestDistance = distance;
+                    nearestPlant = { plant, key, x: plantX, y: plantY };
+                }
+            });
+            
+            if (nearestPlant) {
+                // Get boss position
+                const bossSize = getEnemySize(boss.type);
+                let bossPos;
+                if (boss.x === mapWidth) {
+                    // Level 3 boss positioned outside map on the right
+                    const centerY = Math.floor(mapHeight / 2);
+                    const tempPos = gridToPixel(mapWidth - 1, centerY, bossSize);
+                    bossPos = { x: tempPos.x + cubeSize + gap, y: tempPos.y };
+                } else {
+                    bossPos = gridToPixel(boss.x, boss.y, bossSize);
+                }
+                const bossCenterX = bossPos.x + bossSize / 2;
+                const bossCenterY = bossPos.y + bossSize / 2;
+                
+                // Get target plant position
+                const plantPos = gridToPixel(nearestPlant.x, nearestPlant.y);
+                const targetX = plantPos.x + cubeSize / 2;
+                const targetY = plantPos.y + cubeSize / 2;
+                
+                // Create boss projectile - level 3 uses images, others use panels
+                if (currentLevel === 3) {
+                    // Level 3 boss throws random images
+                    const bossImages = [
+                        'BobAnim.webp',
+                        'png-transparent-poppy-playtime-huggy-wuggy-experiment-1170-games-poppy-playtime-thumbnail.png',
+                        '268-2687721_description-bendy-and-the-ink-machine-bendy.png',
+                        'Petscop.png',
+                        '558f24dd10c05d7.png'
+                    ];
+                    const randomImage = bossImages[Math.floor(Math.random() * bossImages.length)];
+                    createProjectile(bossCenterX, bossCenterY, targetX, targetY, false, false, false, false, false, false, false, null, null, false, true, randomImage);
+                } else {
+                    // Other levels use boss panels
+                    createProjectile(bossCenterX, bossCenterY, targetX, targetY, false, false, false, false, true);
+                }
+            }
+        }
+        
         function moveBoss(boss) {
             const currentTime = Date.now();
+            
+            // Level 3 boss doesn't move - stays stationary outside map (on the right)
+            if (currentLevel === 3 && boss.x === mapWidth) {
+                // Boss throws projectiles at plants
+                if (currentTime - boss.lastBossProjectileTime >= boss.bossProjectileCooldown) {
+                    throwBossProjectile(boss);
+                    boss.lastBossProjectileTime = currentTime;
+                }
+                // Just update position (already positioned outside map on the right)
+                const centerY = Math.floor(mapHeight / 2);
+                const pos = gridToPixel(mapWidth - 1, centerY, 60);
+                boss.element.style.left = (pos.x + cubeSize + gap) + 'px';
+                boss.element.style.top = pos.y + 'px';
+                updateBossHPBar();
+                return true;
+            }
+            
+            // Boss throws projectiles at plants
+            if (currentTime - boss.lastBossProjectileTime >= boss.bossProjectileCooldown) {
+                throwBossProjectile(boss);
+                boss.lastBossProjectileTime = currentTime;
+            }
             
             // Check if boss is currently stopped after a jump
             if (boss.isJumping) {
@@ -2902,8 +4978,22 @@
                     return;
                 }
                 
+                // Handle slow enemy type - moves every 2 seconds
+                if (enemy.type === 'slow') {
+                    const currentTime = Date.now();
+                    if (currentTime - enemy.lastMoveTime >= enemy.moveCooldown) {
+                        moveEnemy(enemy);
+                        enemy.lastMoveTime = currentTime;
+                    } else {
+                        // Just update position without moving
+                        const enemySize = getEnemySize(enemy.type);
+                        const pos = gridToPixel(enemy.x, enemy.y, enemySize);
+                        enemy.element.style.left = pos.x + 'px';
+                        enemy.element.style.top = pos.y + 'px';
+                    }
+                }
                 // Handle slow effect - slowed enemies move every other tick (half speed)
-                if (enemy.slowed) {
+                else if (enemy.slowed) {
                     const tickCount = enemyMoveTicks.get(enemy) || 0;
                     enemyMoveTicks.set(enemy, tickCount + 1);
                     // Only move every other tick when slowed
@@ -3362,6 +5452,169 @@
             return chomper;
         }
         
+        function createPumpkin() {
+            const pumpkin = document.createElement('div');
+            pumpkin.className = 'plant-placed';
+            
+            const pumpkinInner = document.createElement('div');
+            pumpkinInner.className = 'pumpkin';
+            
+            const body = document.createElement('div');
+            body.className = 'pumpkin-body';
+            
+            // Add eyes
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'pumpkin-eye pumpkin-eye-left';
+            const pupilLeft = document.createElement('div');
+            pupilLeft.className = 'pumpkin-pupil';
+            eyeLeft.appendChild(pupilLeft);
+            body.appendChild(eyeLeft);
+            
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'pumpkin-eye pumpkin-eye-right';
+            const pupilRight = document.createElement('div');
+            pupilRight.className = 'pumpkin-pupil';
+            eyeRight.appendChild(pupilRight);
+            body.appendChild(eyeRight);
+            
+            // Add mouth
+            const mouth = document.createElement('div');
+            mouth.className = 'pumpkin-mouth';
+            
+            const toothUpper = document.createElement('div');
+            toothUpper.className = 'pumpkin-tooth pumpkin-tooth-upper';
+            mouth.appendChild(toothUpper);
+            
+            const toothLower1 = document.createElement('div');
+            toothLower1.className = 'pumpkin-tooth pumpkin-tooth-lower-1';
+            mouth.appendChild(toothLower1);
+            
+            const toothLower2 = document.createElement('div');
+            toothLower2.className = 'pumpkin-tooth pumpkin-tooth-lower-2';
+            mouth.appendChild(toothLower2);
+            
+            body.appendChild(mouth);
+            
+            // Add stem
+            const stem = document.createElement('div');
+            stem.className = 'pumpkin-stem';
+            
+            // Add flame
+            const flame = document.createElement('div');
+            flame.className = 'pumpkin-flame';
+            
+            pumpkinInner.appendChild(body);
+            pumpkinInner.appendChild(stem);
+            pumpkinInner.appendChild(flame);
+            pumpkin.appendChild(pumpkinInner);
+            
+            return pumpkin;
+        }
+        
+        function createFlowerplant() {
+            const flowerplant = document.createElement('div');
+            flowerplant.className = 'plant-placed';
+            
+            const flowerplantInner = document.createElement('div');
+            flowerplantInner.className = 'flowerplant';
+            
+            const flower = document.createElement('div');
+            flower.className = 'flowerplant-flower';
+            
+            const disc = document.createElement('div');
+            disc.className = 'flowerplant-disc';
+            flower.appendChild(disc);
+            
+            for (let i = 1; i <= 8; i++) {
+                const petal = document.createElement('div');
+                petal.className = `flowerplant-petal flowerplant-petal-${i}`;
+                flower.appendChild(petal);
+            }
+            
+            const body = document.createElement('div');
+            body.className = 'flowerplant-body';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'flowerplant-eye flowerplant-eye-left';
+            body.appendChild(eyeLeft);
+            
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'flowerplant-eye flowerplant-eye-right';
+            body.appendChild(eyeRight);
+            
+            const mouth = document.createElement('div');
+            mouth.className = 'flowerplant-mouth';
+            body.appendChild(mouth);
+            
+            const leaves = document.createElement('div');
+            leaves.className = 'flowerplant-leaves';
+            for (let i = 1; i <= 3; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = `flowerplant-leaf flowerplant-leaf-${i}`;
+                leaves.appendChild(leaf);
+            }
+            
+            flowerplantInner.appendChild(flower);
+            flowerplantInner.appendChild(body);
+            flowerplantInner.appendChild(leaves);
+            flowerplant.appendChild(flowerplantInner);
+            
+            return flowerplant;
+        }
+        
+        function createFireplant() {
+            const fireplant = document.createElement('div');
+            fireplant.className = 'plant-placed';
+            
+            const fireplantInner = document.createElement('div');
+            fireplantInner.className = 'fireplant';
+            
+            const top = document.createElement('div');
+            top.className = 'fireplant-top';
+            for (let i = 1; i <= 3; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = `fireplant-leaf fireplant-leaf-${i}`;
+                top.appendChild(leaf);
+            }
+            
+            const body = document.createElement('div');
+            body.className = 'fireplant-body';
+            
+            const browLeft = document.createElement('div');
+            browLeft.className = 'fireplant-brow fireplant-brow-left';
+            body.appendChild(browLeft);
+            
+            const browRight = document.createElement('div');
+            browRight.className = 'fireplant-brow fireplant-brow-right';
+            body.appendChild(browRight);
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'fireplant-eye fireplant-eye-left';
+            body.appendChild(eyeLeft);
+            
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'fireplant-eye fireplant-eye-right';
+            body.appendChild(eyeRight);
+            
+            const mouth = document.createElement('div');
+            mouth.className = 'fireplant-mouth';
+            body.appendChild(mouth);
+            
+            const stem = document.createElement('div');
+            stem.className = 'fireplant-stem';
+            
+            const base = document.createElement('div');
+            base.className = 'fireplant-base';
+            
+            fireplantInner.appendChild(top);
+            fireplantInner.appendChild(body);
+            fireplantInner.appendChild(stem);
+            fireplantInner.appendChild(base);
+            fireplant.appendChild(fireplantInner);
+            
+            return fireplant;
+        }
+        
         // Click-based placement system
         const sunflowerCard = document.getElementById('sunflower-card');
         const peashooterCard = document.getElementById('peashooter-card');
@@ -3373,6 +5626,10 @@
         const mushroomCard = document.getElementById('mushroom-card');
         const coconutcannonCard = document.getElementById('coconutcannon-card');
         const chomperCard = document.getElementById('chomper-card');
+        const spikychomperCard = document.getElementById('spikychomper-card');
+        const pumpkinCard = document.getElementById('pumpkin-card');
+        const flowerplantCard = document.getElementById('flowerplant-card');
+        const fireplantCard = document.getElementById('fireplant-card');
         const ghostCard = document.getElementById('ghost-card');
         let selectedPlant = null;
         
@@ -3433,10 +5690,52 @@
                 chomperCard.classList.remove('insufficient-funds');
             }
             
+            if (money < 175) {
+                spikychomperCard.classList.add('insufficient-funds');
+            } else {
+                spikychomperCard.classList.remove('insufficient-funds');
+            }
+            
+            // Show/hide spikychomper based on level
+            if (currentLevel >= 2) {
+                spikychomperCard.style.display = 'block';
+            } else {
+                spikychomperCard.style.display = 'none';
+            }
+            
+            if (money < 200) {
+                pumpkinCard.classList.add('insufficient-funds');
+            } else {
+                pumpkinCard.classList.remove('insufficient-funds');
+            }
+            
+            // Show/hide pumpkin - available from level 1
+            pumpkinCard.style.display = 'block';
+            
             if (money < 150) {
                 coconutcannonCard.classList.add('insufficient-funds');
             } else {
                 coconutcannonCard.classList.remove('insufficient-funds');
+            }
+            
+            // Show/hide flowerplant and fireplant based on level
+            if (currentLevel >= 3) {
+                flowerplantCard.style.display = 'block';
+                fireplantCard.style.display = 'block';
+            } else {
+                flowerplantCard.style.display = 'none';
+                fireplantCard.style.display = 'none';
+            }
+            
+            // Update insufficient funds for level 3 plants
+            if (currentLevel >= 3) {
+                if (money < 150) {
+                    flowerplantCard.classList.add('insufficient-funds');
+                    fireplantCard.classList.add('insufficient-funds');
+                } else {
+                    flowerplantCard.classList.remove('insufficient-funds');
+                    fireplantCard.classList.remove('insufficient-funds');
+                }
             }
         };
         
@@ -3470,6 +5769,42 @@
             return true;
         }
         
+        // Make plant cards draggable
+        function makeCardDraggable(card, plantType) {
+            card.setAttribute('draggable', 'true');
+            card.addEventListener('dragstart', (e) => {
+                if (money < parseInt(card.dataset.cost)) {
+                    e.preventDefault();
+                    return;
+                }
+                // Select the plant when drag starts
+                selectedPlant = plantType;
+                selectedCost = parseInt(card.dataset.cost);
+                // Deselect other cards
+                document.querySelectorAll('.plant-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                updateCubeHighlights();
+                e.dataTransfer.effectAllowed = 'copy';
+                e.dataTransfer.setData('text/plain', plantType);
+            });
+        }
+        
+        // Enable drag for all plant cards
+        makeCardDraggable(sunflowerCard, 'sunflower');
+        makeCardDraggable(peashooterCard, 'peashooter');
+        makeCardDraggable(cactusCard, 'cactus');
+        makeCardDraggable(thunderpeaCard, 'thunderpea');
+        makeCardDraggable(firepeashooterCard, 'firepeashooter');
+        makeCardDraggable(snowpeaCard, 'snowpea');
+        makeCardDraggable(starfruitCard, 'starfruit');
+        makeCardDraggable(mushroomCard, 'mushroom');
+        makeCardDraggable(coconutcannonCard, 'coconutcannon');
+        makeCardDraggable(chomperCard, 'chomper');
+        makeCardDraggable(spikychomperCard, 'spikychomper');
+        makeCardDraggable(pumpkinCard, 'pumpkin');
+        makeCardDraggable(flowerplantCard, 'flowerplant');
+        makeCardDraggable(fireplantCard, 'fireplant');
+        
         // Click on plant card to select it
         sunflowerCard.addEventListener('click', (e) => {
             if (money < 50) {
@@ -3493,6 +5828,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 if (ghostCard && ghostCard.style.display !== 'none') {
                     ghostCard.classList.remove('selected');
                 }
@@ -3527,10 +5866,53 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'peashooter';
                 selectedCost = parseInt(peashooterCard.dataset.cost);
                 peashooterCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
+        pumpkinCard.addEventListener('click', (e) => {
+            if (money < 200) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'pumpkin') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                pumpkinCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                // Select
+                selectedPlant = 'pumpkin';
+                selectedCost = parseInt(pumpkinCard.dataset.cost);
+                pumpkinCard.classList.add('selected');
             }
             
             updateCubeHighlights();
@@ -3558,6 +5940,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'cactus';
                 selectedCost = parseInt(cactusCard.dataset.cost);
@@ -3589,6 +5975,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'thunderpea';
                 selectedCost = parseInt(thunderpeaCard.dataset.cost);
@@ -3620,6 +6010,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'firepeashooter';
                 selectedCost = parseInt(firepeashooterCard.dataset.cost);
@@ -3649,6 +6043,12 @@
                 firepeashooterCard.classList.remove('selected');
                 starfruitCard.classList.remove('selected');
                 mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 // Select
                 selectedPlant = 'snowpea';
                 selectedCost = parseInt(snowpeaCard.dataset.cost);
@@ -3672,6 +6072,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 starfruitCard.classList.add('selected');
                 
                 selectedPlant = 'starfruit';
@@ -3694,6 +6098,10 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
                 mushroomCard.classList.add('selected');
                 
                 selectedPlant = 'mushroom';
@@ -3716,6 +6124,8 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
                 if (ghostCard.style.display !== 'none') {
                     ghostCard.classList.remove('selected');
                 }
@@ -3741,12 +6151,101 @@
                 mushroomCard.classList.remove('selected');
                 coconutcannonCard.classList.remove('selected');
                 chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
                 if (ghostCard && ghostCard.style.display !== 'none') {
                     ghostCard.classList.remove('selected');
                 }
                 chomperCard.classList.add('selected');
                 
                 selectedPlant = 'chomper';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        spikychomperCard.addEventListener('click', (e) => {
+            const cost = parseInt(spikychomperCard.dataset.cost);
+            if (money >= cost && currentLevel >= 2) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                spikychomperCard.classList.add('selected');
+                
+                selectedPlant = 'spikychomper';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        flowerplantCard.addEventListener('click', (e) => {
+            const cost = parseInt(flowerplantCard.dataset.cost);
+            if (money >= cost && currentLevel >= 3) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                flowerplantCard.classList.add('selected');
+                
+                selectedPlant = 'flowerplant';
+                selectedCost = cost;
+                updateCubeHighlights();
+            }
+        });
+        
+        fireplantCard.addEventListener('click', (e) => {
+            const cost = parseInt(fireplantCard.dataset.cost);
+            if (money >= cost && currentLevel >= 3) {
+                // Deselect other cards
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                fireplantCard.classList.add('selected');
+                
+                selectedPlant = 'fireplant';
                 selectedCost = cost;
                 updateCubeHighlights();
             }
@@ -3777,25 +6276,29 @@
             });
         }
         
-        // Click on cubes to place plants
-        cubes.forEach(cube => {
-            cube.element.addEventListener('click', (e) => {
-                // Only place if a plant is selected
-                if (!selectedPlant) {
-                    return;
-                }
-                
-                const key = `${cube.x},${cube.y}`;
-                
-                // Check if square is valid for placement
-                if (!isValidPlacement(cube.x, cube.y)) {
-                    return;
-                }
-                
-                // Check if player has enough money
-                if (money < selectedCost) {
-                    return;
-                }
+        // Function to place plant on a cube
+        function placePlantOnCube(cube, e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            // Only place if a plant is selected
+            if (!selectedPlant) {
+                return;
+            }
+            
+            const key = `${cube.x},${cube.y}`;
+            
+            // Check if square is valid for placement
+            if (!isValidPlacement(cube.x, cube.y)) {
+                return;
+            }
+            
+            // Check if player has enough money
+            if (money < selectedCost) {
+                return;
+            }
                 
                 // Place the plant
                 if (selectedPlant === 'sunflower') {
@@ -3825,6 +6328,20 @@
                     selectedPlant = null;
                     selectedCost = 0;
                     peashooterCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'pumpkin') {
+                    const plant = createPumpkin();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { type: 'pumpkin', element: plant });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    pumpkinCard.classList.remove('selected');
                     updateCubeHighlights();
                 } else if (selectedPlant === 'cactus') {
                     const plant = createCactus();
@@ -3910,7 +6427,7 @@
                         x: cube.x,
                         y: cube.y,
                         lastShotTime: 0,
-                        cooldown: 20700 // 20.7 seconds in milliseconds
+                        cooldown: 15500 // 15.5 seconds in milliseconds
                     };
                     placedPlants.set(key, plantData);
                     
@@ -3955,6 +6472,25 @@
                     selectedCost = 0;
                     chomperCard.classList.remove('selected');
                     updateCubeHighlights();
+                } else if (selectedPlant === 'spikychomper') {
+                    const plant = createSpikychomper();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'spikychomper', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    spikychomperCard.classList.remove('selected');
+                    updateCubeHighlights();
                 } else if (selectedPlant === 'ghost') {
                     // CRASH THE GAME
                     // Create infinite loop to crash
@@ -3979,7 +6515,132 @@
                     selectedCost = 0;
                     starfruitCard.classList.remove('selected');
                     updateCubeHighlights();
+                } else if (selectedPlant === 'flowerplant') {
+                    const plant = createFlowerplant();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'flowerplant', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    flowerplantCard.classList.remove('selected');
+                    updateCubeHighlights();
+                } else if (selectedPlant === 'fireplant') {
+                    const plant = createFireplant();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'fireplant', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    fireplantCard.classList.remove('selected');
+                    updateCubeHighlights();
                 }
+        }
+        
+        // Click on cubes to place plants
+        cubes.forEach(cube => {
+            // Click event
+            cube.element.addEventListener('click', (e) => {
+                placePlantOnCube(cube, e);
+            });
+            
+            // Touch events for tap and drag
+            let isDragging = false;
+            let touchStartTime = 0;
+            let touchStartX = 0;
+            let touchStartY = 0;
+            
+            cube.element.addEventListener('touchstart', (e) => {
+                touchStartTime = Date.now();
+                isDragging = false;
+                if (e.touches && e.touches[0]) {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                }
+            }, { passive: true });
+            
+            cube.element.addEventListener('touchmove', (e) => {
+                if (e.touches && e.touches[0]) {
+                    const moveX = Math.abs(e.touches[0].clientX - touchStartX);
+                    const moveY = Math.abs(e.touches[0].clientY - touchStartY);
+                    // If moved more than 10px, consider it a drag
+                    if (moveX > 10 || moveY > 10) {
+                        isDragging = true;
+                    }
+                }
+            }, { passive: true });
+            
+            cube.element.addEventListener('touchend', (e) => {
+                const touchDuration = Date.now() - touchStartTime;
+                // If it was a quick tap (not a drag), place the plant
+                if (!isDragging && touchDuration < 300) {
+                    e.preventDefault();
+                    placePlantOnCube(cube, e);
+                }
+                isDragging = false;
+            });
+            
+            // Mouse drag support
+            let mouseDown = false;
+            let mouseDownTime = 0;
+            let mouseStartX = 0;
+            let mouseStartY = 0;
+            
+            cube.element.addEventListener('mousedown', (e) => {
+                mouseDown = true;
+                mouseDownTime = Date.now();
+                mouseStartX = e.clientX;
+                mouseStartY = e.clientY;
+            });
+            
+            cube.element.addEventListener('mousemove', (e) => {
+                if (mouseDown) {
+                    const moveX = Math.abs(e.clientX - mouseStartX);
+                    const moveY = Math.abs(e.clientY - mouseStartY);
+                    // If moved more than 5px, cancel the click
+                    if (moveX > 5 || moveY > 5) {
+                        mouseDown = false;
+                    }
+                }
+            });
+            
+            cube.element.addEventListener('mouseup', (e) => {
+                if (mouseDown) {
+                    const mouseDuration = Date.now() - mouseDownTime;
+                    if (mouseDuration < 200) {
+                        placePlantOnCube(cube, e);
+                    }
+                }
+                mouseDown = false;
+            });
+            
+            // Also support drag from plant cards
+            cube.element.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+            
+            cube.element.addEventListener('drop', (e) => {
+                e.preventDefault();
+                placePlantOnCube(cube, e);
             });
         });
         
@@ -4072,14 +6733,29 @@
         const stunDuration = 3000; // Stun lasts 3 seconds
         const slowDuration = 3000; // Slow lasts 3 seconds
         
-        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false, isCoconut = false) {
+        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false, isCoconut = false, isBossPanel = false, isBoomerang = false, isCokeCan = false, returnX = null, returnY = null, isStrongFire = false, isBossImage = false, imageSrc = null) {
             const projectile = document.createElement('div');
             let className = 'projectile';
             if (isThunder) className = 'projectile thunder';
             else if (isFire) className = 'projectile fire';
             else if (isIce) className = 'projectile ice';
             else if (isCoconut) className = 'projectile coconut';
+            else if (isBossPanel) className = 'projectile boss-panel';
+            else if (isBoomerang) className = 'projectile boomerang';
+            else if (isCokeCan) className = 'projectile coke-can';
+            else if (isBossImage) className = 'projectile boss-image';
             projectile.className = className;
+            
+            // If it's a boss image, use the image as background
+            if (isBossImage && imageSrc) {
+                projectile.style.backgroundImage = `url('${imageSrc}')`;
+                projectile.style.backgroundSize = 'contain';
+                projectile.style.backgroundRepeat = 'no-repeat';
+                projectile.style.backgroundPosition = 'center';
+                projectile.style.width = '50px';
+                projectile.style.height = '50px';
+            }
+            
             projectile.style.left = startX + 'px';
             projectile.style.top = startY + 'px';
             mapContainer.appendChild(projectile);
@@ -4090,12 +6766,22 @@
                 y: startY,
                 targetX: targetX,
                 targetY: targetY,
+                returnX: returnX,
+                returnY: returnY,
                 speed: 3,
                 active: true,
                 isThunder: isThunder,
                 isFire: isFire,
                 isIce: isIce,
-                isCoconut: isCoconut
+                isCoconut: isCoconut,
+                isBossPanel: isBossPanel,
+                isBoomerang: isBoomerang,
+                isCokeCan: isCokeCan,
+                isBossImage: isBossImage, // Level 3 boss image projectiles
+                imageSrc: imageSrc, // Image source for boss image projectiles
+                isStrongFire: isStrongFire, // Stronger fire damage from spikychomper (dragon)
+                returning: false,
+                hitEnemies: [] // Track enemies already hit by this boomerang
             };
             projectiles.push(projectileObj);
             return projectileObj;
@@ -4240,27 +6926,132 @@
                     continue;
                 }
                 
-                // Move projectile toward target
-                const dx = projectile.targetX - projectile.x;
-                const dy = projectile.targetY - projectile.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < projectile.speed) {
-                    // Projectile reached target
-                    if (projectile.isCoconut) {
-                        // Create explosion
-                        createExplosion(projectile.x, projectile.y);
+                // Handle boomerang return logic
+                if (projectile.isBoomerang) {
+                    let targetX, targetY;
+                    if (projectile.returning) {
+                        // Returning to plant
+                        targetX = projectile.returnX;
+                        targetY = projectile.returnY;
+                    } else {
+                        // Going to enemy
+                        targetX = projectile.targetX;
+                        targetY = projectile.targetY;
                     }
-                    projectile.element.remove();
-                    projectiles.splice(i, 1);
-                    continue;
+                    
+                    const dx = targetX - projectile.x;
+                    const dy = targetY - projectile.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < projectile.speed) {
+                        if (projectile.returning) {
+                            // Reached plant, remove boomerang
+                            projectile.element.remove();
+                            projectile.active = false;
+                            projectiles.splice(i, 1);
+                            continue;
+                        } else {
+                            // Reached enemy, start returning
+                            projectile.returning = true;
+                        }
+                    } else {
+                        projectile.x += (dx / distance) * projectile.speed;
+                        projectile.y += (dy / distance) * projectile.speed;
+                    }
+                } else if (projectile.isCokeCan || projectile.isBossImage) {
+                    // Coke can and boss images move toward target (plant), but continue past if they miss
+                    const dx = projectile.targetX - projectile.x;
+                    const dy = projectile.targetY - projectile.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Move toward target
+                    if (distance > projectile.speed) {
+                        projectile.x += (dx / distance) * projectile.speed;
+                        projectile.y += (dy / distance) * projectile.speed;
+                    } else {
+                        // Reached target, continue moving left
+                        projectile.x -= projectile.speed;
+                    }
+                    
+                    // Check if coke can or boss image reached left side of map (damage player)
+                    const padding = 20;
+                    if (projectile.x < padding) {
+                        if (projectile.isCokeCan) {
+                            // Coke can reached left side - damage player by 3
+                            loseHP(3);
+                        } else if (projectile.isBossImage) {
+                            // Boss image reached left side - damage player by 2
+                            loseHP(2);
+                        }
+                        projectile.element.remove();
+                        projectile.active = false;
+                        projectiles.splice(i, 1);
+                        continue;
+                    }
+                } else {
+                    // Move projectile toward target
+                    const dx = projectile.targetX - projectile.x;
+                    const dy = projectile.targetY - projectile.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < projectile.speed) {
+                        // Projectile reached target
+                        if (projectile.isCoconut) {
+                            // Create explosion
+                            createExplosion(projectile.x, projectile.y);
+                        }
+                        projectile.element.remove();
+                        projectile.active = false;
+                        projectiles.splice(i, 1);
+                        continue;
+                    }
+                    
+                    // Move projectile
+                    projectile.x += (dx / distance) * projectile.speed;
+                    projectile.y += (dy / distance) * projectile.speed;
                 }
                 
-                // Move projectile
-                projectile.x += (dx / distance) * projectile.speed;
-                projectile.y += (dy / distance) * projectile.speed;
                 projectile.element.style.left = projectile.x + 'px';
                 projectile.element.style.top = projectile.y + 'px';
+                
+                // Check collision with plants (for boss panels, coke cans, and boss images)
+                if (projectile.isBossPanel || projectile.isCokeCan || projectile.isBossImage) {
+                    placedPlants.forEach((plant, key) => {
+                        const [plantX, plantY] = key.split(',').map(Number);
+                        const plantPos = gridToPixel(plantX, plantY);
+                        const plantCenterX = plantPos.x + cubeSize / 2;
+                        const plantCenterY = plantPos.y + cubeSize / 2;
+                        
+                        const distanceToPlant = Math.sqrt(
+                            Math.pow(projectile.x - plantCenterX, 2) + 
+                            Math.pow(projectile.y - plantCenterY, 2)
+                        );
+                        
+                        if (distanceToPlant < 30) {
+                            // Hit plant - damage it
+                            if (!plantHealths) {
+                                plantHealths = new Map();
+                            }
+                            const currentHealth = plantHealths.get(key) || 10;
+                            const newHealth = currentHealth - 5;
+                            plantHealths.set(key, newHealth);
+                            
+                            if (newHealth <= 0) {
+                                // Plant destroyed
+                                plant.element.remove();
+                                placedPlants.delete(key);
+                                plantHealths.delete(key);
+                            }
+                            
+                            // Remove projectile on hit (only for boss panels and boss images, coke cans continue)
+                            if (projectile.isBossPanel || projectile.isBossImage) {
+                                projectile.element.remove();
+                                projectile.active = false;
+                                projectiles.splice(i, 1);
+                            }
+                        }
+                    });
+                }
                 
                 // Check collision with enemies
                 let hitEnemy = false;
@@ -4280,7 +7071,27 @@
                     
                     if (distanceToEnemy < 20) {
                         // Hit enemy
-                        if (projectile.isCoconut) {
+                        if (projectile.isBoomerang) {
+                            // Boomerang hits enemy and continues (doesn't remove on hit)
+                            if (!projectile.hitEnemies || !projectile.hitEnemies.includes(j)) {
+                                // Only hit each enemy once per boomerang
+                                if (!projectile.hitEnemies) projectile.hitEnemies = [];
+                                projectile.hitEnemies.push(j);
+                                enemy.hits++;
+                                if (enemy.hits >= enemy.maxHits) {
+                                    removeEnemy(enemy, true);
+                                }
+                                if (enemy.type === 'boss') {
+                                    updateBossHPBar();
+                                }
+                                // Start returning if not already
+                                if (!projectile.returning) {
+                                    projectile.returning = true;
+                                }
+                            }
+                            hitEnemy = true;
+                            // Don't break, continue checking other enemies
+                        } else if (projectile.isCoconut) {
                             // Coconut explodes on impact
                             createExplosion(projectile.x, projectile.y);
                             projectile.element.remove();
@@ -4298,6 +7109,7 @@
                             enemy.onFire = true;
                             enemy.fireEndTime = Date.now() + 3000; // Fire lasts 3 seconds
                             enemy.fireDamageTicks = 0;
+                            enemy.isStrongFire = projectile.isStrongFire || false; // Track if this is stronger fire from spikychomper (dragon)
                             enemy.element.classList.add('on-fire');
                             // Also do initial hit
                             enemy.hits++;
@@ -4349,7 +7161,7 @@
             const currentTime = Date.now();
             
             placedPlants.forEach((plant, key) => {
-                if (plant.type !== 'peashooter' && plant.type !== 'thunderpea' && plant.type !== 'firepeashooter' && plant.type !== 'snowpea') return;
+                if (plant.type !== 'peashooter' && plant.type !== 'thunderpea' && plant.type !== 'firepeashooter' && plant.type !== 'snowpea' && plant.type !== 'spikychomper' && plant.type !== 'pumpkin' && plant.type !== 'flowerplant' && plant.type !== 'fireplant') return;
                 
                 // Get plant position from key
                 const [x, y] = key.split(',').map(Number);
@@ -4366,26 +7178,154 @@
                     cooldown = shootCooldown; // 1 second (same as peashooter)
                 } else if (plant.type === 'snowpea') {
                     cooldown = snowShootCooldown; // 3 seconds
+                } else if (plant.type === 'spikychomper') {
+                    cooldown = 2000; // 2 seconds for dragon
+                } else if (plant.type === 'pumpkin') {
+                    cooldown = shootCooldown; // 1 second
+                } else if (plant.type === 'flowerplant') {
+                    cooldown = shootCooldown; // 1 second
+                } else if (plant.type === 'fireplant') {
+                    cooldown = shootCooldown; // 1 second
                 }
                 
                 if (currentTime - lastShot < cooldown) {
                     return;
                 }
                 
-                // Find nearest enemy
-                const targetEnemy = findNearestEnemy(x, y);
-                
-                if (targetEnemy) {
-                    const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y);
-                    const targetX = enemyPos.x + enemySize / 2;
-                    const targetY = enemyPos.y + enemySize / 2;
+                // Pumpkin is close-range - targets enemies within 2 squares
+                if (plant.type === 'pumpkin') {
+                    // Find enemies in close range (within 2 squares)
+                    let targetEnemy = null;
+                    let nearestDistance = Infinity;
                     
-                    // Create projectile based on plant type
-                    const isThunder = plant.type === 'thunderpea';
-                    const isFire = plant.type === 'firepeashooter';
-                    const isIce = plant.type === 'snowpea';
-                    createProjectile(plantCenterX, plantCenterY, targetX, targetY, isThunder, isFire, isIce);
-                    lastShotTime.set(key, currentTime);
+                    enemies.forEach(enemy => {
+                        if (!enemy.active) return;
+                        
+                        // Calculate distance to enemy
+                        const dx = Math.abs(enemy.x - x);
+                        const dy = Math.abs(enemy.y - y);
+                        const distance = Math.max(dx, dy); // Chebyshev distance (close range)
+                        
+                        // Close range: within 2 squares
+                        if (distance <= 2 && distance < nearestDistance) {
+                            nearestDistance = distance;
+                            targetEnemy = enemy;
+                        }
+                    });
+                    
+                    if (targetEnemy) {
+                        const enemySizeForTarget = getEnemySize(targetEnemy.type);
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySizeForTarget);
+                        const targetX = enemyPos.x + enemySizeForTarget / 2;
+                        const targetY = enemyPos.y + enemySizeForTarget / 2;
+                        
+                        // Create fire projectile (burns enemies)
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, false, true, false);
+                        lastShotTime.set(key, currentTime);
+                    }
+                } else if (plant.type === 'spikychomper') {
+                    // Find enemies in the 3 rows (plant row, row above, row below)
+                    let targetEnemy = null;
+                    let nearestDistance = Infinity;
+                    
+                    // Determine which rows to check (handle edge cases)
+                    const rowsToCheck = [];
+                    if (y - 1 >= 0) rowsToCheck.push(y - 1); // Row above
+                    rowsToCheck.push(y); // Plant's row
+                    if (y + 1 < mapHeight) rowsToCheck.push(y + 1); // Row below
+                    
+                    enemies.forEach(enemy => {
+                        if (!enemy.active) return;
+                        
+                        // Check if enemy is in one of the 3 rows
+                        if (rowsToCheck.includes(enemy.y)) {
+                            // Check if enemy is to the right of the plant
+                            if (enemy.x >= x) {
+                                const distance = enemy.x - x;
+                                if (distance < nearestDistance) {
+                                    nearestDistance = distance;
+                                    targetEnemy = enemy;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (targetEnemy) {
+                        const enemySizeForTarget = getEnemySize(targetEnemy.type);
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySizeForTarget);
+                        const targetX = enemyPos.x + enemySizeForTarget / 2;
+                        const targetY = enemyPos.y + enemySizeForTarget / 2;
+                        
+                        // Create fire projectile with stronger fire damage (dragon fire)
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, false, true, false, false, false, false, false, null, null, true);
+                        lastShotTime.set(key, currentTime);
+                    }
+                } else if (plant.type === 'flowerplant') {
+                    // Flowerplant shoots boomerang ring that returns
+                    const targetEnemy = findNearestEnemy(x, y);
+                    
+                    if (targetEnemy) {
+                        const enemySizeForTarget = getEnemySize(targetEnemy.type);
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySizeForTarget);
+                        const targetX = enemyPos.x + enemySizeForTarget / 2;
+                        const targetY = enemyPos.y + enemySizeForTarget / 2;
+                        
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, false, false, false, false, false, true, plantCenterX, plantCenterY);
+                        lastShotTime.set(key, currentTime);
+                    }
+                } else if (plant.type === 'fireplant') {
+                    // Fireplant is close-range (within 2 squares) and applies fire damage
+                    let targetEnemy = null;
+                    let nearestDistance = Infinity;
+                    
+                    enemies.forEach(enemy => {
+                        if (!enemy.active) return;
+                        
+                        // Calculate distance to enemy
+                        const dx = Math.abs(enemy.x - x);
+                        const dy = Math.abs(enemy.y - y);
+                        const distance = Math.max(dx, dy); // Chebyshev distance (close range)
+                        
+                        // Close range: within 2 squares
+                        if (distance <= 2 && distance < nearestDistance) {
+                            nearestDistance = distance;
+                            targetEnemy = enemy;
+                        }
+                    });
+                    
+                    if (targetEnemy) {
+                        // Apply fire damage directly (close-range attack)
+                        targetEnemy.onFire = true;
+                        targetEnemy.fireEndTime = Date.now() + 3000; // Fire lasts 3 seconds
+                        targetEnemy.fireDamageTicks = 0;
+                        targetEnemy.element.classList.add('on-fire');
+                        // Also do initial hit
+                        targetEnemy.hits++;
+                        if (targetEnemy.hits >= targetEnemy.maxHits) {
+                            removeEnemy(targetEnemy, true);
+                        }
+                        // Update boss HP bar if boss was hit
+                        if (targetEnemy.type === 'boss') {
+                            updateBossHPBar();
+                        }
+                        lastShotTime.set(key, currentTime);
+                    }
+                } else {
+                    // Find nearest enemy
+                    const targetEnemy = findNearestEnemy(x, y);
+                    
+                    if (targetEnemy) {
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y);
+                        const targetX = enemyPos.x + enemySize / 2;
+                        const targetY = enemyPos.y + enemySize / 2;
+                        
+                        // Create projectile based on plant type
+                        const isThunder = plant.type === 'thunderpea';
+                        const isFire = plant.type === 'firepeashooter';
+                        const isIce = plant.type === 'snowpea';
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, isThunder, isFire, isIce);
+                        lastShotTime.set(key, currentTime);
+                    }
                 }
             });
         }
