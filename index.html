@@ -553,6 +553,93 @@
             align-items: center;
             gap: 10px;
         }
+        #tutorial-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #tutorial-overlay.hidden {
+            display: none;
+        }
+        #tutorial-content {
+            background: linear-gradient(135deg, #1a4d2e 0%, #0f2e1a 100%);
+            border: 4px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+        #tutorial-content h2 {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        .tutorial-section {
+            margin-bottom: 25px;
+        }
+        .tutorial-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .tutorial-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .tutorial-section li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .tutorial-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-size: 20px;
+        }
+        .tutorial-section strong {
+            color: #ffd700;
+        }
+        #tutorial-close-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 15px 40px;
+            background: linear-gradient(to bottom, #ffd700 0%, #cc9900 100%);
+            border: 3px solid #996600;
+            border-radius: 10px;
+            color: #1a4d2e;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        #tutorial-close-btn:hover {
+            background: linear-gradient(to bottom, #ffed4e 0%, #ffd700 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+        #tutorial-close-btn:active {
+            transform: scale(0.98);
+        }
+        #tutorial-overlay.hidden {
+            display: none;
+        }
         #countdown-timer {
             position: fixed;
             top: 50%;
@@ -1006,6 +1093,222 @@
         .boss2-tear-4 { top: 25px; right: 5px; }
         .boss2-tear-5 { bottom: 15px; left: 8px; }
         .boss2-tear-6 { bottom: 10px; right: 8px; }
+        .boss-level4 {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+        .boss4-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #4a1a6a 0%, #2d0f42 50%, #1a0a28 100%);
+            border: 3px solid #0a0514;
+            border-radius: 15px 15px 20px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+        }
+        .boss4-head {
+            width: 60px;
+            height: 55px;
+            background: linear-gradient(to bottom, #6b2a8a 0%, #4a1a6a 50%, #2d0f42 100%);
+            border: 3px solid #1a0a28;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: visible;
+            z-index: 10;
+        }
+        .boss4-crown {
+            position: absolute;
+            width: 50px;
+            height: 15px;
+            background: linear-gradient(to bottom, #1a0a28 0%, #0a0514 50%, #1a0a28 100%);
+            border: 2px solid #0a0514;
+            border-radius: 8px 8px 0 0;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            z-index: 12;
+        }
+        .boss4-crown::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #4a1a6a;
+            border: 1px solid #2d0f42;
+            top: -4px;
+            left: 8px;
+            border-radius: 2px;
+        }
+        .boss4-crown::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #4a1a6a;
+            border: 1px solid #2d0f42;
+            top: -4px;
+            right: 8px;
+            border-radius: 2px;
+        }
+        .boss4-eye {
+            position: absolute;
+            width: 12px;
+            height: 14px;
+            background: radial-gradient(circle, #ffffff 0%, #ffffff 60%, rgba(255, 255, 255, 0.8) 100%);
+            border-radius: 50%;
+            top: 18px;
+            z-index: 11;
+            box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+            animation: boss4-glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes boss4-glow {
+            from { box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff; }
+            to { box-shadow: 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 25px #ffffff; }
+        }
+        .boss4-eye-left {
+            left: 10px;
+        }
+        .boss4-eye-right {
+            right: 10px;
+        }
+        .boss4-mouth {
+            position: absolute;
+            width: 38px;
+            height: 18px;
+            background: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 0 0 18px 18px;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 11;
+            box-shadow: 0 0 8px #ffffff, 0 0 12px #ffffff, 0 0 16px #ffffff;
+            animation: boss4-glow 1.5s ease-in-out infinite alternate;
+        }
+        .boss4-mouth::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #1a0a28;
+            border-radius: 50%;
+            top: 3px;
+            left: 8px;
+        }
+        .boss4-mouth::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #1a0a28;
+            border-radius: 50%;
+            top: 3px;
+            right: 8px;
+        }
+        .boss4-robe {
+            position: absolute;
+            width: 70px;
+            height: 60px;
+            background: linear-gradient(to bottom, #4a1a6a 0%, #2d0f42 50%, #1a0a28 100%);
+            border: 2px solid #0a0514;
+            border-radius: 10px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boss4-arm-right {
+            position: absolute;
+            width: 15px;
+            height: 45px;
+            background: linear-gradient(to bottom, #6b2a8a 0%, #4a1a6a 50%, #2d0f42 100%);
+            border: 2px solid #1a0a28;
+            border-radius: 8px;
+            right: -10px;
+            top: 25px;
+            transform: rotate(-15deg);
+        }
+        .boss4-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff, 0 0 35px #ffffff;
+            animation: boss4-star-glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes boss4-star-glow {
+            from { 
+                box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff, 0 0 35px #ffffff;
+                transform: translateX(-50%) scale(1);
+            }
+            to { 
+                box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+        .boss4-glitch {
+            position: absolute;
+            width: 50%;
+            height: 80%;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(138, 43, 226, 0.3) 0%, 
+                rgba(75, 0, 130, 0.2) 50%, 
+                rgba(138, 43, 226, 0.3) 100%);
+            border-radius: 15px 0 0 20px;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .boss4-binary {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            color: #8a2be2;
+            opacity: 0.6;
+            line-height: 1.2;
+            padding: 5px;
+            text-shadow: 0 0 5px #8a2be2;
+            animation: boss4-binary-scroll 3s linear infinite;
+            overflow: hidden;
+        }
+        @keyframes boss4-binary-scroll {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+        .boss4-binary::before {
+            content: '01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010 00001010 01101000 01101001 00101110 01100110 01110101 01100011 01101011 00100000 01111001 01101111 01110101 00101110 01100010 01101111 01101111 00101110 01100111 01110101 01101110 00101110 00110010 00110000 00110010 00110101 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01100010 01100001 01100100 00100000 01111001 01100101 01100001 01110010';
+            white-space: pre;
+            display: block;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+        .boss4-smoke {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: radial-gradient(ellipse, rgba(138, 43, 226, 0.4) 0%, transparent 70%);
+            left: -5px;
+            top: 20px;
+            border-radius: 50%;
+            animation: boss4-smoke-float 2s ease-in-out infinite;
+        }
+        @keyframes boss4-smoke-float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-10px) scale(1.2); opacity: 0.6; }
+        }
         #money-counter {
             background-color: #1a4d2e;
             border: 3px solid #0f2e1a;
@@ -1918,6 +2221,24 @@
             color: #fff;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
+        .projectile.boss-star {
+            width: 25px;
+            height: 25px;
+            background: #ffffff;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff, 0 0 35px #ffffff;
+            animation: boss-star-glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes boss-star-glow {
+            from { 
+                box-shadow: 0 0 15px #ffffff, 0 0 25px #ffffff, 0 0 35px #ffffff;
+                transform: scale(1);
+            }
+            to { 
+                box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+                transform: scale(1.1);
+            }
+        }
         .projectile.coke-can {
             width: 30px;
             height: 50px;
@@ -2745,6 +3066,410 @@
         .ghost-tear-right {
             right: 8px;
         }
+        .seed {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .seed-body {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+            border: 2px solid #4a2a0a;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .seed-eye {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            top: 10px;
+        }
+        .seed-eye-left {
+            left: 8px;
+        }
+        .seed-eye-right {
+            right: 8px;
+        }
+        .seed-mouth {
+            position: absolute;
+            width: 12px;
+            height: 6px;
+            border: 2px solid #000;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .seed-leaf {
+            position: absolute;
+            width: 12px;
+            height: 15px;
+            background: linear-gradient(135deg, #228b22 0%, #006400 100%);
+            border: 1px solid #004d00;
+            border-radius: 0 50% 50% 0;
+            top: 25px;
+        }
+        .seed-leaf-left {
+            left: 2px;
+            transform: rotate(-20deg);
+        }
+        .seed-leaf-right {
+            right: 2px;
+            transform: rotate(20deg) scaleX(-1);
+        }
+        .upgradeable-seed {
+            cursor: pointer;
+            position: relative;
+        }
+        .upgradeable-seed::after {
+            content: '💰';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 12px;
+            animation: seed-pulse 2s ease-in-out infinite;
+            z-index: 10;
+        }
+        @keyframes seed-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .seed-upgrade-menu {
+            position: fixed;
+            z-index: 3000;
+            background: linear-gradient(135deg, #1a4d2e 0%, #0f2e1a 100%);
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            display: none;
+            max-width: 250px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .seed-upgrade-menu.active {
+            display: block;
+        }
+        .seed-upgrade-option {
+            background: linear-gradient(to bottom, #2d6a3d 0%, #1a4d2e 100%);
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .seed-upgrade-option:hover {
+            background: linear-gradient(to bottom, #3d7a4d 0%, #2a5d3e 100%);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+        .seed-upgrade-option.insufficient-funds {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .seed-upgrade-option.insufficient-funds:hover {
+            transform: none;
+        }
+        .upgrade-name {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .upgrade-cost {
+            color: #fff;
+            font-size: 12px;
+        }
+        .ogtree {
+            width: 50px;
+            height: 70px;
+            position: relative;
+        }
+        .ogtree-trunk {
+            position: absolute;
+            width: 16px;
+            height: 45px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 50%, #4a2a0a 100%);
+            border: 2px solid #3d2817;
+            border-radius: 8px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ogtree-spiral {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ogtree-spiral::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+        }
+        .ogtree-crown {
+            position: absolute;
+            width: 45px;
+            height: 40px;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ogtree-bump {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #228b22;
+            border: 2px solid #006400;
+            border-radius: 50% 50% 50% 0;
+        }
+        .ogtree-bump-1 { top: 5px; left: 5px; transform: rotate(-20deg); }
+        .ogtree-bump-2 { top: 8px; left: 15px; transform: rotate(10deg); }
+        .ogtree-bump-3 { top: 5px; left: 25px; transform: rotate(-10deg); }
+        .ogtree-bump-4 { top: 8px; right: 15px; transform: rotate(20deg); }
+        .ogtree-bump-5 { top: 12px; left: 10px; transform: rotate(-15deg); }
+        .ogtree-bump-6 { top: 15px; left: 20px; transform: rotate(15deg); }
+        .ogtree-bump-7 { top: 12px; right: 10px; transform: rotate(-20deg); }
+        .ogtree-bump-8 { top: 18px; left: 50%; transform: translateX(-50%) rotate(10deg); }
+        .ogtree-grass {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: #90ee90;
+            border: 1px solid #228b22;
+            border-radius: 0 0 50% 50%;
+            bottom: -2px;
+        }
+        .ogtree-grass-left {
+            left: 5px;
+            transform: rotate(-10deg);
+        }
+        .ogtree-grass-right {
+            right: 5px;
+            transform: rotate(10deg);
+        }
+        .projectile.leaf {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+            border: 1px solid #006400;
+            border-radius: 50% 0 50% 0;
+            box-shadow: 0 0 6px rgba(34, 139, 34, 0.8);
+            transform: rotate(45deg);
+        }
+        .boom {
+            width: 50px;
+            height: 70px;
+            position: relative;
+        }
+        .boom-trunk {
+            position: absolute;
+            width: 14px;
+            height: 50px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 50%, #4a2a0a 100%);
+            border: 2px solid #3d2817;
+            border-radius: 7px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boom-band {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #3d2817;
+            left: 0;
+        }
+        .boom-band-1 { top: 10px; }
+        .boom-band-2 { top: 25px; }
+        .boom-band-3 { top: 40px; }
+        .boom-coconut {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #90ee90 0%, #7ccd7c 100%);
+            border: 1px solid #228b22;
+            border-radius: 50%;
+            top: 5px;
+        }
+        .boom-coconut-1 {
+            left: 12px;
+        }
+        .boom-coconut-2 {
+            right: 12px;
+        }
+        .boom-fronds {
+            position: absolute;
+            width: 45px;
+            height: 35px;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boom-frond {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background: linear-gradient(135deg, #90ee90 0%, #228b22 100%);
+            border: 1px solid #006400;
+            border-radius: 50% 0 50% 0;
+        }
+        .boom-frond-1 { top: 0; left: 5px; transform: rotate(-30deg); }
+        .boom-frond-2 { top: 2px; left: 15px; transform: rotate(-10deg); }
+        .boom-frond-3 { top: 0; left: 25px; transform: rotate(10deg); }
+        .boom-frond-4 { top: 2px; right: 15px; transform: rotate(30deg); }
+        .boom-frond-5 { top: 8px; left: 10px; transform: rotate(-20deg); }
+        .boom-frond-6 { top: 10px; right: 10px; transform: rotate(20deg); }
+        .boom-foliage {
+            position: absolute;
+            width: 40px;
+            height: 8px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .boom-leaf {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: #32cd32;
+            border: 1px solid #228b22;
+            border-radius: 0 0 50% 50%;
+            bottom: 0;
+        }
+        .boom-leaf-1 { left: 5px; transform: rotate(-15deg); }
+        .boom-leaf-2 { left: 15px; transform: rotate(10deg); }
+        .boom-leaf-3 { right: 15px; transform: rotate(-10deg); }
+        .boom-leaf-4 { right: 5px; transform: rotate(15deg); }
+        .projectile.boom-coconut {
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(135deg, #90ee90 0%, #7ccd7c 50%, #228b22 100%);
+            border: 2px solid #006400;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(144, 238, 144, 0.8);
+        }
+        .theone {
+            width: 55px;
+            height: 75px;
+            position: relative;
+        }
+        .theone-trunk {
+            position: absolute;
+            width: 16px;
+            height: 45px;
+            background: linear-gradient(to bottom, #8b4513 0%, #654321 50%, #4a2a0a 100%);
+            border: 2px solid #3d2817;
+            border-radius: 8px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .theone-prop-roots {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .theone-root {
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to top, #8b4513 0%, #654321 100%);
+            border: 1px solid #3d2817;
+            border-radius: 2px;
+            bottom: 0;
+        }
+        .theone-root-1 { height: 25px; left: 5px; transform: rotate(-25deg); }
+        .theone-root-2 { height: 20px; left: 12px; transform: rotate(-15deg); }
+        .theone-root-3 { height: 22px; left: 20px; transform: rotate(-5deg); }
+        .theone-root-4 { height: 22px; right: 20px; transform: rotate(5deg); }
+        .theone-root-5 { height: 20px; right: 12px; transform: rotate(15deg); }
+        .theone-root-6 { height: 25px; right: 5px; transform: rotate(25deg); }
+        .theone-barnacles {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        .theone-barnacle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #f5f5f5;
+            border: 1px solid #d3d3d3;
+            border-radius: 50%;
+        }
+        .theone-barnacle-1 { bottom: 8px; left: 8px; }
+        .theone-barnacle-2 { bottom: 12px; left: 15px; }
+        .theone-barnacle-3 { bottom: 10px; left: 22px; }
+        .theone-barnacle-4 { bottom: 15px; right: 22px; }
+        .theone-barnacle-5 { bottom: 12px; right: 15px; }
+        .theone-barnacle-6 { bottom: 8px; right: 8px; }
+        .theone-barnacle-7 { bottom: 18px; left: 14px; }
+        .theone-barnacle-8 { bottom: 20px; right: 14px; }
+        .theone-canopy {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+        .theone-leaf {
+            position: absolute;
+            width: 12px;
+            height: 15px;
+            background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+            border: 1px solid #006400;
+            border-radius: 50% 0 50% 0;
+        }
+        .theone-leaf-1 { top: 0; left: 5px; transform: rotate(-40deg); }
+        .theone-leaf-2 { top: 2px; left: 12px; transform: rotate(-20deg); }
+        .theone-leaf-3 { top: 0; left: 20px; transform: rotate(0deg); }
+        .theone-leaf-4 { top: 2px; right: 20px; transform: rotate(20deg); }
+        .theone-leaf-5 { top: 0; right: 12px; transform: rotate(40deg); }
+        .theone-leaf-6 { top: 5px; left: 8px; transform: rotate(-30deg); }
+        .theone-leaf-7 { top: 7px; left: 16px; transform: rotate(-10deg); }
+        .theone-leaf-8 { top: 8px; right: 16px; transform: rotate(10deg); }
+        .theone-leaf-9 { top: 5px; right: 8px; transform: rotate(30deg); }
+        .theone-leaf-10 { top: 12px; left: 12px; transform: rotate(-15deg); }
+        .theone-leaf-11 { top: 14px; right: 12px; transform: rotate(15deg); }
+        .theone-leaf-12 { top: 18px; left: 50%; transform: translateX(-50%) rotate(0deg); }
+        .projectile.theone-projectile {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #8b4513 0%, #654321 50%, #4a2a0a 100%);
+            border: 2px solid #3d2817;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(139, 69, 19, 0.8);
+        }
         .enemy.stunned {
             opacity: 0.5;
             filter: brightness(1.5);
@@ -2774,6 +3499,89 @@
             <span id="hp-amount">10</span>
         </div>
     </div>
+    <div id="tutorial-overlay" class="hidden">
+        <div id="tutorial-content">
+            <h2>Welcome to Ancient Egypt TDG!</h2>
+            <div class="tutorial-section">
+                <h3>🎯 How to Play:</h3>
+                <ul>
+                    <li><strong>Place Plants:</strong> Click on a plant card, then click on a grid square to place it</li>
+                    <li><strong>Defend:</strong> Plants automatically shoot at enemies coming from the right</li>
+                    <li><strong>Earn Money:</strong> Defeat enemies to earn cash for more plants</li>
+                    <li><strong>Survive:</strong> Don't let enemies reach the left side or you'll lose HP!</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>⚠️ Watch Out For:</h3>
+                <ul>
+                    <li><strong>Bosses:</strong> Powerful enemies spawn after 4 minutes</li>
+                    <li><strong>Different Enemy Types:</strong> Some enemies are tougher or have special abilities</li>
+                    <li><strong>Limited Resources:</strong> Manage your money wisely!</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>💡 Tips:</h3>
+                <ul>
+                    <li>Start with cheap plants like Sunflowers to earn money</li>
+                    <li>Place Peashooters in the front rows to stop enemies early</li>
+                    <li>Use special plants like Cactus and Thunder Pea for tough enemies</li>
+                    <li>You have 15 seconds before enemies start spawning - use it wisely!</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>🌱 Plants & Abilities:</h3>
+                <ul>
+                    <li><strong>Sunflower (50💰):</strong> Generates 25 gold every 5 seconds</li>
+                    <li><strong>Peashooter (100💰):</strong> Shoots peas every 1 second</li>
+                    <li><strong>Cactus (150💰):</strong> Shoots spikes, deals 2 damage per hit</li>
+                    <li><strong>Thunder Pea (175💰):</strong> Shoots every 10 seconds, stuns enemies for 3 seconds</li>
+                    <li><strong>Fire Peashooter (200💰):</strong> Shoots fire peas that deal damage over time</li>
+                    <li><strong>Snow Pea (125💰):</strong> Shoots every 3 seconds, slows enemies for 3 seconds</li>
+                    <li><strong>Starfruit (75💰):</strong> Shoots in 5 directions</li>
+                    <li><strong>Mushroom (75💰):</strong> Generates 5 gold every 2 seconds (after 10s delay)</li>
+                    <li><strong>Coconut Cannon (150💰):</strong> Explosive shots every 5 seconds, area damage</li>
+                    <li><strong>Chomper (200💰):</strong> Eats enemies whole, 20 second cooldown</li>
+                    <li><strong>Spikychomper (300💰):</strong> Dragon form, shoots strong fire every 2 seconds</li>
+                    <li><strong>Pumpkin (150💰):</strong> Close-range attacker, targets within 2 squares</li>
+                    <li><strong>Flowerplant (175💰):</strong> Shoots projectiles every 1 second</li>
+                    <li><strong>Fireplant (200💰):</strong> Shoots fire projectiles every 1 second</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>👹 Enemy Types:</h3>
+                <ul>
+                    <li><strong>Regular Mummy:</strong> 5 HP, standard speed</li>
+                    <li><strong>Tough Enemy:</strong> 9 HP, slower but more durable</li>
+                    <li><strong>Summoner:</strong> 6 HP, spawns small enemies when killed</li>
+                    <li><strong>Different Enemy:</strong> 6 HP, unique appearance</li>
+                    <li><strong>Small Enemy:</strong> 2 HP, very fast</li>
+                    <li><strong>Slow Enemy:</strong> 4 HP initially, respawns with 2 HP if not fully killed</li>
+                    <li><strong>Ingen:</strong> Special enemy that spawns after 4 minutes, 100 HP</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>👑 Bosses:</h3>
+                <ul>
+                    <li><strong>Level 1 Boss:</strong> Thoth-like boss, 30 HP, respawns once with 100 HP</li>
+                    <li><strong>Level 2 Boss:</strong> Damaged Bear Animatronic, 120 HP, respawns once with 100 HP</li>
+                    <li><strong>Level 3 Boss:</strong> Image-based boss, 8 rows tall, 200 HP, respawns once with 200 HP, throws random images</li>
+                    <li><strong>Level 4 Boss:</strong> Dark purple character with binary code effects, 167 HP, respawns once with 167 HP, throws star projectiles that one-shot plants and deal 2 damage to player</li>
+                </ul>
+            </div>
+            <div class="tutorial-section">
+                <h3>🎮 Game Mechanics:</h3>
+                <ul>
+                    <li><strong>Money System:</strong> Start with 200💰 (Level 1), 350💰 (Level 2), 600💰 (Level 3), 800💰 (Level 4)</li>
+                    <li><strong>Player HP:</strong> Start with 10 HP, lose 1 HP when enemies reach left side</li>
+                    <li><strong>Boss Timer:</strong> Bosses spawn after 4 minutes (4:00 for levels 1, 3, 4) or 4:50 (Level 2)</li>
+                    <li><strong>Countdown:</strong> 15 seconds to prepare before enemies spawn</li>
+                    <li><strong>Level Progression:</strong> Beat the boss to advance to next level</li>
+                    <li><strong>Boss Respawn:</strong> Bosses respawn once after being defeated</li>
+                </ul>
+            </div>
+            <button id="tutorial-close-btn">Start Game!</button>
+        </div>
+    </div>
     <div id="countdown-timer">15</div>
     <div id="boss-hp-bar-container">
         <div id="boss-hp-label">BOSS</div>
@@ -2790,6 +3598,9 @@
     </audio>
     <audio id="boss-music-level3" loop>
         <source src="A LITTLE THEORIZING  Official Game Theory Song!.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="boss-music-level4" loop>
+        <source src="FORSAKEN OST - NULLANDVOID (NOLI CHASE THEME).mp3" type="audio/mpeg">
     </audio>
     <div id="song-credit">all song are not mine</div>
     <div id="boss-timer">
@@ -2893,6 +3704,18 @@
                 <div class="snowpea-leaf snowpea-leaf-right"></div>
             </div>
             <div class="plant-cost">125</div>
+        </div>
+        <div class="plant-card" id="seed-card" data-cost="40" data-plant="seed">
+            <div class="seed">
+                <div class="seed-body">
+                    <div class="seed-eye seed-eye-left"></div>
+                    <div class="seed-eye seed-eye-right"></div>
+                    <div class="seed-mouth"></div>
+                </div>
+                <div class="seed-leaf seed-leaf-left"></div>
+                <div class="seed-leaf seed-leaf-right"></div>
+            </div>
+            <div class="plant-cost">40</div>
         </div>
         </div>
         <div class="plant-shop-column">
@@ -3155,7 +3978,7 @@
             // Reset slow enemy respawns
             slowEnemyRespawns.clear();
             
-            // Stop boss music (both level 1 and level 2)
+            // Stop boss music (all levels)
             const bossMusic1 = document.getElementById('boss-music');
             if (bossMusic1) {
                 bossMusic1.pause();
@@ -3170,6 +3993,11 @@
             if (bossMusic3) {
                 bossMusic3.pause();
                 bossMusic3.currentTime = 0;
+            }
+            const bossMusic4 = document.getElementById('boss-music-level4');
+            if (bossMusic4) {
+                bossMusic4.pause();
+                bossMusic4.currentTime = 0;
             }
             
             // Clear all intervals
@@ -3408,8 +4236,32 @@
             }, 1000);
         }
         
-        // Start initial countdown
-        startCountdown();
+        // Tutorial system
+        const tutorialOverlay = document.getElementById('tutorial-overlay');
+        const tutorialCloseBtn = document.getElementById('tutorial-close-btn');
+        let tutorialShown = false;
+        
+        // Check if tutorial has been shown before (using localStorage)
+        if (localStorage.getItem('tutorialShown') !== 'true') {
+            tutorialOverlay.classList.remove('hidden');
+            tutorialShown = true;
+        } else {
+            tutorialOverlay.classList.add('hidden');
+            // Start countdown if tutorial was already shown
+            startCountdown();
+        }
+        
+        tutorialCloseBtn.addEventListener('click', () => {
+            tutorialOverlay.classList.add('hidden');
+            localStorage.setItem('tutorialShown', 'true');
+            // Start countdown after tutorial is closed
+            startCountdown();
+        });
+        
+        // Start initial countdown (only if tutorial was already shown)
+        if (localStorage.getItem('tutorialShown') === 'true') {
+            startCountdown();
+        }
         
         // Boss timer system (4 minutes = 240 seconds)
         const bossTimerElement = document.getElementById('boss-timer-value');
@@ -3457,10 +4309,10 @@
                 
                 // Play boss music based on level
                 if (currentLevel === 4) {
-                    // Level 4 boss music (uses level 3 music for now, or can add level 4 music)
-                    const bossMusic3 = document.getElementById('boss-music-level3');
-                    if (bossMusic3) {
-                        bossMusic3.play().catch(err => {
+                    // Level 4 boss music
+                    const bossMusic4 = document.getElementById('boss-music-level4');
+                    if (bossMusic4) {
+                        bossMusic4.play().catch(err => {
                             console.log('Could not play level 4 boss music:', err);
                         });
                     }
@@ -3474,6 +4326,11 @@
                     if (bossMusic2) {
                         bossMusic2.pause();
                         bossMusic2.currentTime = 0;
+                    }
+                    const bossMusic3 = document.getElementById('boss-music-level3');
+                    if (bossMusic3) {
+                        bossMusic3.pause();
+                        bossMusic3.currentTime = 0;
                     }
                 } else if (currentLevel === 3) {
                     // Level 3 boss music
@@ -4093,7 +4950,7 @@
             return enemy;
         }
         
-        // Function to create level 3 boss (Image-based, stationary, outside map)
+        // Function to create level 3 boss (Image-based, stationary, outside map, spans 8 rows)
         function createBossLevel3() {
             const enemy = document.createElement('div');
             enemy.className = 'enemy enemy-boss-level3';
@@ -4102,8 +4959,10 @@
             const bossImage = document.createElement('img');
             bossImage.src = 'Matpat-PNG-Image.png'; // Using the provided boss image
             bossImage.className = 'boss-level3-image';
-            bossImage.style.width = '60px';
-            bossImage.style.height = '60px';
+            // Size to span exactly 8 rows: 8 * (cubeSize + gap) - gap = 8 * 62 - 2 = 494px
+            const bossHeight = 8 * (cubeSize + gap) - gap; // Exactly 8 rows tall
+            bossImage.style.width = 'auto'; // Maintain aspect ratio
+            bossImage.style.height = bossHeight + 'px'; // Exactly 8 rows tall
             bossImage.style.objectFit = 'contain';
             bossImage.style.transform = 'scaleX(-1)'; // Flip to face left (toward the map) since boss is on the right
             
@@ -4113,21 +4972,73 @@
             return enemy;
         }
         
-        // Function to create level 4 boss (Image-based, moves like level 1 boss)
+        // Function to create level 4 boss (Custom CSS sprite - dark purple character with binary code effects)
         function createBossLevel4() {
             const enemy = document.createElement('div');
             enemy.className = 'enemy enemy-boss-level4';
             
-            // Create image element for boss
-            const bossImage = document.createElement('img');
-            bossImage.src = 'Noli_Remodel_Render.webp'; // Using the provided boss image
-            bossImage.className = 'boss-level4-image';
-            bossImage.style.width = '120px';
-            bossImage.style.height = '120px';
-            bossImage.style.objectFit = 'contain';
-            // Don't flip - boss spawns on right side and moves left, so image faces right initially
+            const boss = document.createElement('div');
+            boss.className = 'boss-level4';
             
-            enemy.appendChild(bossImage);
+            const body = document.createElement('div');
+            body.className = 'boss4-body';
+            
+            // Glitch effect on left side
+            const glitch = document.createElement('div');
+            glitch.className = 'boss4-glitch';
+            
+            const binary = document.createElement('div');
+            binary.className = 'boss4-binary';
+            glitch.appendChild(binary);
+            
+            const smoke = document.createElement('div');
+            smoke.className = 'boss4-smoke';
+            glitch.appendChild(smoke);
+            
+            body.appendChild(glitch);
+            
+            // Head
+            const head = document.createElement('div');
+            head.className = 'boss4-head';
+            
+            // Crown
+            const crown = document.createElement('div');
+            crown.className = 'boss4-crown';
+            head.appendChild(crown);
+            
+            // Glowing eyes
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'boss4-eye boss4-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'boss4-eye boss4-eye-right';
+            head.appendChild(eyeLeft);
+            head.appendChild(eyeRight);
+            
+            // Glowing mouth
+            const mouth = document.createElement('div');
+            mouth.className = 'boss4-mouth';
+            head.appendChild(mouth);
+            
+            body.appendChild(head);
+            
+            // Robe
+            const robe = document.createElement('div');
+            robe.className = 'boss4-robe';
+            body.appendChild(robe);
+            
+            // Right arm with star
+            const armRight = document.createElement('div');
+            armRight.className = 'boss4-arm-right';
+            
+            const star = document.createElement('div');
+            star.className = 'boss4-star';
+            armRight.appendChild(star);
+            
+            body.appendChild(armRight);
+            
+            boss.appendChild(body);
+            enemy.appendChild(boss);
+            
             mapContainer.appendChild(enemy);
             
             return enemy;
@@ -4194,8 +5105,8 @@
         function getEnemySize(type) {
             switch(type) {
                 case 'boss': 
-                    // Level 3 boss is smaller (60px), others are 80px
-                    if (currentLevel === 3) return 60;
+                    // Level 3 boss spans 8 rows (494px), others are 80px
+                    if (currentLevel === 3) return 8 * (cubeSize + gap) - gap; // 494px
                     return 80;
                 case 'tough': return 50;
                 case 'slow': return 45;
@@ -4352,7 +5263,7 @@
                 summonDuration: 1000, // Takes 1 second to summon
                 // Boss-specific properties
                 lastJumpTime: type === 'boss' ? Date.now() : 0,
-                jumpCooldown: type === 'boss' ? 2000 : 0, // Jump every 2 seconds
+                jumpCooldown: type === 'boss' ? (currentLevel === 4 ? 6590 : 2000) : 0, // Level 4 jumps every 6.59 seconds, others every 2 seconds
                 jumpStopDuration: type === 'boss' ? 4000 : 0, // Stop for 4 seconds after jump
                 isJumping: false,
                 jumpStartTime: 0,
@@ -4365,12 +5276,14 @@
             
             // Position enemy on map
             if (x === mapWidth && type === 'boss' && currentLevel === 3) {
-                // Level 3 boss positioned outside map (to the right)
-                const centerY = Math.floor(mapHeight / 2);
-                const pos = gridToPixel(mapWidth - 1, centerY, 60); // Use rightmost column for calculation, boss is 60px
+                // Level 3 boss positioned outside map (to the right), spans all 8 rows
+                const bossSize = getEnemySize(type);
+                const padding = 20;
+                // Position at top row (row 0) so it spans all 8 rows
+                const topRowPos = gridToPixel(mapWidth - 1, 0, bossSize);
                 enemy.style.position = 'absolute';
-                enemy.style.left = (pos.x + cubeSize + gap) + 'px'; // Position to the right of the map
-                enemy.style.top = pos.y + 'px';
+                enemy.style.left = (topRowPos.x + cubeSize + gap) + 'px'; // Position to the right of the map
+                enemy.style.top = (padding) + 'px'; // Start at the top (row 0)
                 enemy.style.zIndex = '100';
             } else {
                 const enemySize = getEnemySize(type);
@@ -4458,7 +5371,7 @@
                     // Boss has been killed and won't respawn - advance to level 2
                     // Hide boss HP bar
                     bossHPBarContainer.classList.remove('active');
-                    // Stop boss music (both level 1 and level 2)
+                    // Stop boss music (all levels)
                     const bossMusic1 = document.getElementById('boss-music');
                     if (bossMusic1) {
                         bossMusic1.pause();
@@ -4473,6 +5386,11 @@
                     if (bossMusic3) {
                         bossMusic3.pause();
                         bossMusic3.currentTime = 0;
+                    }
+                    const bossMusic4 = document.getElementById('boss-music-level4');
+                    if (bossMusic4) {
+                        bossMusic4.pause();
+                        bossMusic4.currentTime = 0;
                     }
                     // Advance to next level
                     if (currentLevel === 1) {
@@ -4758,10 +5676,10 @@
                 const bossSize = getEnemySize(boss.type);
                 let bossPos;
                 if (boss.x === mapWidth) {
-                    // Level 3 boss positioned outside map on the right
-                    const centerY = Math.floor(mapHeight / 2);
-                    const tempPos = gridToPixel(mapWidth - 1, centerY, bossSize);
-                    bossPos = { x: tempPos.x + cubeSize + gap, y: tempPos.y };
+                // Level 3 boss positioned outside map on the right, spans all 8 rows
+                const padding = 20;
+                const topRowPos = gridToPixel(mapWidth - 1, 0, bossSize);
+                bossPos = { x: topRowPos.x + cubeSize + gap, y: padding + bossSize / 2 }; // Center vertically within the 8 rows
                 } else {
                     bossPos = gridToPixel(boss.x, boss.y, bossSize);
                 }
@@ -4792,27 +5710,68 @@
             }
         }
         
+        function throwBossStar(boss) {
+            // Find nearest plant to target
+            let nearestPlant = null;
+            let nearestDistance = Infinity;
+            
+            placedPlants.forEach((plant, key) => {
+                const [plantX, plantY] = key.split(',').map(Number);
+                const bossX = boss.x === mapWidth ? mapWidth - 1 : boss.x;
+                const distance = Math.sqrt(
+                    Math.pow(bossX - plantX, 2) + 
+                    Math.pow(boss.y - plantY, 2)
+                );
+                if (distance < nearestDistance) {
+                    nearestDistance = distance;
+                    nearestPlant = { plant, key, x: plantX, y: plantY };
+                }
+            });
+            
+            // Get boss position
+            const bossSize = getEnemySize(boss.type);
+            const bossPos = gridToPixel(boss.x, boss.y, bossSize);
+            const bossCenterX = bossPos.x + bossSize / 2;
+            const bossCenterY = bossPos.y + bossSize / 2;
+            
+            // Get target position (plant if exists, otherwise left side of map)
+            let targetX, targetY;
+            if (nearestPlant) {
+                const plantPos = gridToPixel(nearestPlant.x, nearestPlant.y);
+                targetX = plantPos.x + cubeSize / 2;
+                targetY = plantPos.y + cubeSize / 2;
+            } else {
+                // No plants, target left side of map
+                targetX = 0;
+                targetY = bossCenterY;
+            }
+            
+            // Create star projectile
+            createProjectile(bossCenterX, bossCenterY, targetX, targetY, false, false, false, false, false, false, false, null, null, false, false, null, true);
+        }
+        
         function moveBoss(boss) {
             const currentTime = Date.now();
             
-            // Level 3 boss doesn't move - stays stationary outside map (on the right)
+            // Level 3 boss doesn't move - stays stationary outside map (on the right), spans all 8 rows
             if (currentLevel === 3 && boss.x === mapWidth) {
                 // Boss throws projectiles at plants
                 if (currentTime - boss.lastBossProjectileTime >= boss.bossProjectileCooldown) {
                     throwBossProjectile(boss);
                     boss.lastBossProjectileTime = currentTime;
                 }
-                // Just update position (already positioned outside map on the right)
-                const centerY = Math.floor(mapHeight / 2);
-                const pos = gridToPixel(mapWidth - 1, centerY, 60);
-                boss.element.style.left = (pos.x + cubeSize + gap) + 'px';
-                boss.element.style.top = pos.y + 'px';
+                // Just update position (already positioned outside map on the right, spans all 8 rows)
+                const bossSize = getEnemySize(boss.type);
+                const padding = 20;
+                const topRowPos = gridToPixel(mapWidth - 1, 0, bossSize);
+                boss.element.style.left = (topRowPos.x + cubeSize + gap) + 'px';
+                boss.element.style.top = padding + 'px'; // Start at the top (row 0)
                 updateBossHPBar();
                 return true;
             }
             
-            // Boss throws projectiles at plants
-            if (currentTime - boss.lastBossProjectileTime >= boss.bossProjectileCooldown) {
+            // Boss throws projectiles at plants (level 4 throws stars on jump, not here)
+            if (currentLevel !== 4 && currentTime - boss.lastBossProjectileTime >= boss.bossProjectileCooldown) {
                 throwBossProjectile(boss);
                 boss.lastBossProjectileTime = currentTime;
             }
@@ -4844,6 +5803,11 @@
                 boss.lastJumpTime = currentTime;
                 boss.isJumping = true; // Start stop period
                 boss.jumpStartTime = currentTime;
+                
+                // Level 4 boss throws a star when jumping
+                if (currentLevel === 4) {
+                    throwBossStar(boss);
+                }
                 
                 // Update position
                 const enemySize = getEnemySize(boss.type);
@@ -5615,6 +6579,181 @@
             return fireplant;
         }
         
+        function createSeed() {
+            const seed = document.createElement('div');
+            seed.className = 'plant-placed';
+            
+            const seedInner = document.createElement('div');
+            seedInner.className = 'seed';
+            
+            const body = document.createElement('div');
+            body.className = 'seed-body';
+            
+            const eyeLeft = document.createElement('div');
+            eyeLeft.className = 'seed-eye seed-eye-left';
+            const eyeRight = document.createElement('div');
+            eyeRight.className = 'seed-eye seed-eye-right';
+            const mouth = document.createElement('div');
+            mouth.className = 'seed-mouth';
+            
+            body.appendChild(eyeLeft);
+            body.appendChild(eyeRight);
+            body.appendChild(mouth);
+            
+            const leafLeft = document.createElement('div');
+            leafLeft.className = 'seed-leaf seed-leaf-left';
+            const leafRight = document.createElement('div');
+            leafRight.className = 'seed-leaf seed-leaf-right';
+            
+            seedInner.appendChild(body);
+            seedInner.appendChild(leafLeft);
+            seedInner.appendChild(leafRight);
+            seed.appendChild(seedInner);
+            
+            return seed;
+        }
+        
+        function createOgtree() {
+            const ogtree = document.createElement('div');
+            ogtree.className = 'plant-placed';
+            
+            const ogtreeInner = document.createElement('div');
+            ogtreeInner.className = 'ogtree';
+            
+            // Trunk
+            const trunk = document.createElement('div');
+            trunk.className = 'ogtree-trunk';
+            
+            // Spiral on trunk
+            const spiral = document.createElement('div');
+            spiral.className = 'ogtree-spiral';
+            trunk.appendChild(spiral);
+            
+            // Crown/Leaves
+            const crown = document.createElement('div');
+            crown.className = 'ogtree-crown';
+            
+            // Create multiple leaf bumps for the crown
+            for (let i = 0; i < 8; i++) {
+                const leafBump = document.createElement('div');
+                leafBump.className = `ogtree-bump ogtree-bump-${i + 1}`;
+                crown.appendChild(leafBump);
+            }
+            
+            // Grass at base
+            const grassLeft = document.createElement('div');
+            grassLeft.className = 'ogtree-grass ogtree-grass-left';
+            const grassRight = document.createElement('div');
+            grassRight.className = 'ogtree-grass ogtree-grass-right';
+            
+            ogtreeInner.appendChild(trunk);
+            ogtreeInner.appendChild(crown);
+            ogtreeInner.appendChild(grassLeft);
+            ogtreeInner.appendChild(grassRight);
+            ogtree.appendChild(ogtreeInner);
+            
+            return ogtree;
+        }
+        
+        function createBoom() {
+            const boom = document.createElement('div');
+            boom.className = 'plant-placed';
+            
+            const boomInner = document.createElement('div');
+            boomInner.className = 'boom';
+            
+            // Trunk
+            const trunk = document.createElement('div');
+            trunk.className = 'boom-trunk';
+            
+            // Horizontal bands on trunk
+            for (let i = 0; i < 3; i++) {
+                const band = document.createElement('div');
+                band.className = `boom-band boom-band-${i + 1}`;
+                trunk.appendChild(band);
+            }
+            
+            // Coconuts at top
+            const coconut1 = document.createElement('div');
+            coconut1.className = 'boom-coconut boom-coconut-1';
+            const coconut2 = document.createElement('div');
+            coconut2.className = 'boom-coconut boom-coconut-2';
+            
+            // Palm fronds
+            const fronds = document.createElement('div');
+            fronds.className = 'boom-fronds';
+            for (let i = 0; i < 6; i++) {
+                const frond = document.createElement('div');
+                frond.className = `boom-frond boom-frond-${i + 1}`;
+                fronds.appendChild(frond);
+            }
+            
+            // Base foliage
+            const foliage = document.createElement('div');
+            foliage.className = 'boom-foliage';
+            for (let i = 0; i < 4; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = `boom-leaf boom-leaf-${i + 1}`;
+                foliage.appendChild(leaf);
+            }
+            
+            boomInner.appendChild(trunk);
+            boomInner.appendChild(coconut1);
+            boomInner.appendChild(coconut2);
+            boomInner.appendChild(fronds);
+            boomInner.appendChild(foliage);
+            boom.appendChild(boomInner);
+            
+            return boom;
+        }
+        
+        function createTheOne() {
+            const theOne = document.createElement('div');
+            theOne.className = 'plant-placed';
+            
+            const theOneInner = document.createElement('div');
+            theOneInner.className = 'theone';
+            
+            // Main trunk with prop roots (mangrove style)
+            const trunk = document.createElement('div');
+            trunk.className = 'theone-trunk';
+            
+            // Prop roots extending outward
+            const propRoots = document.createElement('div');
+            propRoots.className = 'theone-prop-roots';
+            for (let i = 0; i < 6; i++) {
+                const root = document.createElement('div');
+                root.className = `theone-root theone-root-${i + 1}`;
+                propRoots.appendChild(root);
+            }
+            
+            // Barnacles on roots
+            const barnacles = document.createElement('div');
+            barnacles.className = 'theone-barnacles';
+            for (let i = 0; i < 8; i++) {
+                const barnacle = document.createElement('div');
+                barnacle.className = `theone-barnacle theone-barnacle-${i + 1}`;
+                barnacles.appendChild(barnacle);
+            }
+            
+            // Canopy with leaves
+            const canopy = document.createElement('div');
+            canopy.className = 'theone-canopy';
+            for (let i = 0; i < 12; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = `theone-leaf theone-leaf-${i + 1}`;
+                canopy.appendChild(leaf);
+            }
+            
+            theOneInner.appendChild(trunk);
+            theOneInner.appendChild(propRoots);
+            theOneInner.appendChild(barnacles);
+            theOneInner.appendChild(canopy);
+            theOne.appendChild(theOneInner);
+            
+            return theOne;
+        }
+        
         // Click-based placement system
         const sunflowerCard = document.getElementById('sunflower-card');
         const peashooterCard = document.getElementById('peashooter-card');
@@ -5631,7 +6770,13 @@
         const flowerplantCard = document.getElementById('flowerplant-card');
         const fireplantCard = document.getElementById('fireplant-card');
         const ghostCard = document.getElementById('ghost-card');
+        const seedCard = document.getElementById('seed-card');
         let selectedPlant = null;
+        
+        // Make sure seed card is visible
+        if (seedCard) {
+            seedCard.style.display = 'block';
+        }
         
         // 1/20 chance to show ghost card
         if (Math.random() < 0.05) { // 5% = 1/20
@@ -5683,6 +6828,15 @@
                 starfruitCard.classList.remove('insufficient-funds');
                 mushroomCard.classList.remove('insufficient-funds');
             }
+            
+            if (money < 40) {
+                seedCard.classList.add('insufficient-funds');
+            } else {
+                seedCard.classList.remove('insufficient-funds');
+            }
+            
+            // Seed card is always visible
+            seedCard.style.display = 'block';
             
             if (money < 125) {
                 chomperCard.classList.add('insufficient-funds');
@@ -6251,6 +7405,46 @@
             }
         });
         
+        seedCard.addEventListener('click', (e) => {
+            const cost = parseInt(seedCard.dataset.cost);
+            if (money < cost) {
+                return;
+            }
+            
+            // Toggle selection
+            if (selectedPlant === 'seed') {
+                // Deselect
+                selectedPlant = null;
+                selectedCost = 0;
+                seedCard.classList.remove('selected');
+            } else {
+                // Deselect other plants
+                sunflowerCard.classList.remove('selected');
+                peashooterCard.classList.remove('selected');
+                cactusCard.classList.remove('selected');
+                thunderpeaCard.classList.remove('selected');
+                firepeashooterCard.classList.remove('selected');
+                snowpeaCard.classList.remove('selected');
+                starfruitCard.classList.remove('selected');
+                mushroomCard.classList.remove('selected');
+                coconutcannonCard.classList.remove('selected');
+                chomperCard.classList.remove('selected');
+                spikychomperCard.classList.remove('selected');
+                pumpkinCard.classList.remove('selected');
+                flowerplantCard.classList.remove('selected');
+                fireplantCard.classList.remove('selected');
+                if (ghostCard && ghostCard.style.display !== 'none') {
+                    ghostCard.classList.remove('selected');
+                }
+                // Select
+                selectedPlant = 'seed';
+                selectedCost = cost;
+                seedCard.classList.add('selected');
+            }
+            
+            updateCubeHighlights();
+        });
+        
         if (ghostCard && ghostCard.style.display !== 'none') {
             ghostCard.addEventListener('click', (e) => {
                 const cost = parseInt(ghostCard.dataset.cost);
@@ -6553,6 +7747,36 @@
                     selectedCost = 0;
                     fireplantCard.classList.remove('selected');
                     updateCubeHighlights();
+                } else if (selectedPlant === 'seed') {
+                    const plant = createSeed();
+                    cube.element.style.position = 'relative';
+                    cube.element.appendChild(plant);
+                    placedPlants.set(key, { 
+                        type: 'seed', 
+                        element: plant,
+                        x: cube.x,
+                        y: cube.y
+                    });
+                    
+                    // Make seed clickable for upgrades
+                    plant.style.cursor = 'pointer';
+                    plant.style.pointerEvents = 'auto';
+                    plant.classList.add('upgradeable-seed');
+                    
+                    // Add click handler for upgrading
+                    plant.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        showSeedUpgradeMenu(key, plant, cube);
+                    });
+                    
+                    // Deduct money
+                    spendMoney(selectedCost);
+                    
+                    // Deselect after placing
+                    selectedPlant = null;
+                    selectedCost = 0;
+                    seedCard.classList.remove('selected');
+                    updateCubeHighlights();
                 }
         }
         
@@ -6724,6 +7948,147 @@
         // Check mushroom income every 500ms
         setInterval(generateMushroomIncome, 500);
         
+        // Seed upgrade system - seeds can be upgraded by clicking and spending money
+        function upgradeSeed(key, upgradeType) {
+            const plant = placedPlants.get(key);
+            if (!plant || plant.type !== 'seed') return;
+            
+            // Upgrade costs - CUSTOMIZE THESE 3 OPTIONS
+            const upgradeCosts = {
+                'ogtree': 50,   // Tree that throws leaves
+                'boom': 75,     // Palm tree that throws exploding coconuts
+                'theone': 100   // The one - shoots every 0.5s with 3x3 explosion
+            };
+            
+            const cost = upgradeCosts[upgradeType];
+            if (!cost || money < cost) {
+                return; // Not enough money or invalid upgrade
+            }
+            
+            // Get cube position
+            const [x, y] = key.split(',').map(Number);
+            const cube = cubes.find(c => c.x === x && c.y === y);
+            
+            if (!cube) return;
+            
+            // Remove old seed
+            plant.element.remove();
+            
+            // Create new plant based on upgrade type - CUSTOMIZE THESE
+            let newPlant;
+            switch(upgradeType) {
+                case 'ogtree': 
+                    newPlant = createOgtree();
+                    break;
+                case 'boom': 
+                    newPlant = createBoom();
+                    break;
+                case 'theone': 
+                    newPlant = createTheOne();
+                    break;
+                default: return;
+            }
+            
+            cube.element.style.position = 'relative';
+            cube.element.appendChild(newPlant);
+            
+            // Update plant data
+            placedPlants.set(key, { 
+                type: upgradeType, 
+                element: newPlant,
+                x: x,
+                y: y
+            });
+            
+            // Deduct money
+            spendMoney(cost);
+            
+            // Close upgrade menu if open
+            const upgradeMenu = document.getElementById('seed-upgrade-menu');
+            if (upgradeMenu) {
+                upgradeMenu.classList.remove('active');
+                // Remove click listener if it exists
+                if (upgradeMenu._closeMenuHandler) {
+                    document.removeEventListener('click', upgradeMenu._closeMenuHandler);
+                    upgradeMenu._closeMenuHandler = null;
+                }
+            }
+        }
+        
+        function showSeedUpgradeMenu(key, plantElement, cube) {
+            // Create or get upgrade menu
+            let upgradeMenu = document.getElementById('seed-upgrade-menu');
+            if (!upgradeMenu) {
+                upgradeMenu = document.createElement('div');
+                upgradeMenu.id = 'seed-upgrade-menu';
+                upgradeMenu.className = 'seed-upgrade-menu';
+                document.body.appendChild(upgradeMenu);
+            }
+            
+            // Clear existing options
+            upgradeMenu.innerHTML = '';
+            
+            // Upgrade options - CUSTOMIZE THESE 3 OPTIONS
+            const upgrades = [
+                { type: 'ogtree', cost: 50, name: 'Ogtree' },   // Tree that throws leaves
+                { type: 'boom', cost: 75, name: 'Boom' },       // Palm tree that throws exploding coconuts
+                { type: 'theone', cost: 100, name: 'The One' }   // Shoots every 0.5s with 3x3 explosion
+            ];
+            
+            upgrades.forEach(upgrade => {
+                const option = document.createElement('div');
+                option.className = 'seed-upgrade-option';
+                if (money < upgrade.cost) {
+                    option.classList.add('insufficient-funds');
+                }
+                option.innerHTML = `
+                    <span class="upgrade-name">${upgrade.name}</span>
+                    <span class="upgrade-cost">+${upgrade.cost}💰</span>
+                `;
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (money >= upgrade.cost) {
+                        upgradeSeed(key, upgrade.type);
+                    }
+                });
+                upgradeMenu.appendChild(option);
+            });
+            
+            // Position menu near the seed
+            const rect = plantElement.getBoundingClientRect();
+            upgradeMenu.style.left = (rect.left + rect.width / 2) + 'px';
+            upgradeMenu.style.top = (rect.bottom + 10) + 'px';
+            upgradeMenu.style.transform = 'translateX(-50%)';
+            upgradeMenu.dataset.seedKey = key;
+            upgradeMenu.classList.add('active');
+            
+            // Close menu when clicking outside
+            // Remove any existing close listeners first
+            if (upgradeMenu._closeMenuHandler) {
+                document.removeEventListener('click', upgradeMenu._closeMenuHandler);
+            }
+            
+            const closeMenu = (e) => {
+                // Don't close if clicking on the menu itself or the seed
+                if (upgradeMenu.contains(e.target) || plantElement.contains(e.target)) {
+                    return;
+                }
+                
+                // Close the menu
+                upgradeMenu.classList.remove('active');
+                document.removeEventListener('click', closeMenu);
+                upgradeMenu._closeMenuHandler = null;
+            };
+            
+            // Store handler reference
+            upgradeMenu._closeMenuHandler = closeMenu;
+            
+            // Add click listener after a small delay to prevent immediate closing
+            setTimeout(() => {
+                document.addEventListener('click', closeMenu);
+            }, 10);
+        }
+        
         // Shooting system
         const projectiles = [];
         const shootCooldown = 1000; // Shoot every 1 second (for peashooter)
@@ -6733,7 +8098,7 @@
         const stunDuration = 3000; // Stun lasts 3 seconds
         const slowDuration = 3000; // Slow lasts 3 seconds
         
-        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false, isCoconut = false, isBossPanel = false, isBoomerang = false, isCokeCan = false, returnX = null, returnY = null, isStrongFire = false, isBossImage = false, imageSrc = null) {
+        function createProjectile(startX, startY, targetX, targetY, isThunder = false, isFire = false, isIce = false, isCoconut = false, isBossPanel = false, isBoomerang = false, isCokeCan = false, returnX = null, returnY = null, isStrongFire = false, isBossImage = false, imageSrc = null, isBossStar = false, isLeaf = false, isBoomCoconut = false, isTheOne = false) {
             const projectile = document.createElement('div');
             let className = 'projectile';
             if (isThunder) className = 'projectile thunder';
@@ -6744,6 +8109,10 @@
             else if (isBoomerang) className = 'projectile boomerang';
             else if (isCokeCan) className = 'projectile coke-can';
             else if (isBossImage) className = 'projectile boss-image';
+            else if (isBossStar) className = 'projectile boss-star';
+            else if (isLeaf) className = 'projectile leaf';
+            else if (isBoomCoconut) className = 'projectile boom-coconut';
+            else if (isTheOne) className = 'projectile theone-projectile';
             projectile.className = className;
             
             // If it's a boss image, use the image as background
@@ -6780,6 +8149,10 @@
                 isBossImage: isBossImage, // Level 3 boss image projectiles
                 imageSrc: imageSrc, // Image source for boss image projectiles
                 isStrongFire: isStrongFire, // Stronger fire damage from spikychomper (dragon)
+                isBossStar: isBossStar, // Level 4 boss star projectile
+                isLeaf: isLeaf, // Ogtree leaf projectile
+                isBoomCoconut: isBoomCoconut, // Boom palm tree exploding coconut
+                isTheOne: isTheOne, // The one plant projectile with 3x3 explosion
                 returning: false,
                 hitEnemies: [] // Track enemies already hit by this boomerang
             };
@@ -6958,8 +8331,8 @@
                         projectile.x += (dx / distance) * projectile.speed;
                         projectile.y += (dy / distance) * projectile.speed;
                     }
-                } else if (projectile.isCokeCan || projectile.isBossImage) {
-                    // Coke can and boss images move toward target (plant), but continue past if they miss
+                } else if (projectile.isCokeCan || projectile.isBossImage || projectile.isBossStar) {
+                    // Coke can, boss images, and boss star move toward target (plant), but continue past if they miss
                     const dx = projectile.targetX - projectile.x;
                     const dy = projectile.targetY - projectile.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -6973,7 +8346,7 @@
                         projectile.x -= projectile.speed;
                     }
                     
-                    // Check if coke can or boss image reached left side of map (damage player)
+                    // Check if coke can, boss image, or boss star reached left side of map (damage player)
                     const padding = 20;
                     if (projectile.x < padding) {
                         if (projectile.isCokeCan) {
@@ -6981,6 +8354,9 @@
                             loseHP(3);
                         } else if (projectile.isBossImage) {
                             // Boss image reached left side - damage player by 2
+                            loseHP(2);
+                        } else if (projectile.isBossStar) {
+                            // Boss star reached left side - damage player by 2
                             loseHP(2);
                         }
                         projectile.element.remove();
@@ -6999,6 +8375,39 @@
                         if (projectile.isCoconut) {
                             // Create explosion
                             createExplosion(projectile.x, projectile.y);
+                        } else if (projectile.isBoomCoconut) {
+                            // Boom coconut explodes at target, deals 2 damage
+                            const explosionX = projectile.x;
+                            const explosionY = projectile.y;
+                            
+                            // Convert pixel position to grid position for explosion
+                            const padding = 20;
+                            const explosionGridX = Math.floor((explosionX - padding) / (cubeSize + gap));
+                            const explosionGridY = Math.floor((explosionY - padding) / (cubeSize + gap));
+                            
+                            // Create visual explosion
+                            createExplosion(explosionX, explosionY);
+                            
+                            // Damage all enemies in 2x2 area (1 box radius)
+                            enemies.forEach(enemy => {
+                                if (!enemy.active) return;
+                                
+                                // Check if enemy is within explosion radius (1 box in each direction)
+                                const dx = Math.abs(enemy.x - explosionGridX);
+                                const dy = Math.abs(enemy.y - explosionGridY);
+                                
+                                if (dx <= 1 && dy <= 1) {
+                                    // Enemy is in explosion range - deal 2 damage
+                                    enemy.hits += 2;
+                                    if (enemy.hits >= enemy.maxHits) {
+                                        removeEnemy(enemy, true);
+                                    } else {
+                                        if (enemy.type === 'boss') {
+                                            updateBossHPBar();
+                                        }
+                                    }
+                                }
+                            });
                         }
                         projectile.element.remove();
                         projectile.active = false;
@@ -7014,8 +8423,8 @@
                 projectile.element.style.left = projectile.x + 'px';
                 projectile.element.style.top = projectile.y + 'px';
                 
-                // Check collision with plants (for boss panels, coke cans, and boss images)
-                if (projectile.isBossPanel || projectile.isCokeCan || projectile.isBossImage) {
+                // Check collision with plants (for boss panels, coke cans, boss images, and boss star)
+                if (projectile.isBossPanel || projectile.isCokeCan || projectile.isBossImage || projectile.isBossStar) {
                     placedPlants.forEach((plant, key) => {
                         const [plantX, plantY] = key.split(',').map(Number);
                         const plantPos = gridToPixel(plantX, plantY);
@@ -7028,26 +8437,40 @@
                         );
                         
                         if (distanceToPlant < 30) {
-                            // Hit plant - damage it
-                            if (!plantHealths) {
-                                plantHealths = new Map();
-                            }
-                            const currentHealth = plantHealths.get(key) || 10;
-                            const newHealth = currentHealth - 5;
-                            plantHealths.set(key, newHealth);
-                            
-                            if (newHealth <= 0) {
-                                // Plant destroyed
+                            // Hit plant
+                            if (projectile.isBossStar) {
+                                // Boss star one-shots plants
                                 plant.element.remove();
                                 placedPlants.delete(key);
-                                plantHealths.delete(key);
-                            }
-                            
-                            // Remove projectile on hit (only for boss panels and boss images, coke cans continue)
-                            if (projectile.isBossPanel || projectile.isBossImage) {
+                                if (plantHealths) {
+                                    plantHealths.delete(key);
+                                }
+                                // Remove star on hit
                                 projectile.element.remove();
                                 projectile.active = false;
                                 projectiles.splice(i, 1);
+                            } else {
+                                // Other projectiles damage plants
+                                if (!plantHealths) {
+                                    plantHealths = new Map();
+                                }
+                                const currentHealth = plantHealths.get(key) || 10;
+                                const newHealth = currentHealth - 5;
+                                plantHealths.set(key, newHealth);
+                                
+                                if (newHealth <= 0) {
+                                    // Plant destroyed
+                                    plant.element.remove();
+                                    placedPlants.delete(key);
+                                    plantHealths.delete(key);
+                                }
+                                
+                                // Remove projectile on hit (only for boss panels and boss images, coke cans continue)
+                                if (projectile.isBossPanel || projectile.isBossImage) {
+                                    projectile.element.remove();
+                                    projectile.active = false;
+                                    projectiles.splice(i, 1);
+                                }
                             }
                         }
                     });
@@ -7094,6 +8517,63 @@
                         } else if (projectile.isCoconut) {
                             // Coconut explodes on impact
                             createExplosion(projectile.x, projectile.y);
+                            projectile.element.remove();
+                            projectile.active = false;
+                            projectiles.splice(i, 1);
+                            hitEnemy = true;
+                            break;
+                        } else if (projectile.isBoomCoconut) {
+                            // Boom coconut explodes on impact, deals 2 damage to all enemies in area
+                            const explosionX = projectile.x;
+                            const explosionY = projectile.y;
+                            
+                            // Convert pixel position to grid position for explosion
+                            const padding = 20;
+                            const explosionGridX = Math.floor((explosionX - padding) / (cubeSize + gap));
+                            const explosionGridY = Math.floor((explosionY - padding) / (cubeSize + gap));
+                            
+                            // Create visual explosion
+                            createExplosion(explosionX, explosionY);
+                            
+                            // Damage all enemies in 2x2 area (1 box radius)
+                            enemies.forEach(enemy => {
+                                if (!enemy.active) return;
+                                
+                                // Check if enemy is within explosion radius (1 box in each direction)
+                                const dx = Math.abs(enemy.x - explosionGridX);
+                                const dy = Math.abs(enemy.y - explosionGridY);
+                                
+                                if (dx <= 1 && dy <= 1) {
+                                    // Enemy is in explosion range - deal 2 damage
+                                    enemy.hits += 2;
+                                    if (enemy.hits >= enemy.maxHits) {
+                                        removeEnemy(enemy, true);
+                                    } else {
+                                        if (enemy.type === 'boss') {
+                                            updateBossHPBar();
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            // Remove projectile immediately - don't apply regular damage
+                            projectile.element.remove();
+                            projectile.active = false;
+                            projectiles.splice(i, 1);
+                            hitEnemy = true;
+                            break; // Exit the enemy loop, explosion already handled
+                        } else if (projectile.isTheOne) {
+                            // The one does regular damage (no explosion)
+                            enemy.hits++;
+                            // Check if enemy should die
+                            if (enemy.hits >= enemy.maxHits) {
+                                removeEnemy(enemy, true);
+                            }
+                            // Update boss HP bar if boss was hit
+                            if (enemy.type === 'boss') {
+                                updateBossHPBar();
+                            }
+                            
                             projectile.element.remove();
                             projectile.active = false;
                             projectiles.splice(i, 1);
@@ -7161,7 +8641,7 @@
             const currentTime = Date.now();
             
             placedPlants.forEach((plant, key) => {
-                if (plant.type !== 'peashooter' && plant.type !== 'thunderpea' && plant.type !== 'firepeashooter' && plant.type !== 'snowpea' && plant.type !== 'spikychomper' && plant.type !== 'pumpkin' && plant.type !== 'flowerplant' && plant.type !== 'fireplant') return;
+                if (plant.type !== 'peashooter' && plant.type !== 'thunderpea' && plant.type !== 'firepeashooter' && plant.type !== 'snowpea' && plant.type !== 'spikychomper' && plant.type !== 'pumpkin' && plant.type !== 'flowerplant' && plant.type !== 'fireplant' && plant.type !== 'ogtree' && plant.type !== 'boom' && plant.type !== 'theone') return;
                 
                 // Get plant position from key
                 const [x, y] = key.split(',').map(Number);
@@ -7186,6 +8666,12 @@
                     cooldown = shootCooldown; // 1 second
                 } else if (plant.type === 'fireplant') {
                     cooldown = shootCooldown; // 1 second
+                } else if (plant.type === 'ogtree') {
+                    cooldown = shootCooldown; // 1 second
+                } else if (plant.type === 'boom') {
+                    cooldown = 800; // 0.8 seconds (faster than ogtree)
+                } else if (plant.type === 'theone') {
+                    cooldown = 500; // 0.5 seconds (fastest)
                 }
                 
                 if (currentTime - lastShot < cooldown) {
@@ -7310,20 +8796,53 @@
                         }
                         lastShotTime.set(key, currentTime);
                     }
+                } else if (plant.type === 'theone') {
+                    // The one has 3x3 shooting range (can target enemies within 3 boxes in any direction)
+                    let targetEnemy = null;
+                    let nearestDistance = Infinity;
+                    
+                    enemies.forEach(enemy => {
+                        if (!enemy.active) return;
+                        
+                        // Calculate distance to enemy (Chebyshev distance for 3x3 range)
+                        const dx = Math.abs(enemy.x - x);
+                        const dy = Math.abs(enemy.y - y);
+                        const distance = Math.max(dx, dy); // Chebyshev distance
+                        
+                        // 3x3 range: within 3 boxes in any direction
+                        if (distance <= 3 && distance < nearestDistance) {
+                            nearestDistance = distance;
+                            targetEnemy = enemy;
+                        }
+                    });
+                    
+                    if (targetEnemy) {
+                        const enemySizeForTarget = getEnemySize(targetEnemy.type);
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySizeForTarget);
+                        const targetX = enemyPos.x + enemySizeForTarget / 2;
+                        const targetY = enemyPos.y + enemySizeForTarget / 2;
+                        
+                        // Create projectile
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, false, false, false, false, false, false, false, null, null, false, false, null, false, false, false, true);
+                        lastShotTime.set(key, currentTime);
+                    }
                 } else {
-                    // Find nearest enemy
+                    // Find nearest enemy (same row only)
                     const targetEnemy = findNearestEnemy(x, y);
                     
                     if (targetEnemy) {
-                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y);
-                        const targetX = enemyPos.x + enemySize / 2;
-                        const targetY = enemyPos.y + enemySize / 2;
+                        const enemySizeForTarget = getEnemySize(targetEnemy.type);
+                        const enemyPos = gridToPixel(targetEnemy.x, targetEnemy.y, enemySizeForTarget);
+                        const targetX = enemyPos.x + enemySizeForTarget / 2;
+                        const targetY = enemyPos.y + enemySizeForTarget / 2;
                         
                         // Create projectile based on plant type
                         const isThunder = plant.type === 'thunderpea';
                         const isFire = plant.type === 'firepeashooter';
                         const isIce = plant.type === 'snowpea';
-                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, isThunder, isFire, isIce);
+                        const isLeaf = plant.type === 'ogtree';
+                        const isBoomCoconut = plant.type === 'boom';
+                        createProjectile(plantCenterX, plantCenterY, targetX, targetY, isThunder, isFire, isIce, false, false, false, false, null, null, false, false, null, false, isLeaf, isBoomCoconut, false);
                         lastShotTime.set(key, currentTime);
                     }
                 }
